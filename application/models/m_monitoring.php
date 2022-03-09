@@ -18,4 +18,9 @@ class m_monitoring extends CI_Model
         $result = $query->result();
         return $result;
     }
+
+    public function monitoring_add($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
 }

@@ -27,11 +27,15 @@ class kontrol_fin extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    function edit($kontrol_fin)
+    function aksi_pagu_kontrak($VENDOR_ID)
     {
-        $where = array('id' => $kontrol_fin);
-        $data['user'] = $this->m_data->edit_data($where, 'user')->result();
-        $this->load->view('kontrol_fin', $data);
+        $where = array('VENDOR_ID' => $VENDOR_ID);
+        $data['aksi_pagu_kontrak'] = $this->m_kontrol_fin->edit_data($where, 'tb_pagu_kontrak')->result();
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('aksi_pagu_kontrak', $data);
+        $this->load->view('templates/footer');
     }
 
 

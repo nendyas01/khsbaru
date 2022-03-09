@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <section class="panel">
                     <header class="panel-heading">Monitoring Perizinan</header>
-                    <!--  <a class="btn btn-danger" href=" <?php echo base_url('monitoring/print') ?>"> <i></i>
+                    <!--  <a class="btn btn-danger" href=" <?php echo base_url('monitoring_add') ?>"> <i></i>
                 </a> -->
 
                     <div class="panel-body table-responsive">
@@ -32,7 +32,7 @@
                                         <th>Tanggal Keluar SKRD</th>
                                         <th>Pembayaran Retribusi</th>
                                         <!--isinya dibayar tgl berapa-->
-                                        <th>Izin Terbit</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
 
@@ -53,7 +53,7 @@
                                             <td> <?php echo $m->tgl_survey ?> </td>
                                             <td> <?php echo $m->tgl_terbit_skrd ?></td>
                                             <td> <?php echo $m->biaya_retribusi ?></td>
-                                            <td> <?php echo anchor('monitoring/' . $m->spj_no, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <td><?php echo anchor('monitoring/monitoring_add/' . $m->spj_no, '<div><a href="monitoring_add">Upload</a></div>') ?></td>
                                         </tr>
                                     <?php } ?>
 
@@ -99,7 +99,4 @@
         </div>
     </section>
     </section>
-</div>
-</div>
-</section>
 </div>
