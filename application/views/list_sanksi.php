@@ -24,7 +24,6 @@
                                         <th>Vendor</th>
                                         <th>No KHS</th>
                                         <th>Paket</th>
-                                        <th>Nama Vendor</th>
                                         <th>Zona</th>
                                         <th>TT1</th>
                                         <th>TT2</th>
@@ -42,15 +41,15 @@
                                     ?>
                                         <tr>
                                             <td> <?php echo $no++ ?></td>
-                                            <td> <?php echo $ap->vendor ?></td>
-                                            <td> <?php echo $ap->no_khs ?></td>
-                                            <td> <?php echo $ap->paket ?></td>
-                                            <td> <?php echo $ap->ZONE ?></td>
-                                            <td> <?php echo $ap->TT1 ?></td>
-                                            <td> <?php echo $ap->TT2 ?></td>
-                                            <td> <?php echo $ap->P1 ?></td>
-                                            <td> <?php echo $ap->P2 ?></td>
-                                            <td> <?php echo $ap->P3 ?></td>
+                                            <td> <?php echo $ls->vendor ?></td>
+                                            <td> <?php echo $ls->no_khs ?></td>
+                                            <td> <?php echo $ls->paket ?></td>
+                                            <td> <?php echo $ls->ZONE ?></td>
+                                            <td> <?php echo $ls->TT1 ?></td>
+                                            <!-- <td> <?php echo $ls->TT2 ?></td>
+                                            <td> <?php echo $ls->P1 ?></td>
+                                            <td> <?php echo $ls->P2 ?></td>
+                                            <td> <?php echo $ls->P3 ?></td> -->
 
                                         </tr>
 

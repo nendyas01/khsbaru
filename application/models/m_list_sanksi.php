@@ -16,7 +16,6 @@ class m_list_sanksi extends CI_Model
 
         $this->db->from('tb_mapping_vendor a');
         $this->db->where('a.MAPPING_TAHUN = 2017');
-        $this->db->order_by('no_pelanggaran');
 
         $query = $this->db->get();
         $result = $query->result();
@@ -25,10 +24,10 @@ class m_list_sanksi extends CI_Model
 
     public function get_keyword($keyword)
     {
-        $approve_pelanggaran = $this->db->get('tb_pelanggaran');
+        $list_sanksi = $this->db->get('tb_vendor');
         $this->db->select('*');
-        $this->db->from('tb_pelanggaran');
-        $this->db->like('no_pelanggaran', $keyword);
+        $this->db->from('ttb_vendor');
+        $this->db->like('VENDOR_NAMA', $keyword);
         return $this->db->get->result();
     }
 }
