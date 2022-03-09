@@ -28,9 +28,30 @@
                                         <th>No Kontrak</th>
                                         <th>Paket</th>
                                         <th>Jenis Sanksi</th>
-                                        <th>Cetak</th>
+                                        <!-- <th>Cetak</th> -->
                                     </tr>
                                 </thead>
+
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($trans_sanksi as $ts) {
+                                    ?>
+                                        <tr>
+                                            <td> <?php echo $no++ ?></td>
+                                            <td> <?php echo $ts->AREA_NAMA ?></td>
+                                            <td> <?php echo $ts->jenis_pelanggaran ?></td>
+                                            <td> <?php echo $ts->no_spj ?></td>
+                                            <td> <?php echo $ts->nama_vendor ?></td>
+                                            <td> <?php echo $ts->no_kontrak ?></td>
+                                            <td> <?php echo $ts->paket ?></td>
+                                            <td> <?php echo $ts->id_master_sanksi ?></td>
+                                            <!-- <td> <?php echo $ts->cetak ?></td>
+                                            <td> <?php echo $ts->evidence1 ?></td> -->
+                                        </tr>
+
+                                    <?php } ?>
+                                </tbody>
 
                                 <tbody>
                                     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
