@@ -19,6 +19,8 @@
                         <font size="2" face="Arial">
                             <table id="example" class="table table-striped table-bordered" cellspacing="0">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Paket</button>
+                                <br>
+                                <br>
                                 <thead>
                                     <tr>
                                         <th>Paket Jenis</th>

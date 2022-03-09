@@ -19,7 +19,7 @@
      <?php if($this->session->userdata("role") == '1'){ ?>
       <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
         <a href="<?php echo base_url('chart') ?>">
-          <i class="fa fa-bar-chart"></i> <span>Chart</span>
+          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
 
@@ -132,7 +132,7 @@
       <?php }elseif($this->session->userdata("role") == "2"){ ?>
         <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
         <a href="<?php echo base_url('chart') ?>">
-          <i class="fa fa-bar-chart"></i> <span>Chart</span>
+          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
 
@@ -192,7 +192,7 @@
       <?php }elseif($this->session->userdata("role") == "3"){ ?>
         <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
         <a href="<?php echo base_url('chart') ?>">
-          <i class="fa fa-bar-chart"></i> <span>Chart</span>
+          <i class="fa fa dashoard"></i> <span>Dashboard</span>
         </a>
       </li>
       
@@ -241,7 +241,7 @@
       <?php }elseif($this->session->userdata("role") == "4"){ ?>
         <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
         <a href="<?php echo base_url('chart') ?>">
-          <i class="fa fa-bar-chart"></i> <span>Chart</span>
+          <i class="fa fa-dashoard"></i> <span>Dashoard</span>
         </a>
       </li>
       <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
@@ -322,7 +322,7 @@
       <?php }elseif($this->session->userdata("role") == "5"){ ?>
         <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
         <a href="<?php echo base_url('chart') ?>">
-          <i class="fa fa-bar-chart"></i> <span>Chart</span>
+          <i class="fa fa-dashoard"></i> <span>Dashoard</span>
         </a>
       </li>
       <li class="treeview <?= $this->uri->segment(1) == 'kontrol_fin/tambah_addendum' || $this->uri->segment(1) == 'kontrol_fin/tambah'

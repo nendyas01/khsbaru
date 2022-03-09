@@ -5,7 +5,7 @@
       <small>Control panel</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
       <li class="active">Input Data Mapping Vendor</li>
     </ol>
   </section>
@@ -21,6 +21,8 @@
             <font size="2" face="Arial">
               <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data</button>
+                <br>
+                <br>
                 <thead>
                   <tr>
                     <th>Tahun</th>
@@ -44,7 +46,7 @@
                       <td> <?php echo $mv->MAPPING_TAHUN ?></td>
                       <td> <?php echo $mv->desc_paket ?></td>
                       <td> <button class="btn btn-default btn x-s"><?php echo $mv->total_vendor ?></span></td>
-                      <td> <a class="btn btn-default btn x-s" data-toggle="modal" data-target="#modal-detail" data-mapping="<?= $mv->AREA_KODE ?>"><?php echo $mv->ZONE ?></td>
+                      <td> <a class="btn btn-default btn x-s" data-toggle="modal" data-target="#modal-detail" data-mapping="<?php echo $mv->total_area ?>"></td>
                       <td> <?php echo anchor('mapping_vendor/getmappingbymappingid/' . $mv->MAPPING_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                       <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                     </tr>

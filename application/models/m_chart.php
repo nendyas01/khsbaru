@@ -22,6 +22,13 @@ function tahun(){
     return $this->db->get()->result(); 
 }
 
+function tahun_paket(){
+    $this->db->select('YEAR(SPJ_TANGGAL_MULAI) as tahun_paket');
+    $this->db->from('tb_spj');
+    $this->db->group_by('tahun_paket');
+    return $this->db->get()->result(); 
+}
+
 // function getpaket(){
 //     $query = $this->db->query("SELECT * FROM tb_paket ORDER BY PAKET_DESKRIPSI ASC");
 //     return $query->result();

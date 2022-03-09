@@ -6,10 +6,6 @@ class chart extends CI_Controller
     function __construct(){ 
         parent::__construct(); 
         $this->load->model('m_chart'); 
-        if($this->session->userdata("status") == "0"){
-            $this->session->set_flashdata('msg', 'non');
-            redirect('login');
-        }
     }
     function index(){ 
         $data['total_spj']=$this->m_chart->jml_total_spj();  
@@ -34,12 +30,14 @@ class chart extends CI_Controller
     }
 
     function getBarChart(){
-        $area_kode=$this->input->post('area_kode');
-        $tahun=$this->input->post('tahun');
-        $get = $this->m_chart->jml_paket($area_kode, $tahun);
+        $area_kode=$this->input->get('area_kode');
+        $tahun_paket=$this->input->get('tahun_paket');
+        $tmp_tahun = substr($tahun_paket,1,4);
+
+        $get = $this->m_chart->jml_paket($area_kode, $tmp_tahun);
         echo json_encode($get);
         // print_r($get);
-
+        //echo $tmp_tahun;
     }
 
     function getLineChart2(){
@@ -60,6 +58,13 @@ class chart extends CI_Controller
         $get = $this->m_chart->tahun();
         echo json_encode($get);
     }
+
+    function getTahunPaket(){
+        $get = $this->m_chart->tahun_paket();
+        echo json_encode($get);
+    }
+
+    
 
     function getPaket(){
         $tahun = $this->input->get('tahun');

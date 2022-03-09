@@ -21,9 +21,9 @@
         <div class="box box-dark">
             <div class="box-header with-border">
               <div class="row">
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <h3 class="box-title">Grafik Pencapaian</h3>
-                </div>
+                </div> -->
                 
               </div>
             </div>
@@ -34,7 +34,7 @@
               <div class="col-md-6">
                 <div class="row">
                   <div class="col-md-6">
-                    <select name="area_kode" class="form-control area_kode"></select>
+                    <select name="area_kode" class="form-control area_kode_gangguan"></select>
                   </div>
 
                   <div class="col-md-4">
@@ -55,11 +55,11 @@
                 <div class="row">
                   <div class="col-md-6">
       
-                    <select name="area_kode" class="form-control area_kode"></select>
+                    <select name="area_kode_paket" class="form-control area_kode_paket"></select>
                   </div>
 
                   <div class="col-md-4">
-                    <select name="tahun" class="form-control tahun"></select>
+                    <select name="tahun_paket" class="form-control tahun_paket"></select>
                   </div>
 
                   <div class="col-md-1">
@@ -76,6 +76,7 @@
                 </div>
               </div>
             </div>
+          </div>
 
             <!-- <div class="row">
             
@@ -83,9 +84,9 @@
         <div class="box box-dark mt-5">
             <div class="box-header with-border">
               <div class="row">
-                <div class="col-md-6">
-                  <h3 class="box-title">Grafik Pencapaian</h3>
-                </div>
+                <!-- <div class="col-md-6">
+                  <center><h3 class="box-title">                Grafik Perbandingan SPJ dan Pagu Kontrak tiap Vendor</h3></center>
+                </div> -->
                 
               </div>
             </div>
@@ -127,6 +128,8 @@
       getChart();
       getArea();
       getTahun();
+      getAreaGangguan() ;
+      getTahunPaket();
       // getPaket();
 
       $('[name="btn-filter"]').on('click', function () {
@@ -143,7 +146,7 @@
       function getArea() {
         $.ajax({
           type: "POST",
-          url: "<?php echo base_url(); ?>/chart/getArea",
+          url: "<?php echo base_url(); ?>chart/getArea",
           data: "data",
           dataType: "JSON",
           success: function (data) {
@@ -151,7 +154,23 @@
             $.each(data, function (i, val) { 
               html += '<option value="'+val.AREA_KODE+'">'+val.AREA_NAMA+'</option>';
             });
-            $('.area_kode').html(html);
+            $('.area_kode_paket').html(html);
+          }
+        });
+      }
+
+      function getAreaGangguan() {
+        $.ajax({
+          type: "POST",
+          url: "<?php echo base_url(); ?>chart/getArea",
+          data: "data",
+          dataType: "JSON",
+          success: function (data) {
+            var html = '';
+            $.each(data, function (i, val) { 
+              html += '<option value="'+val.AREA_KODE+'">'+val.AREA_NAMA+'</option>';
+            });
+            $('.area_kode_gangguan').html(html);
           }
         });
       }
@@ -169,6 +188,22 @@
               html += '<option value="'+val.tahun+'">'+val.tahun+'</option>';
             });
             $('.tahun').html(html);
+          }
+        });
+      }
+
+      function getTahunPaket(){
+        $.ajax({
+          type: "POST",
+          url: "<?php echo base_url(); ?>/chart/getTahunPaket",
+          data: "data",
+          dataType: "JSON",
+          success: function (data) {
+            var html = '';
+            $.each(data, function (i, val) { 
+              html += '<option value="'+val.tahun_paket+'">'+val.tahun_paket+'</option>';
+            });
+            $('.tahun_paket').html(html);
           }
         });
       }
@@ -265,21 +300,24 @@
       getBarChart();
 
       $('[name="btn-filter-bar-chart"]').on('click', function () {
-        var area_kode = $('[name="area_kode"]').val();
-        var tahun = $('[name="tahun"]').val();
+        var area_kode = $('.area_kode_paket').find(":selected").val();
+        var tahun = $('.tahun').find(":selected").text();
+        //var tahun = $(this).attr('class').replace('tahun ', '');
         getBarChart(tahun, area_kode); 
       });
 
 
       function getBarChart(tahun=null, area_kode=null) {
-      
+        //result = tahun.substr(1, 4);
+// alert(area_kode);
+
         $.ajax({
-            type: "POST",
-            url: "<?php echo base_url(); ?>/chart/getBarchart",
+            type: "GET",
+            url: "<?php echo base_url(); ?>chart/getBarchart",
             data: {area_kode:area_kode, tahun:tahun},
             dataType: "JSON",
             success: function (data) {
-              // console.log(data);
+               console.log(data);
                 var paket1 = [];
                 var paket2 = [];
                 var paket3 = [];

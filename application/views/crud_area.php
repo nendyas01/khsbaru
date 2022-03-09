@@ -20,6 +20,8 @@
                         <font size="2" face="Arial">
                             <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Area</button>
+                                <br>
+                                <br>
                                 <thead>
                                     <tr>
                                         <th>No</th>
