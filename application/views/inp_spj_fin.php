@@ -10,6 +10,7 @@
         </ol>
     </section>
     <section class="content">
+
         <div class="row">
             <div class="col-md-12">
                 <section class="panel">
@@ -72,9 +73,9 @@
                                     <!-- Textbox Nomor SKKI/O -->
                                     <div class="form-group">
                                         <label class="col-sm-2 col-sm-2 control-label">Nomor SKKI/O</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="SKKI_ID" id="SKKI_ID" placeholder="Masukan nomor SKKI/O" class="form-control">
-                                            <?= form_error('SKKI_ID', '<small class="text-danger">', '</small>'); ?>
+                                        <div class="col-sm-10" id="no_add">
+                                            <input type="text" class="form-control" name="var_skki_tujuan" id="var_skki_tujuan" placeholder="Masukan nomor SKKI/O">
+                                            <?= form_error('var_skki_tujuan', '<small class="text-danger">', '</small>'); ?>
                                         </div>
                                     </div>
 
@@ -258,6 +259,15 @@
                                     $(document).ready(function() {
                                         $('#SKKI_ID').autocomplete({
                                             source: "<?php echo site_url('inp_spj_fin/get_autofill/?') ?>",
+
+                                        });
+                                    });
+                                </script>
+
+                                <script type='text/javascript'>
+                                    $(document).ready(function() {
+                                        $('#var_skki_tujuan').autocomplete({
+                                            source: "<?php echo site_url('inp_addendum/get_autofill1/?') ?>",
 
                                         });
                                     });

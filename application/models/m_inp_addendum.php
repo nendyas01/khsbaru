@@ -19,10 +19,26 @@ class m_inp_addendum extends CI_Model
         return $result;
     }
 
-    function getdata()
+    /*  function getdata()
     {
         $query = $this->db->query("SELECT DISTINCT * FROM tb_spj ORDER BY SPJ_NO ASC");
         return $query->result();
+    } */
+
+    function search_spj($title)
+    {
+        $this->db->like('SPJ_NO', $title);
+        $this->db->order_by('SPJ_NO', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('tb_spj')->result();
+    }
+
+    function search_skkio($title)
+    {
+        $this->db->like('SKKI_NO', $title);
+        $this->db->order_by('SKKI_NO', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('tb_skko_i')->result();
     }
 
     function getskkio()
