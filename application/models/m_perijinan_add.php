@@ -4,7 +4,7 @@ class m_perijinan_add extends CI_Model
 {
 
 
-    public function edit($table)
+    public function edit_data($table)
     {
         return $this->db->get_where($table);
     }

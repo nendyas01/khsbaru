@@ -63,25 +63,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="reset" class="btn btn-danger">Reset</button>
-                                    <button name="Submit" type="submit" class="btn btn-info">Submit</button>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
+                                <button type="submit" class="btn btn-primary">Submit</button>
 
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-lg-offset-1 col-lg-10">
-                                    <button onclick="goBack() " class="btn btn-info">Kembali</button>
-                                    <script>
-                                        function goBack() {
-                                            window.history.back();
-                                        }
-                                    </script>
-
-                                </div>
-                            </div>
+                            </form>
                         </form>
                     </div>
 

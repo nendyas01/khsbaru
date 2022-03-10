@@ -7,12 +7,8 @@ class m_perijinan extends CI_Model
     {
         $this->db->select(
             '
-        
         spj_no,
         jumlah_dok
-
-        
-
         '
         );
 

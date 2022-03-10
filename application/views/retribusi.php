@@ -35,7 +35,7 @@
                     <section class="panel">
                         <header class="panel-heading">Pembayaran Retribusi</header>
                         <div class="panel-body" onload=disableselect();>
-                            <form class="form-horizontal tasi-form" method="post" action="bayar_retribusi_submit.php">
+                            <form class="form-horizontal tasi-form" method="post" action="Retribusi_submit">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">No Surat Ke PTSP</label>
                                     <div class="col-sm-10">
@@ -56,8 +56,8 @@
                                 </div>
 
                                 <div class="col-md-15" style="margin: 10px;">
-                                    <div class="box box-solid">
 
+                                    <div class="box box-solid" name="var_evidence">
                                         <div class="text-center">
                                             <h3 class="box-title" align="center">Evidence</h3>
                                         </div>
@@ -70,13 +70,11 @@
                                     </div>
                                 </div>
 
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
 
-                                    <div class="form-group">
+                                    <button type="submit" class="btn btn-info" onclick="document.getElementById('submitForm').submit()">Submit</button>
 
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
+                                </div>
 
                                 <script src="<?= base_url('assets/bootstrap/jquery/') . 'jquery3.js'; ?>"></script>
                                 <script src="<?= base_url('assets/bootstrap/js/') . 'bootstrap.js'; ?>"></script>

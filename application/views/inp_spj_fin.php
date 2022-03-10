@@ -65,24 +65,23 @@
                                         </select>
                                     </div>
 
+                                    <br>
+                                    <br>
+                                    <br>
+
                                     <!-- Textbox Nomor SKKI/O -->
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label col-lg-2">Nomor SKKI/O</label>
-                                        <div class="col-lg-9">
-                                            <select class="form-control m-b-10" name="var_no_skkio">
-                                                <option value="0">-- SKKI/SKKO --</option>
-                                                <?php foreach ($skk as $sk) : ?>
-                                                    <option value="<?php echo $sk->SKKI_ID; ?>"> <?php echo $sk->SKKI_NO; ?></option>
-                                                <?php endforeach; ?>
-
-                                            </select>
+                                        <label class="col-sm-2 col-sm-2 control-label">Nomor SKKI/O</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="SKKI_ID" id="SKKI_ID" placeholder="Masukan nomor SKKI/O" class="form-control">
+                                            <?= form_error('SKKI_ID', '<small class="text-danger">', '</small>'); ?>
                                         </div>
+                                    </div>
 
-
-                                        <!-- Textbox Jenis Pekerjaan -->
-                                        <div class="form-group">
-                                            <label class="col-sm-2 col-sm-2 control-label">Jenis Pekerjaan</label>
-                                            <!-- <div class="col-sm-3">
+                                    <!-- Textbox Jenis Pekerjaan -->
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-sm-2 control-label">Jenis Pekerjaan</label>
+                                        <!-- <div class="col-sm-3">
                                             <label class="radio-inline">
                                                 <input type="radio" name="gangguan" value="0"> Non Gangguan
                                             </label>
@@ -90,174 +89,190 @@
                                                 <input type="radio" name="gangguan" value="1"> Gangguan
                                             </label>
                                         </div> -->
-                                            <div class="col-lg-10">
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="gangguan" value="0" checked="checked">Non Gangguan
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="gangguan" value="1">Gangguan
-                                                </label>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Textbox Paket Pekerjaan -->
-                                        <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Paket Pekerjaan</label>
-                                        <div class="col-lg-9">
-                                            <select class="form-control m-b-10" id="paket" name="var_paket_pekerjaan">
-                                                <option value="0">-- Pilih Paket --</option>
-                                                <?php foreach ($jenis_paket as $jp) : ?>
-                                                    <option value="<?php echo $jp->PAKET_JENIS; ?>"> <?php echo $jp->PAKET_DESKRIPSI; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- tahun skarang date('Y'); -->
-                                    <div id="update"></div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label">Vendor Yang Tersedia</label>
-                                        <div class="col-sm-10">
-                                            <table id="availablevendor" class="table table-condensed">
-                                                <tr>
-                                                    <td>Pilih Paket Pekerjaan</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label" name="var_deskripsi_pekerjaan">Deskripsi Pekerjaan</label>
-                                        <div class="col-sm-3">
-                                            <textarea rows="3" cols="123" name="var_deskripsi_pekerjaan"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label">Nomor SPJ</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="var_no_spj">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label">Target Volume</label>
-                                        <div class="col-sm-2">
-                                            <div class="input-group m-b-10">
-                                                <input type="text" class="form-control" name="var_target" id="target">
-                                                <span class="input-group-addon" id="satuan"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label">Metode Pembayaran</label>
-                                        <div class="col-sm-2">
+                                        <div class="col-lg-10">
                                             <label class="radio-inline">
-                                                <input type="radio" name="option_bayar" id="termin" value="1" onClick="javascript:check_termin();">Termin
+                                                <input type="radio" name="gangguan" value="0" checked="checked">Non Gangguan
                                             </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group" id="termin_group" style="display:none;">
-                                        <label class="col-sm-2 col-sm-2 control-label"></label>
-                                        <div class="col-md-1" form-group>
-                                            <input type="text" class="form-control" name="var_termin_1" id="termin1">
-                                        </div>
-                                        <div class="col-md-1" form-group>
-                                            <input type="text" class="form-control" name="var_termin_2" id="termin2">
-                                        </div>
-                                        <div class="col-md-1" form-group>
-                                            <input type="text" class="form-control" name="var_termin_3" id="termin3">
-                                        </div>
-                                        <div class="col-md-1" form-group>
-                                            <input type="text" class="form-control" name="var_termin_4" id="termin4">
-                                        </div>
-                                        <div class="col-md-1" form-group>
-                                            <input type="text" class="form-control" name="var_termin_5" id="termin5">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label"></label>
-                                        <div class="col-sm-2">
                                             <label class="radio-inline">
-                                                <input type="radio" name="option_bayar" id="non_termin" value="0" onClick="javascript:check_termin();">Non Termin
+                                                <input type="radio" name="gangguan" value="1">Gangguan
                                             </label>
+
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label">SPJ Berlaku Mulai</label>
-                                        <div class="col-md-2">
-                                            <input type="date" class="form-control" name="var_mulai_berlaku" id="var_mulai_berlaku">
-                                        </div>
-
-                                        <label class=" col-sm-2 col-sm-2 control-label">Sampai Dengan</label>
-                                        <div class="col-md-2">
-                                            <input type="date" class="form-control" name="var_akhir_berlaku" id="var_akhir_berlaku">
-                                        </div>
+                                    <!-- Textbox Paket Pekerjaan -->
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Paket Pekerjaan</label>
+                                    <div class="col-lg-9">
+                                        <select class="form-control m-b-10" id="paket" name="var_paket_pekerjaan">
+                                            <option value="0">-- Pilih Paket --</option>
+                                            <?php foreach ($jenis_paket as $jp) : ?>
+                                                <option value="<?php echo $jp->PAKET_JENIS; ?>"> <?php echo $jp->PAKET_DESKRIPSI; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
+                                </div>
 
-                                    <link rel="stylesheet" href="//select2.github.io/select2-bootstrap-theme/css/select2-bootstrap.css">
-                                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+                                <!-- tahun skarang date('Y'); -->
+                                <div id="update"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Vendor Yang Tersedia</label>
+                                    <div class="col-sm-10">
+                                        <table id="availablevendor" class="table table-condensed">
+                                            <tr>
+                                                <td>Pilih Paket Pekerjaan</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
 
-                                    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label" name="var_deskripsi_pekerjaan">Deskripsi Pekerjaan</label>
+                                    <div class="col-sm-3">
+                                        <textarea rows="3" cols="123" name="var_deskripsi_pekerjaan"></textarea>
+                                    </div>
+                                </div>
 
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-                                    <style>
-                                        .select2-container--default .select2-selection--multiple .select2-selection__choice {
-                                            background-color: blue;
-                                            border: 1px solid hsl(0, 0%, 66.7%);
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Nomor SPJ</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="var_no_spj">
+                                    </div>
+                                </div>
 
-                                        }
-                                    </style>
-                                    <script>
-                                        $(document).ready(function() {
-                                            $('#PAKET_JENIS').change(function() {
-                                                var id = $(this).val();
-                                                $.ajax({
-                                                    url: "<?php echo base_url(); ?>/inp_spj_fin/getpaket",
-                                                    method: "POST",
-                                                    data: {
-                                                        id: id
-                                                    },
-                                                    async: false,
-                                                    dataType: 'json',
-                                                    success: function(data) {
-                                                        var html = '';
-                                                        var i;
-                                                        for (i = 0; i < data.length; i++) {
-                                                            html += '<option value="' + data[i].VENDOR_ID + '">' + data[i].VENDOR_NAMA + '</option>';
-                                                        }
-                                                        $('.vendor').html(html);
-
-                                                    }
-                                                });
-                                            });
-
-                                            $('.vendor').select2();
-
-                                        });
-                                    </script>
-
-                                    <div class="form-group">
-                                        <div class="col-lg-offset-2 col-lg-10">
-                                            <button type="submit" class="btn btn-info" onClick="document.getElementById('submitForm').submit()">Submit</button>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Target Volume</label>
+                                    <div class="col-sm-2">
+                                        <div class="input-group m-b-10">
+                                            <input type="text" class="form-control" name="var_target" id="target">
+                                            <span class="input-group-addon" id="satuan"></span>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Metode Pembayaran</label>
+                                    <div class="col-sm-2">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="option_bayar" id="termin" value="1" onClick="javascript:check_termin();">Termin
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="termin_group" style="display:none;">
+                                    <label class="col-sm-2 col-sm-2 control-label"></label>
+                                    <div class="col-md-1" form-group>
+                                        <input type="text" class="form-control" name="var_termin_1" id="termin1">
+                                    </div>
+                                    <div class="col-md-1" form-group>
+                                        <input type="text" class="form-control" name="var_termin_2" id="termin2">
+                                    </div>
+                                    <div class="col-md-1" form-group>
+                                        <input type="text" class="form-control" name="var_termin_3" id="termin3">
+                                    </div>
+                                    <div class="col-md-1" form-group>
+                                        <input type="text" class="form-control" name="var_termin_4" id="termin4">
+                                    </div>
+                                    <div class="col-md-1" form-group>
+                                        <input type="text" class="form-control" name="var_termin_5" id="termin5">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label"></label>
+                                    <div class="col-sm-2">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="option_bayar" id="non_termin" value="0" onClick="javascript:check_termin();">Non Termin
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">SPJ Berlaku Mulai</label>
+                                    <div class="col-md-2">
+                                        <input type="date" class="form-control" name="var_mulai_berlaku" id="var_mulai_berlaku">
+                                    </div>
+
+                                    <label class=" col-sm-2 col-sm-2 control-label">Sampai Dengan</label>
+                                    <div class="col-md-2">
+                                        <input type="date" class="form-control" name="var_akhir_berlaku" id="var_akhir_berlaku">
+                                    </div>
+                                </div>
+
+                                <link rel="stylesheet" href="//select2.github.io/select2-bootstrap-theme/css/select2-bootstrap.css">
+                                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+                                <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+                                <style>
+                                    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+                                        background-color: blue;
+                                        border: 1px solid hsl(0, 0%, 66.7%);
+
+                                    }
+                                </style>
+                                <script>
+                                    $(document).ready(function() {
+                                        $('#PAKET_JENIS').change(function() {
+                                            var id = $(this).val();
+                                            $.ajax({
+                                                url: "<?php echo base_url(); ?>/inp_spj_fin/getpaket",
+                                                method: "POST",
+                                                data: {
+                                                    id: id
+                                                },
+                                                async: false,
+                                                dataType: 'json',
+                                                success: function(data) {
+                                                    var html = '';
+                                                    var i;
+                                                    for (i = 0; i < data.length; i++) {
+                                                        html += '<option value="' + data[i].VENDOR_ID + '">' + data[i].VENDOR_NAMA + '</option>';
+                                                    }
+                                                    $('.vendor').html(html);
+
+                                                }
+                                            });
+                                        });
+
+                                        $('.vendor').select2();
+
+                                    });
+                                </script>
+
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button type="submit" class="btn btn-info" onclick="document.getElementById('submitForm').submit()">Submit</button>
+                                    </div>
+                                </div>
+
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+                                <!-- <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-3.3.1.js' ?>'></script> -->
+                                <script type='text/javascript' src='<?php echo base_url() . 'assets/js/bootstrap.js' ?>'></script>
+                                <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-ui.js' ?>'></script>
+
+                                <script type='text/javascript'>
+                                    $(document).ready(function() {
+                                        $('#SKKI_ID').autocomplete({
+                                            source: "<?php echo site_url('inp_spj_fin/get_autofill/?') ?>",
+
+                                        });
+                                    });
+                                </script>
                             </form>
                         </font>
                     </div>
-
                 </section>
-            </div>
 
+            </div>
         </div>
 
     </section>
 </div>
+
 
 
 

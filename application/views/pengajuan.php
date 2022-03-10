@@ -33,7 +33,7 @@
                                 <label class="col-sm-2 col-sm-2 control-label">Nomor SPJ</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="spj_no" id="spj_no" placeholder="Masukan nama SPJ" class="form-control">
-                                    <?= form_error('var_no_spj', '<small class="text-danger">', '</small>'); ?>
+                                    <?= form_error('spj_no', '<small class="text-danger">', '</small>'); ?>
                                 </div>
                             </div>
 

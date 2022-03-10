@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
 
 class pengajuan extends CI_Controller
@@ -29,6 +30,27 @@ class pengajuan extends CI_Controller
 
                 echo json_encode($arr_result);
             }
+        }
+    }
+
+    public function tambah_aksi()
+    {
+        $spj_no = $this->input->post('spj_no');
+        $tgl_serah = $this->input->post('var_tgl_serah');
+        $jumlah_dok = $this->input->post('var_jumlah_dok');
+        $keterangan = $this->input->post('var_keterangan');
+
+        $data = array();
+        foreach ($spj_no as $key => $a) {
+            array_push($data, array(
+                'spj_no' => $spj_no[$key],
+                'var_tgl_serah' => $tgl_serah,
+                'var_jumlah_dok' => $jumlah_dok,
+                'var_keterangan' => $keterangan,
+            ));
+
+            $this->db->insert_batch('tb_dokumen', $data);
+            redirect('pengajuan');
         }
     }
 }
