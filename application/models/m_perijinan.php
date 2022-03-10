@@ -18,8 +18,10 @@ class m_perijinan extends CI_Model
         $result = $query->result();
         return $result;
     }
-    public function perijinan()
+
+    public function edit_data($table)
     {
+        return $this->db->get_where($table);
     }
 
     public function perijinan_add($where, $table)

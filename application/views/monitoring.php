@@ -13,7 +13,6 @@
         <div class="row">
             <div class="col-md-12">
                 <section class="panel">
-                    <header class="panel-heading">Monitoring Perizinan</header>
                     <!--  <a class="btn btn-danger" href=" <?php echo base_url('monitoring_add') ?>"> <i></i>
                 </a> -->
 
