@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <section class="panel">
-                    <header class="panel-heading">List Amandemen</header>
+                    <!-- <header class="panel-heading"></header> -->
                     <!--  <a class="btn btn-danger" href=" <?php echo base_url('list_amandemen/print') ?>"> <i></i>
                 </a> -->
 

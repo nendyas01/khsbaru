@@ -11,7 +11,7 @@ class Pengajuan_submit extends CI_Controller
     public function index()
     {
         $data = [
-            'spj_no' => $this->input->post('var_no_spj'),
+            'spj_no' => $this->input->post('spj_no'),
             'tgl_serah' => date('Y-m-d', strtotime($this->input->post('var_tgl_serah'))),
             'jumlah_dok' => $this->input->post('var_jumlah_dok'),
             'keterangan' => $this->input->post('var_keterangan')

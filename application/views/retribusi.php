@@ -35,7 +35,7 @@
                     <section class="panel">
                         <header class="panel-heading">Pembayaran Retribusi</header>
                         <div class="panel-body" onload=disableselect();>
-                            <form class="form-horizontal tasi-form" method="post" action="bayar_retribusi_submit.php">
+                            <form class="form-horizontal tasi-form" method="post" action="Retribusi_submit">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">No Surat Ke PTSP</label>
                                     <div class="col-sm-10">
@@ -55,9 +55,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-15" style="margin: 10px;">
-                                    <div class="box box-solid">
+                                <div class="col-md-15" style="margin: 20px;">
 
+                                    <div class="box box-solid" name="var_evidence" name="var_evidence" id="var_evidence">
                                         <div class="text-center">
                                             <h3 class="box-title" align="center">Evidence</h3>
                                         </div>
@@ -70,17 +70,16 @@
                                     </div>
                                 </div>
 
-                                <form action="" method="post" enctype="multipart/form-data">
-
-                                    <div class="form-group">
-
+                                <div class="form-group">
+                                    <div class="col-lg-offset-5.5 col-lg-11">
+                                        <button type="submit" class="btn btn-primary" align="center" onclick="document.getElementById('submitForm').submit()">Submit</button>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
+                                </div>
 
                                 <script src="<?= base_url('assets/bootstrap/jquery/') . 'jquery3.js'; ?>"></script>
                                 <script src="<?= base_url('assets/bootstrap/js/') . 'bootstrap.js'; ?>"></script>
                                 <script src="<?= base_url('assets/dropify/js/') . 'dropify.js'; ?>"></script>
+
                             </form>
                         </div>
 

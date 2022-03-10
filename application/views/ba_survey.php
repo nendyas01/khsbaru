@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <section class="panel">
-                        <header class="panel-heading"></header>
-                        <div class="panel-body">
+                        <header class="panel-heading">PERSETUJUAN SURVEY</header>
+                        <div class="panel-body" onload=disableselect();>
                             <?php if ($this->session->flashdata('sukses')) : ?>
                                 <div class="callout callout-success">
                                     <h4>Sukses!</h4>
@@ -29,7 +29,7 @@
                                 </div>
                             <?php endif; ?>
                             <form class="form-horizontal tasi-form" method="post" action="ba_survey_submit">
-                                <header class="panel-heading">PERSETUJUAN SURVEY</header>
+                                <!-- <header class="panel-heading">PERSETUJUAN SURVEY</header> -->
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <div class="col-lg-10">

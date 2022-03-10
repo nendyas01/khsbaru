@@ -19,30 +19,28 @@ class perijinan extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function perijinan_add()
+    public function perijinan_add($SKKI_NO)
     {
-        $this->load->model('m_perijinan');
-        $perijinan_add = $this->m_perijinan->perijinan_add();
-        $data['perijinan_add'] = $perijinan_add;
+
+        $where = array('SKKI_NO' => $SKKI_NO);
+        $data['perijinan_add'] = $this->m_perijinan->edit_data($where, 'tb_spj')->result();
+
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('perijinan_add', $data);
         $this->load->view('templates/footer');
     }
 
-    public function tambah_aksi()
+    public function update()
     {
-        $AREA_KODE = $this->input->post('AREA_KODE');
-        $AREA_NAMA = $this->input->post('AREA_NAMA');
-        $AREA_ZONE = $this->input->post('AREA_ZONE');
+        $SPJ_NO = $this->input->post('SPJ_NO', true);
 
         $data = array(
-            'AREA_KODE'               => $AREA_KODE,
-            'AREA_NAMA'               => $AREA_NAMA,
-            'AREA_ZONE'               => $AREA_ZONE,
+            'SPJ_NO'               => $SPJ_NO,
         );
 
-        $this->m_perijinan->input_data($data, 'tb_area');
+        $where = array('SPJ_NO' => $SPJ_NO);
+        $this->m_crud_area->update_data($where, $data, 'tb_spj');
         redirect('perijinan_add/index');
     }
 }

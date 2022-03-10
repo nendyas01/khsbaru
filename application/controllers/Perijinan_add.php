@@ -13,7 +13,7 @@ class perijinan_add extends CI_Controller
     public function index()
     {
         /* $where = array('spj_no' => $spj_no); */
-        $data['perijinan_add'] = $this->m_perijinan_add->edit('tb_ijin')->result();
+        $data['perijinan_add'] = $this->m_perijinan_add->edit_data('tb_ijin')->result();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

@@ -14,7 +14,6 @@
         <div class="row">
             <div class="col-md-12">
                 <section class="panel">
-                    <header class="panel-heading"></header>
                     <div class="panel-body" onload=disableselect();>
                         <?php if ($this->session->flashdata('sukses')) : ?>
                             <div class="callout callout-success">
@@ -33,7 +32,7 @@
                                 <label class="col-sm-2 col-sm-2 control-label">Nomor SPJ</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="spj_no" id="spj_no" placeholder="Masukan nama SPJ" class="form-control">
-                                    <?= form_error('var_no_spj', '<small class="text-danger">', '</small>'); ?>
+                                    <?= form_error('spj_no', '<small class="text-danger">', '</small>'); ?>
                                 </div>
                             </div>
 
@@ -48,7 +47,7 @@
                             <div class="form-group">
                                 <label class=" col-sm-2 col-sm-2 control-label">Jumlah Dokumen yang Diserahkan</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="var_jumlah_dok" id="var_jumlah_dok" placeholder="Jumlah Dokumen Yang Diserahkan">
+                                    <input type="number" class="form-control" name="var_jumlah_dok" id="var_jumlah_dok" placeholder="Jumlah Dokumen Yang Diserahkan">
                                     <?= form_error('var_jumlah_dok', '<small class="text-danger">', '</small>'); ?>
                                 </div>
                             </div>
