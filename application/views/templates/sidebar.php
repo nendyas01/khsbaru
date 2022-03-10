@@ -18,7 +18,7 @@
       <li class="header">MAIN NAVIGATION</li>
       <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
         <a href="<?php echo base_url('chart') ?>">
-          <i class="fa fa-bar-chart"></i> <span>Chart</span>
+          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
 

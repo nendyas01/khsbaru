@@ -23,6 +23,13 @@ class mapping_vendor extends CI_Controller
         $this->load->view('templates/sidebar');
         $this->load->view('mapping_vendor', $data);
         $this->load->view('templates/footer');
+        // var_dump($data);
+    }
+
+    public function vendor_name($paket_jenis)
+    {
+        $data = $this->m_mapping_vendor->get_vendor_nama($paket_jenis);
+        echo json_encode($data);
     }
 
     public function tambah_aksi()

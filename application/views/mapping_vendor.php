@@ -45,8 +45,8 @@
                     <tr>
                       <td> <?php echo $mv->MAPPING_TAHUN ?></td>
                       <td> <?php echo $mv->desc_paket ?></td>
-                      <td> <button class="btn btn-default btn x-s"><?php echo $mv->total_vendor ?></span></td>
-                      <td> <a class="btn btn-default btn x-s" data-toggle="modal" data-target="#modal-detail" data-mapping="<?php echo $mv->total_area ?>"></td>
+                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail(<?php echo $mv->PAKET_JENIS ?>)"><?php echo $mv->total_vendor?></button></td>
+                      <td> <?php echo $mv->total_area?></td>
                       <td> <?php echo anchor('mapping_vendor/getmappingbymappingid/' . $mv->MAPPING_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                       <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                     </tr>
@@ -73,7 +73,7 @@
                     });
                   </script>
 
-                  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
                   <script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
                   <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -253,23 +253,49 @@
                 $('#modal-detail').modal('hide');
               });
             </script>
+
           </form>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
+</div>
 
-        <div class="panel-body">
-
-        </div>
+<script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<div class="modal fade" id="modal_detail">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Default Modal</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+    <!-- /.modal-content -->
   </div>
+  <!-- /.modal-dialog -->
 </div>
+<!-- /.modal -->
+
+  <script>
+    function modal_detail(paket_jenis){
+      $.ajax({
+        url: "<?= base_url('mapping_vendor/vendor_name/') ?>"+paket_jenis,
+        method: "GET",
+        dataType: "JSON",
+        success: function (response) {
+          console.log(response);
+          $('#modal_detail').modal('show');
+        }
+      });      
+    }
+  </script>
