@@ -46,7 +46,7 @@
                       <td> <?php echo $mv->MAPPING_TAHUN ?></td>
                       <td> <?php echo $mv->desc_paket ?></td>
                       <td> <button class="btn btn-default btn x-s" onclick="modal_detail(<?php echo $mv->PAKET_JENIS ?>)"><?php echo $mv->total_vendor?></button></td>
-                      <td> <?php echo $mv->total_area?></td>
+                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail_area(<?php echo $mv->MAPPING_ID?>)"><?php echo $mv->total_area?></button></td>
                       <td> <?php echo anchor('mapping_vendor/getmappingbymappingid/' . $mv->MAPPING_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                       <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                     </tr>
@@ -73,7 +73,7 @@
                     });
                   </script>
 
-                  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+                  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
                   <script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
                   <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -270,11 +270,18 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Default Modal</h4>
+        <h4 class="modal-title">List Nama Vendor</h4>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
+      <table class="table table-striped" style="width:100%"> 
+          <thead> 
+            <tr> 
+              <td>NO</td> 
+            <td>NAMA VENDOR</td> 
+            </tr> 
+          </thead> 
+          <tbody id="list_vendor"></tbody> 
+      </table>
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
@@ -286,6 +293,34 @@
 </div>
 <!-- /.modal -->
 
+<div class="modal fade" id="modal_detail_area">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">List Nama Area</h4>
+      </div>
+      <div class="modal-body">
+      <table class="table table-striped" style="width:100%"> 
+          <thead> 
+            <tr> 
+              <td>NO</td> 
+            <td>NAMA AREA</td> 
+            </tr> 
+          </thead> 
+          <tbody id="list_area"></tbody> 
+      </table>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
   <script>
     function modal_detail(paket_jenis){
       $.ajax({
@@ -293,9 +328,41 @@
         method: "GET",
         dataType: "JSON",
         success: function (response) {
-          console.log(response);
-          $('#modal_detail').modal('show');
+          var html = ''; 
+          $.each(response,function(index,value){
+            console.log(value); 
+            html+='<tr>'+ 
+                '<td>'+(index+1)+'</td>'+ 
+                '<td>'+value.vendor_nama+'</td>'+ 
+                '</tr>'; 
+          }); 
+            $('#modal_detail').modal('show');
+            $('#list_vendor').html(html);
         }
       });      
     }
   </script>
+
+<script>
+    function modal_detail_area(mapping_id){
+      alert(mapping_id);
+      $.ajax({
+        url: "<?= base_url('mapping_vendor/area_name/') ?>"+mapping_id,
+        method: "GET",
+        dataType: "JSON",
+        success: function (response) {
+          var html = ''; 
+          $.each(response,function(index,value){
+            console.log(value); 
+            html+='<tr>'+ 
+                '<td>'+(index+1)+'</td>'+ 
+                '<td>'+value.area_nama+'</td>'+ 
+                '</tr>'; 
+          }); 
+            $('#modal_detail_area').modal('show');
+            $('#list_area').html(html);
+        }
+      });      
+    }
+  </script>
+  

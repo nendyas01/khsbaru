@@ -27,10 +27,16 @@ class m_mapping_vendor extends CI_Model
 		return $this->db->get()->result();
 	}
 
-
-
-
-
+    public function get_area_nama($mapping_id)
+	{
+        $this->db->distinct();
+		$this->db->select('c.area_nama, a.mapping_id');
+		$this->db->from('tb_mapping_vendor a');
+		// $this->db->join('tb_paket b', 'a.paket_jenis = b.paket_jenis', 'left');
+		$this->db->join('tb_area c', 'a.area_kode = c.area_kode', 'left');
+		$this->db->where('a.area_kode', $mapping_id);
+		return $this->db->get()->result();
+	}
 
     function tampil_data_by_mapping($id)
     {

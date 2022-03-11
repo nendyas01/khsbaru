@@ -32,6 +32,13 @@ class mapping_vendor extends CI_Controller
         echo json_encode($data);
     }
 
+    public function area_name($mapping_id){
+        $data = $this->m_mapping_vendor->get_area_nama($mapping_id);
+        var_dump($data);
+        die();
+        // echo json_encode($data);
+    }
+
     public function tambah_aksi()
     {
         $AREA_KODE = $this->input->post('nama_area');
