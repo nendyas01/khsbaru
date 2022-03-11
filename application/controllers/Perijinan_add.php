@@ -21,7 +21,7 @@ class perijinan_add extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function update()
+    public function update_data()
     {
 
         $spj_no = $this->input->post('spj_no', true);
