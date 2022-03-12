@@ -16,7 +16,7 @@ class Ba_survey_submit extends CI_Controller
             'tgl_survey' => date('Y-m-d', strtotime($this->input->post('var_tgl_survey'))),
             'hasil_survey' => $this->input->post('var_hasil_survey')
         ];
-        $this->db->insert('tb_ijin', $data);
+        $this->db->update('tb_ijin', $data);
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
         echo '<script language="javascript">window.location = "ba_survey"</script>';
     }

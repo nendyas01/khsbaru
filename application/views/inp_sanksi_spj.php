@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?= base_url('assets/dropify/css/') . 'dropify.css'; ?>">
+
 </head>
 
 <div class="content-wrapper">
@@ -26,31 +26,31 @@
                 <div class="col-md-12">
                     <section class="panel">
 
-                        <header class="panel-heading">Input SSanksi SPJ</header>
+                        <header class="panel-heading">Input Sanksi SPJ</header>
                         <div class="panel-body" onload=disableselect();>
 
                             <form class="form-horizontal tasi-form" method="post" action="bayar_retribusi_submit.php">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Area</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control m-b-10" name="KODEAREA">
-                                            <option value>-- Area --</option>
-                                            <?php foreach ($areaspj as $na) : ?>
-                                                <option value="<?php echo $na->AREA_KODE; ?>"> <?php echo $na->AREA_NAMA; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+
+                                        <input type="text" name="area" id="area" placeholder="Masukan Nama Area" class="form-control">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Area</label>
+                                    <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Nomor SPJ</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control m-b-10" name="spj_no">
-                                            <option value>-- NO SPJ --</option>
+
+                                        <input type="text" name="spj" id="spj" placeholder="Masukan Nomor SPJ" class="form-control">
+                                        <!-- <select class="form-control m-b-10" name="spj_no"> -->
+
+
+                                        <!-- <option value>-- NO SPJ --</option>
                                             <?php foreach ($nomorspj as $ns) : ?>
                                                 <option value="<?php echo $ns->SPJ_DESKRIPSI; ?>"> <?php echo $ns->SPJ_NO; ?></option>
                                             <?php endforeach; ?>
-                                        </select>
+                                        </select> -->
                                     </div>
                                 </div>
 
@@ -93,17 +93,23 @@
 
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class=" col-sm-4 col-sm-2 control-label">Evidence 1</label>
+                                        <label class=" col-sm-4 col-sm-2 control-label">Evidence</label>
                                         <div class="col-md-6">
 
-                                            <?= $this->session->flashdata('message'); ?>
+                                            <div class="dropzone">
+                                                <div class="dz-message">
+                                                    <h3>Drop dan Drag Disini untuk upload</h3>
+                                                </div>
+                                            </div>
+
+                                            <!-- <?= $this->session->flashdata('message'); ?>
                                             <form action="" method="post" enctype="multipart/form-data">
 
                                                 <div class="form-group">
                                                     <input type="file" name="image" class="dropify">
                                                 </div>
 
-                                            </form>
+                                            </form> -->
                                         </div>
                                     </div>
                                 </div>
@@ -114,12 +120,74 @@
                                     </div>
                                 </div>
 
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+                                <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+                                <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-3.3.1.js' ?>'></script>
+                                <script type='text/javascript' src='<?php echo base_url() . 'assets/js/bootstrap.js' ?>'></script>
+                                <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-ui.js' ?>'></script>
+
                                 <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 
-                                <script src="<?= base_url('assets/bootstrap/jquery/') . 'jquery3.js'; ?>"></script>
-                                <script src="<?= base_url('assets/bootstrap/js/') . 'bootstrap.js'; ?>"></script>
-                                <script src="<?= base_url('assets/dropify/js/') . 'dropify.js'; ?>"></script>
+                                <script type='text/javascript'>
+                                    $(document).ready(function() {
+                                        $('#spj').autocomplete({
+                                            source: "<?php echo site_url('inp_sanksi_spj/get_autofill/?') ?>",
+
+                                        });
+                                    });
+                                </script>
+
+                                <script type='text/javascript'>
+                                    $(document).ready(function() {
+                                        $('#area').autocomplete({
+                                            source: "<?php echo site_url('inp_sanksi_spj/get_autocomplete/?') ?>",
+
+                                        });
+                                    });
+                                </script>
+
                                 <script>
+                                    Dropzone.autoDiscover = false;
+                                    var file_upload = new Dropzone('.dropzone', {
+                                        url: "<?= base_url('inp_sanksi_spj/proses_upload') ?>",
+                                        method: "post",
+                                        paramName: "userFile",
+                                        maxFiles: 5,
+                                        dictMaxFilesExceeded: "Maximum upload file adalah 5",
+                                        acceptedFiles: "application/pdf",
+                                        dictInvalidFileType: "File ini tidak diizinkan",
+                                        maxFilesize: 1, //MB
+                                        dictFileTooBig: "File size terlalu besar, upload minimal 1 MB",
+                                        addRemoveLinks: true,
+                                    });
+
+                                    file_upload.on('sending', function(a, b, c) {
+                                        a.token = Math.random();
+                                        c.append('token', a.token);
+                                        console.log(file_upload);
+                                    });
+
+                                    file_upload.on('removedfile', function(a) {
+                                        var token = a.token;
+                                        $.ajax({
+                                            type: "post",
+                                            data: {
+                                                token: token
+                                            },
+                                            url: "<?= base_url('inp_sanksi_spj/remove_file'); ?>",
+                                            cache: false,
+                                            success: function() {
+                                                console.log('file berhasil dihapus');
+                                            },
+                                            error: function() {
+                                                console.log('gagal dihapus')
+                                            }
+                                        })
+                                    })
+                                </script>
+
+                                <!-- <script>
                                     $(document).ready(function() {
                                         $('.dropify').dropify({
                                             messages: {
@@ -130,7 +198,7 @@
                                             }
                                         });
                                     });
-                                </script>
+                                </script> -->
 
 
                             </form>

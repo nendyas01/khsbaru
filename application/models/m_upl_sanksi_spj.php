@@ -2,15 +2,19 @@
 
 class m_upl_sanksi_spj extends CI_Model
 {
-    function getdata()
+    function search_spj($title)
     {
-        /* $query = $this->db->query("SELECT DISTINCT * FROM tb_spj ORDER BY SPJ_NO ASC");
-        return $query->result(); */
+        $this->db->like('id_sanksi_spj', $title, 'BOTH');
+        $this->db->order_by('id_sanksi_spj', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('tb_sanksi_spj')->result();
     }
 
-    function getarea()
+    public function get_prov($title)
     {
-        $query = $this->db->query("SELECT  * FROM tb_area ORDER BY AREA_NAMA ASC");
-        return $query->result();
+        $this->db->like('AREA_NAMA', $title, 'BOTH');
+        $this->db->order_by('AREA_NAMA', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('tb_area')->result();
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?= base_url('assets/dropify/css/') . 'dropify.css'; ?>">
+    <!-- <link rel="stylesheet" href="<?= base_url('assets/dropify/css/') . 'dropify.css'; ?>"> -->
 </head>
 
 <div class="content-wrapper">
@@ -33,12 +33,15 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Area</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control m-b-10" name="NOSANKSI">
+
+                                        <input type="text" name="area" id="area" placeholder="Masukan Nama Area" class="form-control">
+
+                                        <!-- <select class="form-control m-b-10" name="NOSANKSI">
                                             <option value>-- Area --</option>
                                             <?php foreach ($areaspj as $na) : ?>
                                                 <option value="<?php echo $na->AREA_KODE; ?>"> <?php echo $na->AREA_NAMA; ?></option>
                                             <?php endforeach; ?>
-                                        </select>
+                                        </select> -->
                                     </div>
                                 </div>
 
@@ -46,12 +49,15 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Nomor Sanksi</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control m-b-10" name="NOSANKSI">
+
+                                            <input type="text" name="sanksi" id="sanksi" placeholder="Masukan nomor sanksi" class="form-control">
+
+                                            <!-- <select class="form-control m-b-10" name="NOSANKSI">
                                                 <option selected="0">-- Nomor Sanksi --</option>
                                                 <?php foreach ($nomor_sanksi as $ns) : ?>
                                                     <option value="<?php echo $ns->id_sanksi; ?>"> <?php echo $ns->tgl_upload; ?></option>
                                                 <?php endforeach; ?>
-                                            </select>
+                                            </select> -->
                                         </div>
                                     </div>
 
@@ -71,16 +77,13 @@
                                             <label class=" col-sm-4 col-sm-2 control-label">File Sanksi *</label>
                                             <div class="col-sm-8">
 
-                                                <?= $this->session->flashdata('message'); ?>
-                                                <form action="" method="post" enctype="multipart/form-data">
-
-                                                    <div class="form-group">
-                                                        <input type="file" name="image" class="dropify">
+                                                <div class="dropzone">
+                                                    <div class="dz-message">
+                                                        <h3>Drop dan Drag Disini untuk upload</h3>
                                                     </div>
-
                                                     <p class="help-block">* : surat sudah bertanda tangan dan berstempel</p>
+                                                </div>
 
-                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -93,7 +96,72 @@
 
                                     <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 
-                                    <script src="<?= base_url('assets/bootstrap/jquery/') . 'jquery3.js'; ?>"></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+                                    <!-- <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-3.3.1.js' ?>'></script> -->
+                                    <script type='text/javascript' src='<?php echo base_url() . 'assets/js/bootstrap.js' ?>'></script>
+                                    <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-ui.js' ?>'></script>
+
+                                    <script type='text/javascript'>
+                                        $(document).ready(function() {
+                                            $('#sanksi').autocomplete({
+                                                source: "<?php echo site_url('upl_sanksi_spj/get_autofill/?') ?>",
+
+                                            });
+                                        });
+                                    </script>
+
+                                    <script type='text/javascript'>
+                                        $(document).ready(function() {
+                                            $('#area').autocomplete({
+                                                source: "<?php echo site_url('upl_sanksi_spj/get_autocomplete/?') ?>",
+
+                                            });
+                                        });
+                                    </script>
+
+                                    <script>
+                                        Dropzone.autoDiscover = false;
+                                        var file_upload = new Dropzone('.dropzone', {
+                                            url: "<?= base_url('upl_sanksi_spj/proses_upload') ?>",
+                                            method: "post",
+                                            paramName: "userFile",
+                                            maxFiles: 5,
+                                            dictMaxFilesExceeded: "Maximum upload file adalah 5",
+                                            acceptedFiles: "application/pdf",
+                                            dictInvalidFileType: "File ini tidak diizinkan",
+                                            maxFilesize: 1, //MB
+                                            dictFileTooBig: "File size terlalu besar, upload minimal 1 MB",
+                                            addRemoveLinks: true,
+                                        });
+
+                                        file_upload.on('sending', function(a, b, c) {
+                                            a.token = Math.random();
+                                            c.append('token', a.token);
+                                            console.log(file_upload);
+                                        });
+
+                                        file_upload.on('removedfile', function(a) {
+                                            var token = a.token;
+                                            $.ajax({
+                                                type: "post",
+                                                data: {
+                                                    token: token
+                                                },
+                                                url: "<?= base_url('upl_sanksi_spj/remove_file'); ?>",
+                                                cache: false,
+                                                success: function() {
+                                                    console.log('file berhasil dihapus');
+                                                },
+                                                error: function() {
+                                                    console.log('gagal dihapus')
+                                                }
+                                            })
+                                        })
+                                    </script>
+
+                                    <!-- <script src="<?= base_url('assets/bootstrap/jquery/') . 'jquery3.js'; ?>"></script>
                                     <script src="<?= base_url('assets/bootstrap/js/') . 'bootstrap.js'; ?>"></script>
                                     <script src="<?= base_url('assets/dropify/js/') . 'dropify.js'; ?>"></script>
                                     <script>
@@ -107,7 +175,7 @@
                                                 }
                                             });
                                         });
-                                    </script>
+                                    </script> -->
 
 
                                 </form>
