@@ -29,14 +29,16 @@ class mapping_vendor extends CI_Controller
     public function vendor_name($paket_jenis)
     {
         $data = $this->m_mapping_vendor->get_vendor_nama($paket_jenis);
+        // var_dump($data);
+        // die();
         echo json_encode($data);
     }
 
-    public function area_name($mapping_id){
-        $data = $this->m_mapping_vendor->get_area_nama($mapping_id);
-        var_dump($data);
-        die();
-        // echo json_encode($data);
+    public function area_name($paket_jenis){
+        $data = $this->m_mapping_vendor->get_area_nama($paket_jenis);
+        // var_dump($data);
+        // die();
+        echo json_encode($data);
     }
 
     public function tambah_aksi()
