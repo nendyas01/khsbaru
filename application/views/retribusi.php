@@ -57,7 +57,7 @@
 
                                 <div class="col-md-15" style="margin: 20px;">
 
-                                    <div class="box box-solid" name="var_evidence" name="var_evidence" id="var_evidence">
+                                    <div class="box box-solid" name="evidence_ret" id="evidence_ret">
                                         <div class="text-center">
                                             <h3 class="box-title" align="center">Evidence</h3>
                                         </div>

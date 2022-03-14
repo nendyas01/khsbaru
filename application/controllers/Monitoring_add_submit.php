@@ -13,9 +13,9 @@ class Monitoring_add_submit extends CI_Controller
         $data = [
             'evidence' => $this->input->post('var_evidence')
 
-
         ];
-        $this->db->update('tb_ijin', $data);
+        $file_name = $_FILES['NamaFile']['name'];
+        $this->db->insert('tb_ijin', $data, $file_name);
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
         echo '<script language="javascript">window.location = "monitoring"</script>';
     }
