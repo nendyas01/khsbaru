@@ -1,13 +1,13 @@
 <div class="content-wrapper">
     <section class="content">
         <?php foreach ($perijinan_add as $pa) { ?>
-            <form class="form-horizontal tasi-form" method="post" action="perijinan_add.php">
+            <form action="<?php echo base_url() . 'perijinan/perijinan_add/'; ?>" method="post">
 
                 <div class="form-group">
 
                     <label class="col-sm-2 col-sm-2 control-label">No. SPJ</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="var_no_spj" id="var_no_spj" disabled value="<?php echo $pa->spj_no ?>">
+                        <input type="text" class="form-control" name="spj_no" id="spj_no" disabled value="<?php echo $pa->spj_no ?>">
                     </div>
 
                 </div>
