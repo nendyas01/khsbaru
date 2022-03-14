@@ -7,9 +7,7 @@ class perijinan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
+
         $this->load->model('m_perijinan');
     }
 
@@ -26,11 +24,11 @@ class perijinan extends CI_Controller
     {
 
         $where = array('SKKI_NO' => $SKKI_NO);
-        $data['perijinan_add'] = $this->m_perijinan->edit_data($where, 'tb_spj')->result();
+        $data['perijinan'] = $this->m_perijinan->edit_data($where, 'tb_spj')->result();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('perijinan_add', $data);
+        $this->load->view('perijinan_add/', $data);
         $this->load->view('templates/footer');
     }
 
@@ -44,6 +42,6 @@ class perijinan extends CI_Controller
 
         $where = array('SPJ_NO' => $SPJ_NO);
         $this->m_crud_area->update_data($where, $data, 'tb_spj');
-        redirect('perijinan_add/index');
+        redirect('perijinan/perijinan_add/index');
     }
 }

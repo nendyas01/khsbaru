@@ -13,8 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <section class="panel">
-                    <!--  <a class="btn btn-danger" href=" <?php echo base_url('perijinan_add.php') ?>"> <i></i>
-                </a> -->
+
 
                     <div class="panel-body table-responsive">
                         <font size="2" face="Arial">
@@ -40,7 +39,7 @@
                                             <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $p->spj_no ?></td>
                                             <td> <?php echo $p->jumlah_dok ?></td>
-                                            <td><a href='perijinan_add/'>Edit</a></td>
+                                            <td><?php echo anchor('perijinan/perijinan_add/' . $p->spj_no, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
                                         </tr>
                                     <?php } ?>
 

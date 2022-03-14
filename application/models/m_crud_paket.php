@@ -38,7 +38,7 @@ class m_crud_paket extends CI_Model
         $this->db->update($table, $data);
     }
 
-    function detail_crud_paket($PAKET_JENIS = NULL)
+    function detail_data($PAKET_JENIS = NULL)
     {
         $query = $this->db->get_where('tb_paket', array('PAKET_JENIS' => $PAKET_JENIS))->row();
         return $query;
