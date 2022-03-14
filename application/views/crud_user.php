@@ -5,7 +5,7 @@
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
             <li class="active">Data Master User</li>
         </ol>
     </section>
@@ -51,16 +51,16 @@
                                             <td> <?php echo $cu->AREA_ZONE ?></td>
                                             <td> 
                                                 <?php  if($cu->USER_STATUS == "0"){ ?>
-                                                    <span class="alert alert-danger">Nonaktif</span>
+                                                    <span class="btn btn-danger">Nonaktif</span>
                                                     <?php }else{ ?>
-                                                        <span class="alert alert-info">Aktif</span>
+                                                        <span class="btn btn-info">Aktif</span>
 
                                                         <?php }  ?>
 
                                             </td>
                                             <td>
                                             <?php  if($cu->USER_STATUS == "0"){ ?>
-                                                <a href="crud_user/aktif/<?php echo $cu->USERNAME ?>" class="btn btn-primary">Aktifkan</a>
+                                                <a href="<?php echo base_url("crud_user/aktif/$cu->USERNAME")  ?>" class="btn btn-primary">Aktifkan</a>
 
                                                     <?php }else{ ?>
                                                         <a href="<?php echo base_url("crud_user/non/$cu->USERNAME") ?>" class="btn btn-warning">Nonaktifkan</a>
@@ -69,6 +69,7 @@
                                                         <?php }  ?>
 
                                             </td>
+                                            
                                             <td><?php echo anchor('crud_user/detail_crud_user/' . $cu->USERNAME, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                                             <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_user/hapus/' . $cu->USERNAME, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                                             <td><?php echo anchor('crud_user/edit_crud_user/' . $cu->USERNAME, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>

@@ -21,6 +21,7 @@ class anggaran extends CI_Controller
         //print_r($data);
     }
 
+
     public function v_input_tagihan()
     {
         // $data['var_no_spj']=$this->m_anggaran->v_input_tagihan();
