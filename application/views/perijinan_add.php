@@ -3,17 +3,15 @@
         <?php foreach ($perijinan_add as $pa) { ?>
             <form action="<?php echo base_url() . 'perijinan/perijinan_add/'; ?>" method="post">
 
+                <!-- no spj -->
                 <div class="form-group">
-
                     <label class="col-sm-2 col-sm-2 control-label">No. SPJ</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="spj_no" id="spj_no" disabled value="<?php echo $pa->spj_no ?>">
                     </div>
-
                 </div>
 
-
-
+                <!-- no surat ke ptsp -->
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label">No. Surat Ke PTSP</label>
                     <div class="col-sm-10">
@@ -21,6 +19,7 @@
                     </div>
                 </div>
 
+                <!-- tanggal surat -->
                 <div class="form-group">
                     <label class=" col-sm-2 col-sm-2 control-label">Tanggal Surat</label>
                     <div class="col-sm-10">
@@ -28,11 +27,13 @@
                     </div>
                 </div>
 
+                <!-- Pekerjaan -->
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label">Pekerjaan</label>
                     <div class="col-sm-10"><input type="text" class="form-control" name="var_pekerjaan" placeholder="Pekerjaan"></div>
                 </div>
 
+                <!-- Kota Administrasi -->
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label">Kota Administrasi</label>
                     <div class="col-sm-10">
@@ -48,6 +49,7 @@
                         </di v>
                     </div>
 
+                    <!-- lokasi -->
                     <div class="form-group">
                         <label class="col-sm-2 col-sm-2 control-label">Lokasi</label>
                         <div class="col-sm-10">

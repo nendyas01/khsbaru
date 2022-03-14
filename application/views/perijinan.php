@@ -14,7 +14,6 @@
             <div class="col-md-12">
                 <section class="panel">
 
-
                     <div class="panel-body table-responsive">
                         <font size="2" face="Arial">
                             <table id="example" class=" table-striped table-bordered " cellspacing="0">
@@ -23,12 +22,10 @@
                                         <th>No</th>
                                         <th>No. SPJ</th>
                                         <th>Surat SPJ yang telah dibuat</th>
-                                        <th>Action</th>
+                                        <th>Edit</th>
 
                                     </tr>
                                 </thead>
-
-
 
                                 <tbody>
                                     <?php
@@ -76,12 +73,9 @@
                                             ]
                                         });
                                     </script>
-
                                 </tbody>
                             </table>
-
-
-
+                        </font>
                     </div>
                 </section>
             </div>
