@@ -40,7 +40,7 @@
                                             <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $p->spj_no ?></td>
                                             <td> <?php echo $p->jumlah_dok ?></td>
-                                            <td><a href='perijinan_add'>Edit</a></td>
+                                            <td><a href='perijinan_add/'>Edit</a></td>
                                         </tr>
                                     <?php } ?>
 
