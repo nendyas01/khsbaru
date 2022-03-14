@@ -34,12 +34,12 @@
                 <div class="col-md-12">
                     <section class="panel">
                         <div class="panel-body">
-                            <form class="form-horizontal tasi-form" method="post" action="monitoring_submit.php">
+                            <form class="form-horizontal tasi-form" method="post" action="monitoring_add_submit">
                                 <div class="form-group">
 
 
                                     <div class="col-md-15" style="margin: 10px;">
-                                        <div class="box box-solid">
+                                        <div class="box box-solid" name="var_evidence" id="var_evidence">
 
                                             <div class="text-center">
                                                 <h3 class="box-title" align="center">Evidence</h3>

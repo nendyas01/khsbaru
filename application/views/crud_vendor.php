@@ -53,9 +53,9 @@
                                             <td> <?php echo $cv->STATUS ?></td>
                                             <td> <?php echo $cv->EMAIL_2 ?></td>
                                             <td> <?php echo $cv->JABATAN ?></td>
-                                            <td><?php echo anchor('crud_vendor/crud_vendor/' . $cv->VENDOR_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
+                                            <td><?php echo anchor('crud_vendor/detail_crud_vendor/' . $cv->VENDOR_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                                             <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_vendor/hapus/' . $cv->VENDOR_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
-                                            <td><?php echo anchor('crud_vendor/crud_vendor/' . $cv->VENDOR_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <td><?php echo anchor('crud_vendor/edit_crud_vendor/' . $cv->VENDOR_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
                                         </tr>
                                     <?php } ?>
 

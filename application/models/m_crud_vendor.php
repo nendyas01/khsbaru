@@ -41,7 +41,7 @@ class m_crud_vendor extends CI_Model
         $this->db->update($table, $data);
     }
 
-    function detail_crud_vendor($VENDOR_ID = NULL)
+    function detail_data($VENDOR_ID = NULL)
     {
         $query = $this->db->get_where('tb_vendor', array('VENDOR_ID' => $VENDOR_ID))->row();
         return $query;

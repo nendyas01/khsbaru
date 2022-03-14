@@ -14,7 +14,6 @@ class Retribusi_submit extends CI_Controller
     public function index()
     {
         $data = [
-            'surat_ijin_no' => $this->input->post('var_no_surat_ptsp'),
             'tgl_bayar_retribusi' => date('Y-m-d', strtotime($this->input->post('var_tgl_bayar_retribusi'))),
             'evidence' => $this->input->post('var_evidence')
         ];
