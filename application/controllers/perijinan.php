@@ -20,11 +20,11 @@ class perijinan extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function perijinan_add($SKKI_NO)
+    public function perijinan_add($spj_no)
     {
 
-        $where = array('SKKI_NO' => $SKKI_NO);
-        $data['perijinan'] = $this->m_perijinan->edit_data($where, 'tb_spj')->result();
+        $where = array('spj_no' => $spj_no);
+        $data['perijinan'] = $this->m_perijinan->edit_data($where, 'tb_ijin')->result();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

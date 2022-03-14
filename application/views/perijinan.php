@@ -39,7 +39,7 @@
                                             <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $p->spj_no ?></td>
                                             <td> <?php echo $p->jumlah_dok ?></td>
-                                            <td><?php echo anchor('perijinan/perijinan_add/' . $p->spj_no, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <td> <?php echo anchor('perijinan/perijinan_add/' . $p->spj_no, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
                                         </tr>
                                     <?php } ?>
 
