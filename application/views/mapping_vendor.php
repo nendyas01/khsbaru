@@ -1,3 +1,8 @@
+<link href="<?php echo base_url() ?>assets/bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+<script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url() ?>assets/bower_components/select2/dist/js/select2.min.js"></script>
+
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
@@ -46,14 +51,14 @@
                       <td> <?php echo $mv->MAPPING_TAHUN ?></td>
                       <td> <?php echo $mv->desc_paket ?></td>
                       <td> <button class="btn btn-default btn x-s" onclick="modal_detail(<?php echo $mv->PAKET_JENIS ?>)"><?php echo $mv->total_vendor?></button></td>
-                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail_area(<?php echo $mv->MAPPING_ID?>)"><?php echo $mv->total_area?></button></td>
+                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail_area(<?php echo $mv->PAKET_JENIS?>)"><?php echo $mv->total_area?></button></td>
                       <td> <?php echo anchor('mapping_vendor/getmappingbymappingid/' . $mv->MAPPING_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                       <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                     </tr>
                   <?php } ?>
 
                   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
-                  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                  <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
                   <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
                   <!--  Button untuk copy, csv, excel -->
@@ -73,7 +78,7 @@
                     });
                   </script>
 
-                  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
                   <script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
                   <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -173,10 +178,10 @@
             </div>
             <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+            <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script> -->
 
             <link rel="stylesheet" href="//select2.github.io/select2-bootstrap-theme/css/select2-bootstrap.css">
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+            <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
 
             <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
@@ -262,8 +267,6 @@
 
 </div>
 
-<script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <div class="modal fade" id="modal_detail">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -292,6 +295,7 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+</div>
 
 <div class="modal fade" id="modal_detail_area">
   <div class="modal-dialog">
@@ -313,12 +317,14 @@
       </table>
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
     <!-- /.modal-content -->
   </div>
   <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 </div>
 
   <script>
@@ -341,13 +347,11 @@
         }
       });      
     }
-  </script>
-
-<script>
-    function modal_detail_area(mapping_id){
-      alert(mapping_id);
+    
+    function modal_detail_area(paket_jenis){
+      // alert(mapping_id);
       $.ajax({
-        url: "<?= base_url('mapping_vendor/area_name/') ?>"+mapping_id,
+        url: "<?= base_url('mapping_vendor/area_name/') ?>"+paket_jenis,
         method: "GET",
         dataType: "JSON",
         success: function (response) {
@@ -359,10 +363,9 @@
                 '<td>'+value.area_nama+'</td>'+ 
                 '</tr>'; 
           }); 
-            $('#modal_detail_area').modal('show');
-            $('#list_area').html(html);
+          $('#list_area').html(html);
+          $('#modal_detail_area').modal('show');
         }
       });      
     }
   </script>
-  

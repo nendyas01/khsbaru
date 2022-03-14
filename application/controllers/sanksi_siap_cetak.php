@@ -6,6 +6,9 @@ class sanksi_siap_cetak extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        if(!$this->session->userdata("username")){
+			redirect('login');
+		}
         $this->load->model('m_sanksi_siap_cetak');
     }
 
