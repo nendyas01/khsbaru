@@ -55,23 +55,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <br>
       <div class="form-group has-feedback">
           <label> Username</label>
-          <!-- <input type="text" name="nama" class="form-control" placeholder="username"> saya komen ya biar buat dibandingkan , ini code yang lama -->
           <input type="text" name="USERNAME" id="username" class="form-control" placeholder="">
-          <!-- jadi name itu harus sama , sama yang dikirim ke controllernya -->
-          <!-- di sini kamu menset usernamenya , namenya = nama , harusnya itu USERNAME -->
-          <!-- jadi harus diganti , disamain sama parameter yang kamu kirim ke controllernya , kita ubah jadi USERNAME-->
-          <!-- <span class="glyphicon glyphicon-user form-control-feedback"></span> -->
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
           <label>Email</label>
           <input type="email" name="email"  class="form-control" placeholder="">
-          <!-- <span class="glyphicon glyphicon-envelope form-control-feedback"></span> -->
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
           <label>Password</label>
           <!-- input type="password" name="id" class="form-control" placeholder="Password"> ini juga sama harus disamain kayak parameter yang kamu kirim -->
           <input type="password" name="password" class="form-control" placeholder="">
-          <!-- <span class="glyphicon glyphicon-lock form-control-feedback"></span> -->
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
 
         <div class="form-group has-feedback">

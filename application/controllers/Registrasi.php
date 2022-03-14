@@ -23,7 +23,7 @@ class registrasi extends CI_Controller
         $data = [
             'USERNAME' => $this->input->post('USERNAME'),
             'email' => $this->input->post('email'),
-            'PASSWORD' => md5($this->input->post('PASSWORD')),
+            'password' => $this->input->post('password'),
             'role_id' => $this->input->post('role_nama'),
             'jabatan' => $this->input->post('jabatan'),
             'AREA_KODE' => $this->input->post('AREA_KODE'),
