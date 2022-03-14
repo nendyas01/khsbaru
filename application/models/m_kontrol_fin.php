@@ -39,14 +39,6 @@ class m_kontrol_fin extends CI_Model
         return $this->db->get->result();
     }
 
-    function edit_data($where, $edit)
-    {
-        return $this->db->get_where($edit, $where);
-    }
-
-    public function tambah()
-    {
-    }
 
     public function getdata()
     {
@@ -71,15 +63,19 @@ class m_kontrol_fin extends CI_Model
         $this->db->delete($table);
     }
 
+    public function edit_data($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
+
+    public function edit_data1($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
+
     public function update_data($where, $data, $table)
     {
         $this->db->where($where);
         $this->db->update($table, $data);
-    }
-
-
-
-    public function tambah_list()
-    {
     }
 }

@@ -5,17 +5,17 @@
 
                 <div class="form-group">
                     <label>Vendor</label>
-                    <input type="text" name="VENDOR_NAMA" class="form-control" disabled value="<?php echo $ak->VENDOR_NAMA ?>">
-                </div>
-
-                <div class="form-group">
-                    <label>Paket</label>
                     <input type="text" name="PAKET_JENIS" class="form-control" value="<?php echo $ak->PAKET_JENIS ?>">
                 </div>
 
                 <div class="form-group">
+                    <label>Paket</label>
+                    <input type="text" name="PAKET_JENIS" class="form-control">
+                </div>
+
+                <div class="form-group">
                     <label>Pagu Kontrak</label>
-                    <input type="text" name="PAGU_KONTRAK" class="form-control" value="<?php echo $ak->PAGU_KONTRAK ?>">
+                    <input type="text" name="PAGU_KONTRAK" class="form-control">
                 </div>
 
                 <button type="reset" class="btn btn-danger">Reset</button>
