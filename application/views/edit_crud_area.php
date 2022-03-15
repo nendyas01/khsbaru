@@ -26,8 +26,20 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <!-- <label>AREA ZONE</label>
+                                        <input type="text" name="AREA_ZONE" class="form-control" value="<?php echo $car->AREA_ZONE ?>"> -->
+
                                         <label>AREA ZONE</label>
-                                        <input type="text" name="AREA_ZONE" class="form-control" value="<?php echo $car->AREA_ZONE ?>">
+                                        <select name="AREA_ZONE" id="AREA_ZONE" class="form-control" value="<?php echo $car->AREA_ZONE ?>">
+                                            <!-- <option selected="0">- Pilih Zona Area -</option> -->
+
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+
+                                        </select>
                                     </div>
 
                                     <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
