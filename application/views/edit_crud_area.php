@@ -1,9 +1,9 @@
 <div class="content-wrapper">
     <section class="content">
         <div class="row">
-        <!-- left column -->
+            <!-- left column -->
             <div class="col-md-12">
-          <!-- general form elements -->
+                <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title">Edit Data Area</h3>
@@ -30,15 +30,16 @@
                                         <input type="text" name="AREA_ZONE" class="form-control" value="<?php echo $car->AREA_ZONE ?>">
                                     </div>
 
+                                    <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
 
-                    </form>
+                                </form>
                             <?php } ?>
-                            
-                </div>            
+
+                        </div>
+                </div>
             </div>
-        </div>
     </section>
 
 </div>
