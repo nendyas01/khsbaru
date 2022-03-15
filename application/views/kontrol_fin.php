@@ -55,8 +55,8 @@
                                         <td> <?php echo 'Rp ' . number_format($kf->PAGU_KONTRAK, 0, ',', '.') ?></td>
                                         <td> <?php echo floor($kf->PERSEN_KONTRAK) . '%' ?>
                                         <td> <?php echo $kf->jumlah_area ?></td>
-                                        <td><?php echo anchor('kontrol_fin/aksi_pagu_kontrak/' . $kf->vendor_nama, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
-                                        <td><?php echo anchor('kontrol_fin/aksi_pagu_rating/' . $kf->vendor_nama, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                        <td><?php echo anchor('kontrol_fin/aksi_pagu_kontrak/' . $kf->vendor_id,  '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                        <td><?php echo anchor('kontrol_fin/aksi_pagu_rating/' . $kf->vendor_id,  '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
                                     </tr>
                                 <?php } ?>
 
