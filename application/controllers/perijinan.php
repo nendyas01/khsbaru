@@ -24,24 +24,11 @@ class perijinan extends CI_Controller
     {
 
         $where = array('spj_no' => $spj_no);
-        $data['perijinan'] = $this->m_perijinan->edit_data($where, 'tb_ijin')->result();
+        $data['perijinan_add'] = $this->m_perijinan->edit_data($where, 'tb_ijin')->result();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('perijinan_add/', $data);
+        $this->load->view('perijinan_add', $data);
         $this->load->view('templates/footer');
-    }
-
-    public function update()
-    {
-        $SPJ_NO = $this->input->post('SPJ_NO', true);
-
-        $data = array(
-            'SPJ_NO'               => $SPJ_NO,
-        );
-
-        $where = array('SPJ_NO' => $SPJ_NO);
-        $this->m_crud_area->update_data($where, $data, 'tb_spj');
-        redirect('perijinan/perijinan_add/index');
     }
 }

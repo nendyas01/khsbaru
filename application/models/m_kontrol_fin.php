@@ -65,6 +65,7 @@ class m_kontrol_fin extends CI_Model
 
     public function edit_data($where, $table)
     {
+
         return $this->db->get_where($table, $where);
     }
 
@@ -73,9 +74,10 @@ class m_kontrol_fin extends CI_Model
         return $this->db->get_where($table, $where);
     }
 
-    public function update_data($where, $data, $table)
+
+    function Update($where, $data, $table)
     {
-        $this->db->where($where);
-        $this->db->update($table, $data);
+        $this->db->update($table, $data, $where);
+        return $this->db->affected_rows();
     }
 }

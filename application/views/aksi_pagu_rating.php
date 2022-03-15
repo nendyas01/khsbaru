@@ -10,14 +10,15 @@
 
                 <div class="form-group">
                     <label>Rating</label>
-                    <input type="text" name="RATING_LAPORAN_AUDIT" class="form-control" value="<?php echo $ar->PAKET_JENIS ?>">
+                    <input type="text" name="RATING_LAPORAN_AUDIT" class="form-control" value="<?php echo $ar->RATING_LAPORAN_AUDIT ?>">
                 </div>
 
                 <div class="form-group">
                     <label>Limit</label>
-                    <input type="text" name="FIN_LIMIT" class="form-control" value="<?php echo $ar->PAGU_KONTRAK ?>">
+                    <input type="text" name="FIN_LIMIT" class="form-control" value="<?php echo 'Rp ' . number_format($ar->FIN_LIMIT, 0, ',', '.') ?>">
                 </div>
 
+                <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
                 <button type="reset" class="btn btn-danger">Reset</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
 

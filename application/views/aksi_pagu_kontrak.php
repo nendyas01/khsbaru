@@ -5,7 +5,7 @@
 
                 <div class="form-group">
                     <label>Vendor</label>
-                    <input type="text" name="PAKET_JENIS" class="form-control" value="<?php echo $ak->PAKET_JENIS ?>">
+                    <input type="text" name="VENDOR_NAMA" class="form-control" disabled value="<?php echo $ak->VENDOR_NAMA ?>">
                 </div>
 
                 <div class="form-group">
@@ -13,11 +13,11 @@
                     <input type="text" name="PAKET_JENIS" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <div class=" form-group">
                     <label>Pagu Kontrak</label>
                     <input type="text" name="PAGU_KONTRAK" class="form-control">
                 </div>
-
+                <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
                 <button type="reset" class="btn btn-danger">Reset</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
 

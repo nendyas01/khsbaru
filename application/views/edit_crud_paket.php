@@ -1,5 +1,17 @@
 <div class="content-wrapper">
     <section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Edit Data Area</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+            <div class="box-body">
         <?php foreach ($crud_paket as $cp) { ?>
             <form action="<?php echo base_url() . 'crud_paket/update'; ?>" method="post">
 
