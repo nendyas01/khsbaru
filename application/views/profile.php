@@ -1,29 +1,36 @@
 <div class="content-wrapper">
-    <section class="content">
-        <h4><strong>Detail Data Paket</strong></h4>
 
-        <table class="table table-striped">
-            <tr>
-                <th>Paket Jenis</th>
-                <td><?php echo $detail_crud_paket->PAKET_JENIS ?></td>
-            </tr>
-            <tr>
-                <th>Paket Deskripsi</th>
-                <td><?php echo $detail_crud_paket->PAKET_DESKRIPSI ?></td>
-            </tr>
-            <tr>
-                <th>Satuan</th>
-                <td><?php echo $detail_crud_paket->SATUAN ?></td>
-            </tr>
-            <tr>
-                <th>Paket Deskripsi</th>
-                <td><?php echo $detail_crud_paket->PAKET_DESKRIPSI2 ?></td>
-            </tr>
-            <tr>
-                <th>Status</th>
-                <td><?php echo $detail_crud_paket->STATUS ?></td>
-            </tr>
-
-        </table>
-    </section>
+  <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Profile User</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                  <?php foreach ((array)$profile as $p) { ?>
+                        <div class="form-group">
+                          <label>Username</label>
+                          <input type="text" class="form-control" name="USERNAME" value="<?php echo $p->USERNAME?>" readonly>
+                        </div>
+                        <div class="form-group">
+                          <label>Password</label>
+                          <input type="text" class="form-control" name="USERNAME" value="<?php echo $p->PASSWORD?>" readonly>
+                        </div>
+                        <div class="form-group">
+                          <label>Email</label>
+                          <input type="text" class="form-control" name="USERNAME" value="<?php echo $p->email?>" readonly>
+                        </div>
+                  </div>
+                <?php } ?>
+            </form>
+          
+          </div>
+      </div>
+  </div>    
 </div>
