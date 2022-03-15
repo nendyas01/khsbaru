@@ -27,7 +27,7 @@
                     <section class="panel">
                         <header class="panel-heading">Input SKRD</header>
                         <div class="panel-body">
-                            <form class="form-horizontal tasi-form" method="post" action="skrd_input_submit.php">
+                            <form class="form-horizontal tasi-form" method="post" action="Skrd_submit">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">No. Surat Ke PTSP</label>
                                     <div class="col-sm-10">
@@ -54,9 +54,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-15" style="margin: 10px;">
-                                    <div class="box box-solid">
+                                <div class="col-md-15" style="margin: 20px;">
 
+                                    <div class="box box-solid" name="evidence_ret" id="evidence_ret">
                                         <div class="text-center">
                                             <h3 class="box-title" align="center">Evidence</h3>
                                         </div>
@@ -69,18 +69,15 @@
                                     </div>
                                 </div>
 
-                                <form action="" method="post" enctype="multipart/form-data">
-
-                                    <div class="form-group">
-
+                                <div class="form-group">
+                                    <div class="col-lg-offset-5.5 col-lg-11">
+                                        <button type="submit" class="btn btn-primary" align="center" onclick="document.getElementById('submitForm').submit()">Submit</button>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
+                                </div>
 
                                 <script src="<?= base_url('assets/bootstrap/jquery/') . 'jquery3.js'; ?>"></script>
                                 <script src="<?= base_url('assets/bootstrap/js/') . 'bootstrap.js'; ?>"></script>
                                 <script src="<?= base_url('assets/dropify/js/') . 'dropify.js'; ?>"></script>
-
                             </form>
                         </div>
                     </section>
@@ -88,5 +85,50 @@
             </div>
         </section><!-- /.content -->
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+
+<script>
+    Dropzone.autoDiscover = false;
+    var file_upload = new Dropzone('.dropzone', {
+        url: "<?= base_url('Multiupload/proses_upload') ?>",
+        method: "post",
+        paramName: "userFile",
+        maxFiles: 5,
+        dictMaxFilesExceeded: "Maximum upload file adalah 5",
+        acceptedFiles: "application/pdf",
+        dictInvalidFileType: "File ini tidak diizinkan",
+        maxFilesize: 1, //MB
+        dictFileTooBig: "File size terlalu besar, upload minimal 1 MB",
+        addRemoveLinks: true,
+    });
+
+    file_upload.on('sending', function(a, b, c) {
+        a.token = Math.random();
+        c.append('token', a.token);
+        console.log(file_upload);
+    });
+
+    file_upload.on('removedfile', function(a) {
+        var token = a.token;
+        $.ajax({
+            type: "post",
+            data: {
+                token: token
+            },
+            url: "<?= base_url('skrd/remove_file'); ?>",
+            cache: false,
+            success: function() {
+                console.log('file berhasil dihapus');
+            },
+            error: function() {
+                console.log('gagal dihapus')
+            }
+        })
+    })
+</script>
+
+
 
 </html>
