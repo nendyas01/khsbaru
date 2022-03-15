@@ -326,12 +326,12 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
             <a href=<?php echo base_url('profile/index');?> class="dropdown-toggle" >
-                <img src="<?php echo base_url() ?>assets/dist/img/avatar5.png" class="user-image" alt="User Image">
+                <i class="fa fa-fw fa-user"></i>
                 <span class="hidden-xs"><?php echo $this->session->userdata("username") ?>  </span>
               </a>
               
             </li>
-            <!-- Control Sidebar Toggle Button -->
+           
             <!-- <li>
               <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
             </li> -->
