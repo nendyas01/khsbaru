@@ -7,18 +7,27 @@ class inp_pel_khs extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
         $this->load->model('m_inp_pel_khs');
     }
 
     public function index()
     {
         //$data['areaspj'] = $this->m_inp_pel_khs->getarea();
+        $table = 'tb_user';
+        $where = array(
+            'USERNAME'       =>  $this->session->userdata('username')
+        );
+
+        $data['user'] = $this->m_inp_pel_khs->Get_Where($where, $table);
+        $data['pelanggaran'] = $this->m_inp_pel_khs->getdata();
+        $data['area'] = $this->m_inp_pel_khs->getarea();
+
+
+        $data['kodeotomatis'] = $this->m_inp_pel_khs->kodeotomatis();
+
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('inp_pel_khs');
+        $this->load->view('inp_pel_khs', $data);
         $this->load->view('templates/footer');
     }
 
@@ -41,7 +50,7 @@ class inp_pel_khs extends CI_Controller
             $result = $this->m_inp_pel_khs->get_prov($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
-                    $result_array[] = $row->AREA_NAMA;
+                    $result_array[] = $row->AREA_KODE;
                 echo json_encode($result_array);
             }
         }
