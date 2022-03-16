@@ -15,11 +15,23 @@ class m_inp_spj_fin extends CI_Model
         return $query->result();
     }
 
+    public function getarea()
+    {
+        $query = $this->db->query("SELECT AREA_KODE, AREA_NAMA FROM tb_area");
+        return $query->result();
+    }
+
     function search_spj($title)
     {
         $this->db->like('SKKI_NO', $title);
         $this->db->order_by('SKKI_NO', 'ASC');
         $this->db->limit(10);
         return $this->db->get('tb_spj')->result();
+    }
+
+    function Save($data, $table)
+    {
+        $result = $this->db->insert($table, $data);
+        return $result;
     }
 }

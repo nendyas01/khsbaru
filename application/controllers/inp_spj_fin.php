@@ -6,15 +6,17 @@ class inp_spj_fin extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
+        if (!$this->session->userdata("username")) {
+            redirect('login');
+        }
         $this->load->model('m_inp_spj_fin');
     }
+
     function index()
     {
         $data['skk'] = $this->m_inp_spj_fin->getdata();
         $data['jenis_paket'] = $this->m_inp_spj_fin->getpaket();
+        $data['area'] = $this->m_inp_spj_fin->getarea();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('inp_spj_fin', $data);

@@ -6,18 +6,20 @@ class inp_addendum extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
         $this->load->model('m_inp_addendum');
     }
     function index()
     {
-        /* $data['nomorspj'] = $this->m_inp_addendum->getdata(); */
-        /*  $data['skkio'] = $this->m_inp_addendum->getskkio(); */
+        $table = 'tb_user';
+        $where = array(
+            'USERNAME'       =>  $this->session->userdata('username')
+        );
+
+        $data['user'] = $this->m_inp_addendum->Get_Where($where, $table);
+        $data['spj'] = $this->m_inp_addendum->getdata();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('inp_addendum');
+        $this->load->view('inp_addendum', $data);
         $this->load->view('templates/footer');
     }
 
@@ -37,7 +39,7 @@ class inp_addendum extends CI_Controller
     function get_autofill1()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_addendum->search_spj($_GET['term']);
+            $result = $this->m_inp_addendum->search_skkio($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->SKKI_NO;

@@ -5,7 +5,7 @@
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Pengelolaan Progress</li>
         </ol>
     </section>
@@ -17,7 +17,7 @@
                     <header class="panel-heading">SELEKSI VENDOR</header>
                     <div class="panel-body">
                         <font size="2" face="Arial">
-                            <form class="form-horizontal tasi-form" method="post">
+                            <form class="form-horizontal tasi-form" method="post" action="Inp_spj_fin_submit">
 
                                 <!-- Textbox Nama Manager -->
                                 <div class="form-group">
@@ -61,8 +61,12 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label col-lg-2">Lokasi Pekerjaan</label>
                                     <div class="col-lg-9">
+
                                         <select class="form-control m-b-10" name="var_lokasi" id="lokasi">
-                                            <option value="54000"> KANTOR DISTRIBUSI</option>
+                                            <option value="0">-- Pilih Lokasi Pekerjaan --</option>
+                                            <?php foreach ($area as $ar) : ?>
+                                                <option value="<?php echo $ar->AREA_KODE; ?>"> <?php echo $ar->AREA_NAMA; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
 
@@ -136,7 +140,8 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Nomor SPJ</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="var_no_spj">
+                                        <input type="text" class="form-control" value="<?= set_value('var_no_spj') ?>" name="var_no_spj">
+                                        <?= form_error('var_no_spj', '<small class="text-danger">', '</small>'); ?>
                                     </div>
                                 </div>
 

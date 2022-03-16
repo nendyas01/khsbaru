@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="<?= base_url('assets/dropify/css/') . 'dropify.css'; ?>"> -->
+
+</head>
+
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
@@ -5,50 +16,48 @@
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-            <li class="active">Pengelolaan Progress</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Pengelolaan Proses</li>
         </ol>
     </section>
+
     <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <section class="panel">
-                    <header class="panel-heading">INPUT ADDENDUM</header>
-                    <div class="panel-body" onload=disableselect();>
-                        <?php if ($this->session->flashdata('sukses')) : ?>
-                            <div class="callout callout-success">
-                                <h4>Sukses!</h4>
-                                <?= $this->session->flashdata('sukses'); ?>
-                            </div>
-                        <?php elseif ($this->session->flashdata('gagal')) : ?>
-                            <div class="callout callout-danger">
-                                <h4>Warning!</h4>
-                                <?= $this->session->flashdata('gagal'); ?>
-                            </div>
-                        <?php endif; ?>
-                        <form class="form-horizontal tasi-form" method="post">
+        <font size="2" face="Arial">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="panel">
+
+                        <header class="panel-heading">INPUT ADDENDUM</header>
+                        <div class="panel-body" onload=disableselect();>
+
                             <form class="form-horizontal tasi-form" method="post" action="inp_addendum_submit">
 
+
                                 <!-- no spj -->
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Nomor SPJ</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="spj_no" id="spj_no" placeholder="Masukan nomor SPJ" class="form-control">
                                         <?= form_error('spj_no', '<small class="text-danger">', '</small>'); ?>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label"></label>
-                                    <div class="col-sm-10">
+                                    <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">No SPJ</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
 
-                                        <div class="col-md-6 form-group">
-                                            <div class="alert alert-info" id="spjdata">
-                                                <strong>Silahkan Memilih No SPJ!</strong>
-                                            </div>
+                                            <input type="text" class="form-control" id="nospj" name="nospj" readonly required autofocus>
+
+
+                                            <span class="input-group-btn">
+                                                <button style="margin-left: 3px;" type="button" class="btn btn-success btn-flat" data-toggle="modal" data-target="#modal">Cari</button>
+                                            </span>
+
                                         </div>
-
                                     </div>
+
                                 </div>
+
 
                                 <!-- nomor addendum -->
                                 <div class="form-group">
@@ -76,6 +85,7 @@
                                     <label class=" col-sm-2 col-sm-2 control-label">Tanggal Addendum</label>
                                     <div class="col-md-2">
                                         <input type="date" class="form-control" name="var_tanggal_add" id="tgl_amd">
+                                        <input type="hidden" name="username" value="<?= $user->USERNAME; ?>">
                                     </div>
                                 </div>
 
@@ -104,7 +114,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Deskripsi</label>
                                     <div class="col-sm-3">
-                                        <textarea></textarea>
+                                        <textarea name="var_deskripsi"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -113,23 +123,57 @@
                                     </div>
                                 </div>
 
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <center>
+                                                    <h3 class="modal-title">Pilih SPJ</h3>
+                                                </center>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="table-responsive">
+                                                    <table id="example1" class=" table-striped table-bordered " cellspacing="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>No</th>
+                                                                <th>NO SPJ</th>
+                                                                <th>Nama Manager</th>
+                                                                <th>Direksi Pekerjaan</th>
+                                                                <th>Direksi Lapangan</th>
+                                                                <th>Aksi</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php
+                                                            $no = 1;
+                                                            foreach ($spj as $data) {
 
+                                                            ?>
+                                                                <tr>
+                                                                    <td align="center" width="10%"><?php echo $no ?></td>
+                                                                    <td><?php echo $data->SPJ_NO ?></td>
+                                                                    <td><?php echo $data->NAMA_MANAGER ?></td>
+                                                                    <td><?php echo $data->DIREKSI_PEKERJAAN ?></td>
+                                                                    <td><?php echo $data->DIREKSI_LAPANGAN ?></td>
+                                                                    <td align="center" width="10%" id="spj" data-id="<?= $data->SPJ_NO; ?>" data-skki="<?= $data->SKKI_NO; ?>" onclick="spjmodal()"> <a class="btn btn-info">Pilih</a> </td>
+                                                                </tr>
+                                                            <?php
+                                                                $no++;
+                                                            }
+                                                            ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
 
-                                <!-- <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-3.3.1.js' ?>'></script> -->
-                                <script type='text/javascript' src='<?php echo base_url() . 'assets/js/bootstrap.js' ?>'></script>
-                                <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-ui.js' ?>'></script>
+                                            </div>
 
-                                <script type='text/javascript'>
-                                    $(document).ready(function() {
-                                        $('#spj_no').autocomplete({
-                                            source: "<?php echo site_url('inp_addendum/get_autofill/?') ?>",
-
-                                        });
-                                    });
-                                </script>
-
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <script type='text/javascript'>
                                     $(document).ready(function() {
                                         $('#var_skki_tujuan').autocomplete({
@@ -138,88 +182,57 @@
                                         });
                                     });
                                 </script>
+                                <script>
+                                    $(document).ready(function() {
+                                        $('#example1').DataTable();
+                                    });
+                                </script>
+
+
+                                <script type='text/javascript'>
+                                    $(document).ready(function() {
+                                        $('#spj').autocomplete({
+                                            source: "<?php echo site_url('inp_pel_khs/get_autofill/?') ?>",
+
+                                        });
+                                    });
+                                </script>
+
+                                <script type='text/javascript'>
+                                    $(document).ready(function() {
+                                        $('#area').autocomplete({
+                                            source: "<?php echo site_url('inp_pel_khs/get_autocomplete') ?>",
+
+                                        });
+                                    });
+                                </script>
+
+
+                                <script type="text/javascript">
+                                    function spjmodal() {
+                                        $(document).on('click', '#spj', function(e) {
+                                            document.getElementById("nospj").value = $(this).attr('data-id');
+                                            document.getElementById("skki_awal").value = $(this).attr('data-skki');
+                                            $('#modal').modal('hide');
+                                        });
+                                    }
+                                </script>
+                                <script type="text/javascript">
+                                    $("#min_ppn").keyup(function(event) {
+                                        //var nilai = $("#min_ppn").val().replace(/,/g,"");
+                                        //alert(nilai);
+                                        //var ppn = (10 / 100) * nilai;
+                                        //var total = nilai + ppn;
+                                        $("#ppn").val(Math.floor($("#min_ppn").val().replace(/,/g, "") * 10 / 100).toLocaleString('en'));
+                                        $("#nilai").val(Math.floor($("#min_ppn").val().replace(/,/g, "") * 110 / 100).toLocaleString('en'));
+                                    })
+                                </script>
                             </form>
-                        </form>
-                    </div>
-                </section>
+                        </div>
+                    </section>
+                </div>
             </div>
-        </div>
-    </section><!-- /.content -->
+    </section>
 </div>
-
-<!-- ------------------------------------------------------------------------------------------------------------------ -->
-
-<script>
-    function dateFormat(date) {
-        var d = date.getDate().toString();
-        d = d.length > 1 ? d : '0' + d;
-        var m = (date.getMonth() + 1).toString();
-        m = m.length > 1 ? m : '0' + m;
-        var y = date.getFullYear().toString();
-        return d + '-' + m + '-' + y;
-    }
-
-    $("#min_ppn").keyup(function(event) {
-        //var nilai = $("#min_ppn").val().replace(/,/g,"");
-        //alert(nilai);
-        //var ppn = (10 / 100) * nilai;
-        //var total = nilai + ppn;
-        $("#ppn").val(Math.floor($("#min_ppn").val().replace(/,/g, "") * 10 / 100).toLocaleString('en'));
-        $("#nilai").val(Math.floor($("#min_ppn").val().replace(/,/g, "") * 110 / 100).toLocaleString('en'));
-    })
-
-    $("#spj").change(function() {
-        var spj = $("#spj").val();
-        var area = "<?php echo $_SESSION['area'] ?>"
-        //alert(spj);
-        //alert(area);
-
-        if (spj == 0) {
-            $("#spjdata").html("<strong>Pilih No SPJ!</strong>");
-        } else {
-            $.getJSON('getspj.php', {
-                'no_spj': spj,
-                'area': area
-            }, function(data) {
-                var showData = "";
-                $.each(data, function(index, value) {
-                    var d_awal = new Date(value.SPJ_TANGGAL_MULAI);
-                    var d_akhir = new Date(value.SPJ_TANGGAL_AKHIR);
-                    var akhir = dateFormat(d_akhir);
-                    var awal = dateFormat(d_awal);
-                    var nilai_spj = numeral(value.SPJ_NILAI);
-                    nilai_spj = nilai_spj.format('0,0');
-                    var paket = value.PAKET_JENIS;
-                    var gangguan = value.gangguan;
-                    //alert(paket);
-                    //if (paket == 11 || paket == 9 || gangguan == 1){
-                    //if (paket == 11 || gangguan == 1){
-                    /*	if (gangguan == 1){
-                    	 document.getElementById("skki_tujuan").disabled = true;
-                    	 //$("#skki_tujuan").html("<option value="">- (Pilih Jika SKKI/O Tidak Berubah)</option>");
-                    	 $("#skki_tujuan").val("-");
-                    }*/
-
-                    //var test = $("#skki_tujuan").val();
-                    //alert (test);
-                    showData += "<table><tr><td>No SPJ</td><td>:</td><td>" + value.SPJ_NO + "</td></tr><tr><td>Nama Vendor</td><td>:</td><td>" + value.VENDOR_NAMA + "</td></tr><tr><td>Nilai SPJ</td><td>:</td><td>Rp." + nilai_spj + "</td></tr><tr><td>Tanggal Awal</td><td>:</td><td>" + awal + "</td></tr><tr><td>Tanggal Akhir</td><td>:</td><td>" + akhir + "</td></tr></table>";
-                })
-                $("#spjdata").html(showData);
-
-            })
-
-            $.getJSON('get_skki.php', {
-                'no_spj': spj
-            }, function(data) {
-
-                $.each(data, function(index, value) {
-                    var skki_awal = value.skki_no;
-                    //alert(skki_awal);
-                    document.getElementById("skki_awal").value = skki_awal;
-                })
-            })
-        }
-    })
-</script>
 
 </html>
