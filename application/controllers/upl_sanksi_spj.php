@@ -11,9 +11,11 @@ class upl_sanksi_spj extends CI_Controller
 
     function index()
     {
+        $data['area'] = $this->m_upl_sanksi_spj->getarea();
+
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('upl_sanksi_spj');
+        $this->load->view('upl_sanksi_spj', $data);
         $this->load->view('templates/footer');
     }
 

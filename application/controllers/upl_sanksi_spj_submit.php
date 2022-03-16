@@ -9,18 +9,36 @@ class upl_sanksi_spj_submit extends CI_Controller
     }
 
     public function index()
-    {
-        $table = 'tb_sanksi_spj';
+    /* {
+        $id_sanksi_spj = $this->input->post('sanksi');
+        $area_kode = $this->input->post('area');
+
         $data = array(
-            'id_sanksi_spj'     =>  $this->input->post('sanksi'),
-            'area_kode'         => $this->input->post('area')
+            //'sanksi' => $id_sanksi_spj,
+            'area' => $area_kode,
         );
-        /* $data = array(
-            'status' => "1"
+
+        /* $where = array(
+            'sanksi' => $id_sanksi_spj,
         ); */
 
-        //$this->m_upl_sanksi_spj->Update($where, $data, $table);
-        $this->m_upl_sanksi_spj->Update($data, $table);
+    /* $this->m_upl_sanksi_spj->update_data($data, 'tb_sanksi_spj');
+        echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
+        echo '<script language="javascript">window.location = "upl_sanksi_spj"</script>';
+    } */
+
+    {
+        $table = 'tb_sanksi_spj';
+        $where = array(
+
+            'area_kode'         => $this->input->post('area')
+        );
+        $data = array(
+            'id_sanksi_spj'     =>  $this->input->post('sanksi'),
+        );
+
+        $this->m_upl_sanksi_spj->Update_data($where, $data, $table);
+        //$this->m_upl_sanksi_spj->Update($data, $table);
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
         echo '<script language="javascript">window.location = "upl_sanksi_spj"</script>';
     }

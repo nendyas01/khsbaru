@@ -18,10 +18,37 @@ class m_upl_sanksi_spj extends CI_Model
         return $this->db->get('tb_area')->result();
     }
 
-    function Update($where, $table)
+    /* function Update($where, $table)
     {
         $this->db->update($table, $where);
         return $this->db->affected_rows();
+    } */
+
+    function update_data($data, $where, $table)
+    {
+
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
+
+    public function getarea()
+    {
+        $query = $this->db->query("SELECT AREA_KODE, AREA_NAMA FROM tb_area");
+        return $query->result();
+    }
+
+    function Save($data, $table)
+    {
+        $result = $this->db->insert($table, $data);
+        return $result;
+    }
+
+    public function no_spj($no_spj)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_');
+        $this->db->where('spj_no', $no_spj);
+        return $this->db->get()->row();
     }
 
     /* function Update($where, $data, $table)

@@ -34,14 +34,14 @@
                                     <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Area</label>
                                     <div class="col-sm-10">
 
-                                        <input type="text" name="area" id="area" placeholder="Masukan Nama Area" class="form-control">
+                                        <!-- <input type="text" name="area" id="area" placeholder="Masukan Nama Area" class="form-control"> -->
 
-                                        <!-- <select class="form-control m-b-10" name="NOSANKSI">
-                                            <option value>-- Area --</option>
-                                            <?php foreach ($areaspj as $na) : ?>
+                                        <select class="form-control m-b-10" name="area">
+                                            <option value>-- Silahkan Pilih Area --</option>
+                                            <?php foreach ($area as $na) : ?>
                                                 <option value="<?php echo $na->AREA_KODE; ?>"> <?php echo $na->AREA_NAMA; ?></option>
                                             <?php endforeach; ?>
-                                        </select> -->
+                                        </select>
                                     </div>
                                 </div>
 
@@ -96,7 +96,7 @@
                                 <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
                                 <!-- <script type='text/javascript' src='<?php echo base_url() . 'assets/js/jquery-3.3.1.js' ?>'></script> -->
                                 <script type='text/javascript' src='<?php echo base_url() . 'assets/js/bootstrap.js' ?>'></script>
