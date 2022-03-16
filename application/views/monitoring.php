@@ -6,7 +6,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-            <li class="active">BA Survey</li>
+            <li class="active">Monitoring Perizinan</li>
         </ol>
     </section>
     <section class="content">
