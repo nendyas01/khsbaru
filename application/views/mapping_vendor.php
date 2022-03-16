@@ -34,7 +34,6 @@
                     <th>Deskripsi Paket</th>
                     <th>Total Vendor</th>
                     <th>Zona</th>
-                    <th> Detail </th>
                     <th colspan="1">Aksi</th>
 
                   </tr>
@@ -52,7 +51,6 @@
                       <td> <?php echo $mv->desc_paket ?></td>
                       <td> <button class="btn btn-default btn x-s" onclick="modal_detail(<?php echo $mv->PAKET_JENIS ?>)"><?php echo $mv->total_vendor?></button></td>
                       <td> <button class="btn btn-default btn x-s" onclick="modal_detail_area(<?php echo $mv->PAKET_JENIS?>)"><?php echo $mv->total_area?></button></td>
-                      <td> <?php echo anchor('mapping_vendor/getmappingbymappingid/' . $mv->MAPPING_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                       <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                     </tr>
                   <?php } ?>

@@ -100,37 +100,8 @@ class mapping_vendor extends CI_Controller
         echo json_encode($get);
     }
 
-    public function getmappingbymappingid($id)
-    {
-        $get = $this->m_mapping_vendor->tampil_data_by_mapping($id)->result();
-        //echo json_encode($get);
-        //echo $this->db->last_query($get);
-        $data['get'] = $get;
-        $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-        $this->load->view('detail_mapping_vendor', $data);
-        $this->load->view('templates/footer');
-    }
 
-    // public function getmappingbymappingid($id)
-    // {
-
-    //     // $VENDOR_ID = $this->input->GET('VENDOR_ID');
-    //     // $MAPPING_TAHUN = $this->input->GET('MAPPING_TAHUN');
-    //     // $PAKET_JENIS = $this->input->GET('PAKET_JENIS');
-
-    //     // $get = $this->m_mapping_vendor->tampil_data_by_mapping($VENDOR_ID, $MAPPING_TAHUN, $PAKET_JENIS)->result();
-    //     // echo json_encode($get);
-    //     // echo $this->db->last_query($get);
-    //     $get = $this->m_mapping_vendor->tampil_data_by_mapping($id)->result();
-    //     $data['get'] = $get;
-    //     $this->load->view('templates/header');
-    //     $this->load->view('templates/sidebar');
-    //     $this->load->view('detail_mapping_vendor', $data);
-    //     $this->load->view('templates/footer');
-
-    // }
-
+    
     public function hapus($mapping_id)
     {
         $where = array('mapping_id' => $mapping_id);
