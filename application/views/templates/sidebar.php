@@ -37,7 +37,7 @@
             <li <?= $this->uri->segment(1) == 'crud_paket' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_paket') ?>"><i class="fa fa-circle-o"></i> Add/Edit Paket</a></li>
             <li <?= $this->uri->segment(1) == 'crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_user') ?>"><i class="fa fa-circle-o"></i> Add/Edit User</a></li>
             <li <?= $this->uri->segment(1) == 'crud_vendor' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_vendor') ?>"><i class="fa fa-circle-o"></i> Add/Edit Vendor</a></li>
-            <li <?= $this->uri->segment(1) == 'mapping_vendor' ? 'class="active"' : '' ?>><a href="<?php echo base_url('mapping_vendor') ?>"><i class="fa fa-circle-o"></i> Add/Edit Mapping Vendor</a></li>
+            <li <?= $this->uri->segment(1) == 'mapping_vendor' ? 'class="active"' : '' ?>><a href="<?php echo base_url('mapping_vendor') ?>"><i class="fa fa-circle-o"></i> Add Mapping Vendor</a></li>
           </ul>
         </li>
 
@@ -170,6 +170,19 @@
             <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
           </ul>
         </li>
+
+        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'progress' ? 'active' : '' ?>">
+        <a href="#">
+            <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+          </ul>
+        </li>
+
 
         <li class="treeview <?= $this->uri->segment(1) == 'kontrol_fin/tambah_addendum' || $this->uri->segment(1) == 'kontrol_fin/tambah'
                               || $this->uri->segment(1) == 'kontrol_fin' || $this->uri->segment(1) == 'list_amandemen' ? 'active' : '' ?>">
