@@ -7,19 +7,27 @@ class inp_sanksi_spj extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
         $this->load->model('m_inp_sanksi_spj');
     }
 
     public function index()
     {
         //$data['nomorspj'] = $this->m_inp_sanksi_spj->getdata();
-        //$data['areaspj'] = $this->m_inp_sanksi_spj->getarea();
+        $data['area'] = $this->m_inp_sanksi_spj->getarea();
+
+
+        $data['kodeotomatis'] = $this->m_inp_sanksi_spj->kodeotomatis();
+
+        $table = 'tb_user';
+        $where = array(
+            'USERNAME'       =>  $this->session->userdata('username')
+        );
+
+        $data['user'] = $this->m_inp_sanksi_spj->Get_Where($where, $table);
+
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('inp_sanksi_spj');
+        $this->load->view('inp_sanksi_spj', $data);
         $this->load->view('templates/footer');
     }
 
