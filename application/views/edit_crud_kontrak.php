@@ -110,6 +110,7 @@
                                         <input type="text" name="BLOCKED" class="form-control" value="<?php echo $cpk->BLOCKED ?>">
                                     </div>
 
+                                    <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
 
