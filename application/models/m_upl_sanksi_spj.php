@@ -17,4 +17,16 @@ class m_upl_sanksi_spj extends CI_Model
         $this->db->limit(10);
         return $this->db->get('tb_area')->result();
     }
+
+    function Update($where, $table)
+    {
+        $this->db->update($table, $where);
+        return $this->db->affected_rows();
+    }
+
+    /* function Update($where, $data, $table)
+    {
+        $this->db->update($table, $data, $where);
+        return $this->db->affected_rows();
+    } */
 }

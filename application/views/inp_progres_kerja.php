@@ -5,7 +5,7 @@
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Progress Pekerjaan</li>
         </ol>
     </section>
@@ -16,7 +16,7 @@
                 <section class="panel">
                     <header class="panel-heading">Progress Pekerjaan</header>
                     <div class="panel-body" onload=disableselect();>
-                        <form class="form-horizontal tasi-form" method="post" action="inp_progress_kerja_submit.php">
+                        <form class="form-horizontal tasi-form" method="post" action="inp_progress_kerja_submit">
 
                             <!-- no spj -->
                             <div class="form-group">
@@ -91,6 +91,7 @@
                                 <label class="col-sm-2 col-sm-2 control-label">Nama Pengawas</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="var_nama_pengawas" id="var_nama_pengawas">
+                                    <input type="hidden" name="username" value="<?= $user->USERNAME; ?>">
                                 </div>
                             </div>
 

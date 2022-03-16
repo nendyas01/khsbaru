@@ -46,12 +46,21 @@ class m_inp_addendum extends CI_Model
         $query = $this->db->query("SELECT DISTINCT * FROM tb_skko_i ORDER BY SKKI_NO ASC");
         return $query->result();
     }
-
-    public function input_data($data, $table)
+    public function getdata()
     {
-        $this->db->insert($table, $data);
+        $query = $this->db->query("SELECT * FROM tb_spj");
+        return $query->result();
     }
-
+    function Save($data, $table)
+    {
+        $result = $this->db->insert($table, $data);
+        return $result;
+    }
+    public function Get_Where($where, $table)
+    {
+        $query = $this->db->get_where($table, $where);
+        return $query->row();
+    }
     public function hapus_data($where, $table)
     {
         $this->db->where($where);
@@ -63,9 +72,9 @@ class m_inp_addendum extends CI_Model
         return $this->db->get_where($table, $where);
     }
 
-    public function update_data($where, $data, $table)
+    function Update($where, $data, $table)
     {
-        $this->db->where($where);
-        $this->db->update($table, $data);
+        $this->db->update($table, $data, $where);
+        return $this->db->affected_rows();
     }
 }

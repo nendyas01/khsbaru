@@ -6,7 +6,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-            <li class="active">LIST AMANDEMEN</li>
+            <li class="active">List Amandemen</li>
         </ol>
     </section>
     <section class="content">

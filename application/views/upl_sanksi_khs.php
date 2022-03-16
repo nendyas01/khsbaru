@@ -15,7 +15,7 @@
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Pengelolaan Pelanggaran</li>
         </ol>
     </section>
@@ -29,7 +29,7 @@
                         <header class="panel-heading">Upload Sanksi KHS</header>
                         <div class="panel-body" onload=disableselect();>
 
-                            <form class="form-horizontal tasi-form" method="post" action="bayar_retribusi_submit.php">
+                            <form class="form-horizontal tasi-form" method="post" action="upl_sanksi_khs_submit">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Nomor Sanksi</label>
                                     <div class="col-sm-10">

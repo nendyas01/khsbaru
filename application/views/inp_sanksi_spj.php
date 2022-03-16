@@ -15,7 +15,7 @@
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Pengelolaan Pelanggaran</li>
         </ol>
     </section>
@@ -29,12 +29,17 @@
                         <header class="panel-heading">Input Sanksi SPJ</header>
                         <div class="panel-body" onload=disableselect();>
 
-                            <form class="form-horizontal tasi-form" method="post" action="bayar_retribusi_submit.php">
+                            <form class="form-horizontal tasi-form" method="post" action="inp_sanksi_spj_submit">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label" for="inputSuccess">Area</label>
                                     <div class="col-sm-10">
-
-                                        <input type="text" name="area" id="area" placeholder="Masukan Nama Area" class="form-control">
+                                        <input type="hidden" name="idsanksi" value="S<?= $kodeotomatis ?>" class="form-control">
+                                        <select class="form-control m-b-10" name="area">
+                                            <option value>-- Silahkan Pilih Area --</option>
+                                            <?php foreach ($area as $na) : ?>
+                                                <option value="<?php echo $na->AREA_KODE; ?>"> <?php echo $na->AREA_NAMA; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -80,6 +85,7 @@
                                     <label class=" col-sm-2 col-sm-2 control-label">Tanggal Kejadian</label>
                                     <div class="col-md-2">
                                         <input type="date" class="form-control" name="tgl_kejadian" id="tgl_kejadian">
+                                        <input type="hidden" name="username" value="<?= $user->USERNAME; ?>">
                                     </div>
                                 </div>
 
@@ -153,8 +159,8 @@
                                         url: "<?= base_url('inp_sanksi_spj/proses_upload') ?>",
                                         method: "post",
                                         paramName: "userFile",
-                                        maxFiles: 5,
-                                        dictMaxFilesExceeded: "Maximum upload file adalah 5",
+                                        maxFiles: 1,
+                                        dictMaxFilesExceeded: "Maximum upload file adalah 1",
                                         acceptedFiles: "application/pdf",
                                         dictInvalidFileType: "File ini tidak diizinkan",
                                         maxFilesize: 1, //MB
