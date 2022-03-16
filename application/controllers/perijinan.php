@@ -24,7 +24,7 @@ class perijinan extends CI_Controller
     {
 
         $where = array('spj_no' => $spj_no);
-        $data['perijinan_add'] = $this->m_perijinan->edit_data($where, 'tb_spj')->result();
+        $data['perijinan_add'] = $this->m_perijinan->edit_data($where, 'tb_ijin')->result();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

@@ -27,7 +27,8 @@
                                     </div>
                                     <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
                                     <button type="reset" class="btn btn-danger">Reset</button>
-                                    <button type="submit" class="btn btn-primary" align="center" onclick="document.getElementById('submitForm').submit()">Submit</button>
+
+                                    <button type="submit" id="submit" class="btn btn-info">Submit</button>
 
                                     <script src="<?= base_url('assets/bootstrap/jquery/') . 'jquery3.js'; ?>"></script>
                                     <script src="<?= base_url('assets/bootstrap/js/') . 'bootstrap.js'; ?>"></script>
