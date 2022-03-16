@@ -58,7 +58,7 @@
                                 <tbody>
                                     <?php
                                     //$no = 1;
-                                    foreach ($crud_kontrak as $cpk) {
+                                    foreach ($a as $cpk) {
                                     ?>
                                         <tr>
                                             <!--  <td> //echo $no++ 
@@ -83,9 +83,9 @@
                                             <td> <?php echo $cpk->punishment ?></td>
                                             <td> <?php echo $cpk->BLOCKED ?></td>
 
-                                            <td><?php echo anchor('crud_kontrak/detail_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_kontrak/hapus/' . $cpk->VENDOR_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
-                                            <td><?php echo anchor('crud_kontrak/edit_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <td><?php echo anchor('a/detail_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
+                                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('a/hapus/' . $cpk->VENDOR_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                                            <td><?php echo anchor('a/edit_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
 
                                         </tr>
                                     <?php } ?>
@@ -140,7 +140,7 @@
                     <h4 class="modal-title" id="myModalLabel"> Tambah Data Pagu Kontrak</h4>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="<?php echo base_url() . 'crud_kontrak/tambah_aksi'; ?>">
+                    <form method="post" action="<?php echo base_url() . 'a/tambah_aksi'; ?>">
                         <div class="form-group">
                             <label>ID VENDOR</label>
                             <input type="text" name="VENDOR_ID" class="form-control">

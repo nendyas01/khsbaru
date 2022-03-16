@@ -23,4 +23,16 @@ class m_inp_progres_kerja extends CI_Model
         $this->db->limit(10);
         return $this->db->get('tb_spj')->result();
     }
+
+    function Save($data, $table)
+    {
+        $result = $this->db->insert($table, $data);
+        return $result;
+    }
+
+    public function Get_Where($where, $table)
+    {
+        $query = $this->db->get_where($table, $where);
+        return $query->row();
+    }
 }
