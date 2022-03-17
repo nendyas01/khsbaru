@@ -124,7 +124,7 @@
                                     <div class="col-sm-10">
                                         <table id="availablevendor" class="table table-condensed">
                                             <tr>
-                                                <td>Pilih Paket Pekerjaan</td>
+                                                <td>BELUM ADA VENDOR YANG TERSEDIA</td>
                                             </tr>
                                         </table>
                                     </div>
