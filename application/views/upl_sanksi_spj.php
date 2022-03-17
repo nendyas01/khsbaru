@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label"></label>
                                     <div class="col-sm-10">
                                         <div class="col-md-5 form-group">
@@ -69,7 +69,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group">
                                     <div class="row">
