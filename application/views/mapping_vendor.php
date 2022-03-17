@@ -49,8 +49,8 @@
                     <tr>
                       <td> <?php echo $mv->MAPPING_TAHUN ?></td>
                       <td> <?php echo $mv->desc_paket ?></td>
-                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail(<?php echo $mv->PAKET_JENIS ?>)"><?php echo $mv->total_vendor?></button></td>
-                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail_area(<?php echo $mv->PAKET_JENIS?>)"><?php echo $mv->total_area?></button></td>
+                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail(<?php echo $mv->MAPPING_ID ?>)"><?php echo $mv->total_vendor?></button></td>
+                      <td> <button class="btn btn-default btn x-s" onclick="modal_detail_area(<?php echo $mv->MAPPING_ID?>)"><?php echo $mv->total_area?></button></td>
                       <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                     </tr>
                   <?php } ?>
@@ -326,9 +326,9 @@
 </div>
 
   <script>
-    function modal_detail(paket_jenis){
+    function modal_detail(mapping_id){
       $.ajax({
-        url: "<?= base_url('mapping_vendor/vendor_name/') ?>"+paket_jenis,
+        url: "<?= base_url('mapping_vendor/vendor_name/') ?>"+mapping_id,
         method: "GET",
         dataType: "JSON",
         success: function (response) {
@@ -346,10 +346,10 @@
       });      
     }
     
-    function modal_detail_area(paket_jenis){
+    function modal_detail_area(mapping_id){
       // alert(mapping_id);
       $.ajax({
-        url: "<?= base_url('mapping_vendor/area_name/') ?>"+paket_jenis,
+        url: "<?= base_url('mapping_vendor/area_name/') ?>"+mapping_id,
         method: "GET",
         dataType: "JSON",
         success: function (response) {
