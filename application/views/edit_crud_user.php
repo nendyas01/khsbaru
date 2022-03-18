@@ -1,5 +1,6 @@
 <div class="content-wrapper">
     <section class="content">
+        <center> <h3>Edit Data User</h3> </center>
         <?php foreach ($crud_user as $cu) { ?>
             <form action="<?php echo base_url() . 'crud_user/update'; ?>" method="post">
 

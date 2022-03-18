@@ -381,6 +381,11 @@
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "6") { ?>
+        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('chart') ?>">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
         <li class="treeview <?= $this->uri->segment(1) == 'kontrol_fin/tambah_addendum' || $this->uri->segment(1) == 'kontrol_fin/tambah'
                               || $this->uri->segment(1) == 'kontrol_fin' || $this->uri->segment(1) == 'list_amandemen' ? 'active' : '' ?>">
           <a href="#">
@@ -428,6 +433,11 @@
         </li>
 
       <?php } elseif ($this->session->userdata("role") == "7") { ?>
+        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('chart') ?>">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
         <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
                               || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
           <a href="#">
@@ -443,9 +453,11 @@
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "8") { ?>
-
-        
-
+        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('chart') ?>">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
         <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
                               || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
           <a href="#">
@@ -474,6 +486,11 @@
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "9") { ?>
+        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('chart') ?>">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
 
         <li class="treeview <?= $this->uri->segment(1) == 'kontrol_fin/tambah_addendum' || $this->uri->segment(1) == 'kontrol_fin/tambah'
                               || $this->uri->segment(1) == 'kontrol_fin' || $this->uri->segment(1) == 'list_amandemen' ? 'active' : '' ?>">
@@ -516,6 +533,11 @@
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "10") { ?>
+        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('chart') ?>">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
         <li class="treeview <?= $this->uri->segment(1) == 'kontrol_fin/tambah_addendum' || $this->uri->segment(1) == 'kontrol_fin/tambah'
                               || $this->uri->segment(1) == 'kontrol_fin' || $this->uri->segment(1) == 'list_amandemen' ? 'active' : '' ?>">
           <a href="#">

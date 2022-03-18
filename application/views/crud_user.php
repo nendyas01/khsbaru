@@ -61,6 +61,7 @@
                                             <td>
                                             <?php  if($cu->USER_STATUS == "0"){ ?>
                                                 <a href="<?php echo base_url("crud_user/aktif/$cu->USERNAME")  ?>" class="btn btn-primary">Aktifkan</a>
+                                                    <span class="btn btn-info">Aktif</span>
 
                                                     <?php }else{ ?>
                                                         <a href="<?php echo base_url("crud_user/non/$cu->USERNAME") ?>" class="btn btn-warning">Nonaktifkan</a>
