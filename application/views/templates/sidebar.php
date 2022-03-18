@@ -50,9 +50,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'inp_addendum' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i>Addendum</a></li>
-            <li <?= $this->uri->segment(1) == 'inp_spj_fin' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_spj_fin') ?>"><i class="fa fa-circle-o"></i>Input SPJ</a></li>
             <li <?= $this->uri->segment(1) == 'kontrol_fin' ? 'class="active"' : '' ?>><a href="<?php echo base_url('kontrol_fin') ?>"><i class="fa fa-circle-o"></i>Kontrol Finansial</a></li>
+            
+            <li <?= $this->uri->segment(1) == 'inp_addendum' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i>Addendum</a></li>
             <li <?= $this->uri->segment(1) == 'list_amandemen' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_amandemen') ?>"><i class="fa fa-circle-o"></i>List Amandemen</a></li>
           </ul>
         </li>
@@ -277,9 +277,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
-            <li><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i> Addendum</a></li>
             <li><a href="<?php echo base_url('kontrol_fin') ?>"><i class="fa fa-circle-o"></i> Kontrol Finansial</a></li>
+            <li <?= $this->uri->segment(1) == 'inp_spj_fin' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_spj_fin') ?>"><i class="fa fa-circle-o"></i>Input SPJ</a></li>
+            <li><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i> Addendum</a></li>
+            
 
 
           </ul>
