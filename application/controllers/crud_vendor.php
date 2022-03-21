@@ -92,7 +92,7 @@ class crud_vendor extends CI_Controller
         );
 
         $where = array('VENDOR_ID' => $VENDOR_ID);
-        $this->m_crudvendor->update_data($where, $data, 'tb_vendor');
+        $this->m_crud_vendor->update_data($where, $data, 'tb_vendor');
         redirect('crud_vendor/index');
     }
 
