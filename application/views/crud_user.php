@@ -24,7 +24,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Username</th>
+                                        <th>Jabatan</th>
                                         <th>ID Role</th>
                                         <th>Kode Area</th>
                                         <th>Nama Area</th>
@@ -44,7 +44,7 @@
                                     ?>
                                         <tr>
                                             <td> <?php echo $no++ ?></td>
-                                            <td> <?php echo $cu->USERNAME ?></td>
+                                            <td> <?php echo $cu-> jabatan ?></td>
                                             <td> <?php echo $cu->role_id ?></td>
                                             <td> <?php echo $cu->AREA_KODE ?></td>
                                             <td> <?php echo $cu->AREA_NAMA ?></td>

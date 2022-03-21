@@ -1,7 +1,7 @@
 <div class="content-wrapper">
     <section class="content">
 
-                        <h3>Edit Data Vendor</h3>
+                        <center><h3>Edit Data Vendor</h3></center>
                             <?php foreach ($crud_vendor as $cv) { ?>
                                 <form action="<?php echo base_url() . 'crud_vendor/update'; ?>" method="post">
 
@@ -61,6 +61,7 @@
                 </div>
             </div>
         </div>
+                           
     </section>
 </div>
 </div>
