@@ -5,7 +5,7 @@
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Data Master Area</li>
         </ol>
     </section>
@@ -20,8 +20,6 @@
                         <font size="2" face="Arial">
                             <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Area</button>
-                                <br>
-                                <br>
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -130,7 +128,6 @@
 
                         <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-
                     </form>
                 </div>
             </div>
