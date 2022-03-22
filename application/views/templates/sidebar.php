@@ -122,7 +122,7 @@
           </a>
           <ul class="treeview-menu">
             <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Input Tagihan</a></li>
+            
             <li <?= $this->uri->segment(1) == 'crud_skkio' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_skkio') ?>"><i class="fa fa-circle-o"></i> Add/Edit SKKO_I</a></li>
           </ul>
         </li>
