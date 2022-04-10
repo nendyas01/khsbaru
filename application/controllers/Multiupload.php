@@ -7,9 +7,7 @@ class Multiupload extends CI_Controller
     public function index()
     {
         $data['title'] = "Upload Multifile";
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
+       
         $this->load->view('upload/multi_file', $data, FALSE);
     }
 

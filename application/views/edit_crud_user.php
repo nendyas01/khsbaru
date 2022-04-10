@@ -1,16 +1,16 @@
 <div class="content-wrapper">
     <section class="content">
-        <center> <h3>Edit Data User</h3> </center>
+        <center> <h3>Edit Data Pengguna</h3> </center>
         <?php foreach ($crud_user as $cu) { ?>
             <form action="<?php echo base_url() . 'crud_user/update'; ?>" method="post">
 
                 <div class="form-group">
                     <label>USERNAME</label>
-                    <input type="text" name="USERNAME" class="form-control" value="<?php echo $cu->USERNAME ?>">
+                    <input type="text" name="USERNAME" class="form-control" value="<?php echo $cu->USERNAME ?>" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label>ID Role</label>
+                    <label>Nama Role</label>
                     <input type="number_format" name="ROLE_ID" class="form-control" value="<?php echo $cu->role_id ?>">
                 </div>
 

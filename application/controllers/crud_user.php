@@ -6,35 +6,47 @@ class crud_user extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
         $this->load->model('m_crud_user');
+        if($this->session->userdata("status")==0){
+            $this->session->set_flashdata('msg', 'non');
+			redirect('login');
+       
+		}
     }
 
     public function index()
     {
         $data['crud_user'] = $this->m_crud_user->tampil_data();
+        $data['role'] = $this->m_crud_user->getrole();
+        $data['nama_area'] = $this->m_crud_user->getarea();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('crud_user', $data);
         $this->load->view('templates/footer');
     }
 
-    public function tambah_aksi()
-    {
-        $USERNAME = $this->input->post('USERNAME');
-        $role_id = $this->input->post('role_id');
-        $AREA_KODE = $this->input->post('AREA_KODE');
+    // public function tambah_aksi()
+    // {
+    //     $USERNAME = $this->input->post('USERNAME');
+    //     $role_id = $this->input->post('role_id');
+    //     $AREA_KODE = $this->input->post('AREA_KODE');
 
-        $data = array(
-            'USERNAME'           => $USERNAME,
-            'role_id'            => $role_id,
-            'AREA_KODE'          => $AREA_KODE,
-        );
+    //     $data = array(
+    //         'USERNAME'           => $USERNAME,
+    //         'role_id'            => $role_id,
+    //         'AREA_KODE'          => $AREA_KODE,
+    //     );
 
-        $this->m_crud_user->input_data($data, 'tb_user');
-        redirect('crud_user/index');
+    //     $this->m_crud_user->input_data($data, 'tb_user');
+    //     // $this->session->set_flashdata('sukses', 'Data berhasil disimpan!');
+    //     redirect('crud_user/index');
+    // }
+    public function tambah_aksi(){
+        $this->load->library('form_validation'); 
+
+        $this->form_validation->set_rules('USERNAME', 'Username', 'trim|required');
+        $this->form_validation->set_rules('role_id', 'ID Role', 'trim|required');
+        $this->form_validation->set_rules('USERNAME', 'Username', 'trim|required');
     }
 
     public function hapus($USERNAME)

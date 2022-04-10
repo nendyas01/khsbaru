@@ -2,11 +2,12 @@
 
 class crud_area extends CI_Controller
 {
-
     public function __construct()
     {
         parent::__construct();
         $this->load->model('m_crud_area');
+       
+       
     }
 
     public function index()

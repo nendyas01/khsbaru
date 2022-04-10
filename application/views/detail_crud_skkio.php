@@ -72,7 +72,7 @@
                 </tr>
               </table>
               <table id="example" class="table table-striped table-bordered table-responsive mb-5" cellspacing="0">
-                <h5>Tabel History sebelumnya</h5>
+                <center><h3>Tabel History</h3></center>
                 
                 <thead>
                   <tr>

@@ -9,6 +9,7 @@ class perijinan extends CI_Controller
         parent::__construct();
 
         $this->load->model('m_perijinan');
+       
     }
 
     public function index()

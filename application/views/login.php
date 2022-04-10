@@ -47,7 +47,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Silahkan melakukan Login!</p>
 
       <?= $this->session->flashdata('message'); ?>
 
@@ -69,9 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row">
           <div class="col-xs-8">
             <div class="checkbox icheck">
-              <label>
-                <input type="checkbox"> Remember Me
-              </label>
+              
             </div>
           </div>
 
@@ -79,7 +77,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </form>
       <!-- /.col -->
       <div class="col-xs-4">
-        <button type="submit" class="btn btn-primary ">Sign In</button>
+        <center><button type="submit" class="btn btn-primary ">Masuk</button></center>
       </div>
 
       <!-- /.col -->
@@ -91,7 +89,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <a class="small" href="https://api.whatsapp.com/send?phone=6287872925880&text=Saya%20lupa%20password">Forgot Password?</a>
     </div> -->
     <div class="text-center">
-      <a class="small" href="<?= base_url('registrasi'); ?>">Create an Account!</a>
+      <a class="small" href="<?= base_url('registrasi'); ?>">Buat Akun Baru</a>
     </div>
 
   </div>

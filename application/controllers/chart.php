@@ -3,11 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class chart extends CI_Controller
 { 
-    function __construct(){ 
-        parent::__construct(); 
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('m_crud_user');
+        if($this->session->userdata("status") == "0"){
+            $this->session->set_flashdata('msg', 'non');
+            redirect("login");
+        }
+    
         $this->load->model('m_chart'); 
     }
     function index(){ 

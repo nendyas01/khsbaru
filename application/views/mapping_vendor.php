@@ -88,14 +88,8 @@
                   <script type="text/javascript">
                     $('#example').DataTable({
                       dom: 'lBfrtip',
-                      buttons: [{
-                          extend: 'copy',
-                          oriented: 'potrait',
-                          download: 'open',
-                          widthX: '90px'
-
-                        },
-                        'csv', 'excel', 'pdf', 'print'
+                      buttons: [
+                        'excel', 'pdf', 'print'
                       ]
                     });
                   </script>
@@ -285,7 +279,7 @@
       </table>
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
     </div>
     <!-- /.modal-content -->
