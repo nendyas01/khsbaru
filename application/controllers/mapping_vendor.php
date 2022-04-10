@@ -10,9 +10,9 @@ class mapping_vendor extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
+        if (!$this->session->userdata("username")) {
+            redirect('login');
+        }
         $this->load->model('m_mapping_vendor');
     }
 
@@ -37,7 +37,8 @@ class mapping_vendor extends CI_Controller
         echo json_encode($data);
     }
 
-    public function area_name($mapping_id){
+    public function area_name($mapping_id)
+    {
         $data = $this->m_mapping_vendor->get_area_nama($mapping_id);
         // var_dump($data);
         // die();
@@ -101,7 +102,7 @@ class mapping_vendor extends CI_Controller
     }
 
 
-    
+
     public function hapus($mapping_id)
     {
         $where = array('mapping_id' => $mapping_id);

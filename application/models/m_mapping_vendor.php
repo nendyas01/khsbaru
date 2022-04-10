@@ -16,30 +16,30 @@ class m_mapping_vendor extends CI_Model
         return $this->db->get();
     }
 
-	public function get_vendor_nama($mapping_id)
-	{
+    public function get_vendor_nama($mapping_id)
+    {
         // $this->db->distinct('c.vendor_nama');
-		$this->db->select('c.vendor_nama');
-		$this->db->from('tb_mapping_vendor a');
-		$this->db->join('tb_paket b', 'a.paket_jenis = b.paket_jenis', 'left');
-		$this->db->join('tb_vendor c', 'a.vendor_id = c.vendor_id', 'left');
+        $this->db->select('c.vendor_nama');
+        $this->db->from('tb_mapping_vendor a');
+        $this->db->join('tb_paket b', 'a.paket_jenis = b.paket_jenis', 'left');
+        $this->db->join('tb_vendor c', 'a.vendor_id = c.vendor_id', 'left');
         // $this->db->join('tb_area d', 'a.area_kode = d.area_kode', 'left');
-		$this->db->where('a.mapping_id', $mapping_id);
+        $this->db->where('a.mapping_id', $mapping_id);
         $this->db->group_by('c.vendor_nama');
-		return $this->db->get()->result();
-	}
+        return $this->db->get()->result();
+    }
 
     public function get_area_nama($mapping_id)
-	{
+    {
         // $this->db->distinct();
-		$this->db->select('c.area_nama');
-		$this->db->from('tb_mapping_vendor a');
-		$this->db->join('tb_paket b', 'a.paket_jenis = b.paket_jenis', 'left');
-		$this->db->join('tb_area c', 'a.area_kode = c.area_kode', 'left');
-		$this->db->where('a.mapping_id', $mapping_id);
-		$this->db->group_by('c.area_nama');
-		return $this->db->get()->result();
-	}
+        $this->db->select('c.area_nama');
+        $this->db->from('tb_mapping_vendor a');
+        $this->db->join('tb_paket b', 'a.paket_jenis = b.paket_jenis', 'left');
+        $this->db->join('tb_area c', 'a.area_kode = c.area_kode', 'left');
+        $this->db->where('a.mapping_id', $mapping_id);
+        $this->db->group_by('c.area_nama');
+        return $this->db->get()->result();
+    }
 
 
     function getID()
@@ -94,5 +94,3 @@ class m_mapping_vendor extends CI_Model
         $this->db->delete($table);
     }
 }
-
-

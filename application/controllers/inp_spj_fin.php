@@ -35,4 +35,19 @@ class inp_spj_fin extends CI_Controller
             }
         }
     }
+
+    public function get_vendor()
+    {
+        $jns_paket = $this->input->post('id');
+        $data = $this->m_inp_spj_fin->get_vendor($jns_paket);
+        echo json_encode($data);
+    }
+
+    public function vendor_name($spj_no)
+    {
+        $data = $this->m_inp_spj_fin->get_vendor_nama($spj_no);
+        // var_dump($dpaket_jenis);
+        // die();
+        echo json_encode($data);
+    }
 }

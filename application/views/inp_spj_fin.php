@@ -1,3 +1,8 @@
+<link href="<?php echo base_url() ?>assets/bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+<script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url() ?>assets/bower_components/select2/dist/js/select2.min.js"></script>
+
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
@@ -12,6 +17,7 @@
     <section class="content">
 
         <div class="row">
+
             <div class="col-md-12">
                 <section class="panel">
                     <header class="panel-heading">SELEKSI VENDOR</header>
@@ -108,7 +114,7 @@
                                     <!-- Textbox Paket Pekerjaan -->
                                     <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Paket Pekerjaan</label>
                                     <div class="col-lg-9">
-                                        <select class="form-control m-b-10" id="paket" name="var_paket_pekerjaan">
+                                        <select class="form-control m-b-10" id="PAKET_JENIS" name="jns_paket">
                                             <option value="0">-- Pilih Paket --</option>
                                             <?php foreach ($jenis_paket as $jp) : ?>
                                                 <option value="<?php echo $jp->PAKET_JENIS; ?>"> <?php echo $jp->PAKET_DESKRIPSI; ?></option>
@@ -118,15 +124,12 @@
                                 </div>
 
                                 <!-- tahun skarang date('Y'); -->
-                                <div id="update"></div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Vendor Yang Tersedia</label>
                                     <div class="col-sm-10">
-                                        <table id="availablevendor" class="table table-condensed">
-                                            <tr>
-                                                <td>BELUM ADA VENDOR YANG TERSEDIA</td>
-                                            </tr>
-                                        </table>
+                                        <select class="vendor form-control m-b-10" style="width:100%;" name="vendor[]" multiple>
+                                            <option selected="0"></option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -210,6 +213,7 @@
                                 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
                                 <style>
                                     .select2-container--default .select2-selection--multiple .select2-selection__choice {
                                         background-color: blue;
@@ -217,12 +221,13 @@
 
                                     }
                                 </style>
+
                                 <script>
                                     $(document).ready(function() {
                                         $('#PAKET_JENIS').change(function() {
                                             var id = $(this).val();
                                             $.ajax({
-                                                url: "<?php echo base_url(); ?>/inp_spj_fin/getpaket",
+                                                url: "<?php echo base_url(); ?>/inp_spj_fin/get_vendor",
                                                 method: "POST",
                                                 data: {
                                                     id: id
@@ -361,5 +366,25 @@
         if (document.getElementById('termin').checked) {
             document.getElementById('termin_group').style.display = 'block';
         } else document.getElementById('termin_group').style.display = 'none';
+    }
+
+    function modal_detail(spj_no) {
+        $.ajax({
+            url: "<?= base_url('inp_spj_fin/vendor_name/') ?>" + spj_no,
+            method: "GET",
+            dataType: "JSON",
+            success: function(response) {
+                var html = '';
+                $.each(response, function(index, value) {
+                    console.log(value);
+                    html += '<tr>' +
+                        '<td>' + (index + 1) + '</td>' +
+                        '<td>' + value.vendor_nama + '</td>' +
+                        '</tr>';
+                });
+                $('#modal_detail').modal('show');
+                $('#list_vendor').html(html);
+            }
+        });
     }
 </script>
