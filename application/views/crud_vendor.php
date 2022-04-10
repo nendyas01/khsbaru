@@ -32,9 +32,7 @@
                                         <th>Status</th>
                                         <th>Email_2</th>
                                         <th>Jabatan</th>
-                                        <th colspan="1">Detail</th>
-                                        <th>Hapus</th>
-                                        <th>Edit</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
 
@@ -53,9 +51,11 @@
                                             <td> <?php echo $cv->STATUS ?></td>
                                             <td> <?php echo $cv->EMAIL_2 ?></td>
                                             <td> <?php echo $cv->JABATAN ?></td>
-                                            <td><?php echo anchor('crud_vendor/detail_crud_vendor/' . $cv->VENDOR_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_vendor/hapus/' . $cv->VENDOR_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
-                                            <td><?php echo anchor('crud_vendor/edit_crud_vendor/' . $cv->VENDOR_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <td>
+                                                <a href="<?php echo base_url('crud_vendor/detail_crud_vendor/' . $cv->VENDOR_ID) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
+                                                        <a href="<?php echo base_url('crud_vendor/hapus/' . $cv->VENDOR_ID) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
+                                                                <a href="<?php echo base_url('crud_vendor/edit_crud_vendor/' . $cv->VENDOR_ID) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> <a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
 

@@ -21,7 +21,7 @@
                                     <th>No</th>
                                     <th>No. SPJ</th>
                                     <th>Surat SPJ yang telah dibuat</th>
-                                    <th>Edit</th>
+                                    <th>Aksi</th>
 
                                 </tr>
                             </thead>

@@ -23,14 +23,13 @@
                                 <br>
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>Paket Jenis</th>
                                         <th>Paket Deskripsi</th>
                                         <th>Satuan</th>
                                         <th>Paket Deskripsi 2</th>
                                         <th>Status</th>
-                                        <th colspan="1">Detail</th>
-                                        <th>Hapus</th>
-                                        <th>Edit</th>
+                                        <th> Aksi </th>
                                     </tr>
                                 </thead>
 
@@ -40,14 +39,27 @@
                                     foreach ($crud_paket as $cp) {
                                     ?>
                                         <tr>
+                                            <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $cp->PAKET_JENIS ?></td>
                                             <td> <?php echo $cp->PAKET_DESKRIPSI ?></td>
                                             <td> <?php echo $cp->SATUAN ?></td>
                                             <td> <?php echo $cp->PAKET_DESKRIPSI2 ?></td>
-                                            <td> <?php echo $cp->STATUS ?></td>
-                                            <td><?php echo anchor('crud_paket/detail_crud_paket/' . $cp->PAKET_JENIS, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_paket/hapus/' . $cp->PAKET_JENIS, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
-                                            <td><?php echo anchor('crud_paket/edit_crud_paket/' . $cp->PAKET_JENIS, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <td>
+                                                <?php if ($cp->STATUS == "0") { ?>
+                                                    <a href="<?php echo base_url("crud_user/aktif/$cp->PAKET_JENIS")  ?>" class="btn btn-danger">Aktif</a>
+                                                    <!-- <span class="btn btn-info">Aktif</span> -->
+
+                                                <?php } else { ?>
+                                                    <a href="<?php echo base_url("crud_user/non/$cp->PAKET_JENIS") ?>" class="btn btn-info">Nonaktif</a>
+
+
+                                                <?php }  ?>
+                                            </td>
+                                            <td>
+                                                <a href="<?php echo base_url('crud_paket/detail_crud_paket/' . $cp->PAKET_JENIS) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
+                                                        <a href="<?php echo base_url('crud_paket/hapus/' . $cp->PAKET_JENIS) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
+                                                                <a href="<?php echo base_url('crud_paket/edit_crud_paket/' . $cp->PAKET_JENIS) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> <a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
 
@@ -65,24 +77,10 @@
                                     <script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
                                     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
                                     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-                                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-                                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
                                     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
                                     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
-                                    <script type="text/javascript">
-                                        $('#example').DataTable({
-                                            dom: 'lBfrtip',
-                                            buttons: [{
-                                                    extend: 'copy',
-                                                    oriented: 'potrait',
-                                                    download: 'open',
-                                                    widthX: '90px'
-                                                },
-                                                'csv', 'excel', 'pdf', 'print'
-                                            ]
-                                        });
-                                    </script>
+
                                 </tbody>
                             </table>
                     </div>

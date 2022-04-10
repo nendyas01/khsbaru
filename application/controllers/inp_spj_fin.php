@@ -14,6 +14,7 @@ class inp_spj_fin extends CI_Controller
 
     function index()
     {
+        $data['inp_spj_fin'] = $this->m_inp_spj_fin->tampil_data_dua()->result();
         $data['skk'] = $this->m_inp_spj_fin->getdata();
         $data['jenis_paket'] = $this->m_inp_spj_fin->getpaket();
         $data['area'] = $this->m_inp_spj_fin->getarea();

@@ -31,7 +31,7 @@
                                         <th>Tanggal Keluar SKRD</th>
                                         <th>Pembayaran Retribusi</th>
                                         <!--isinya dibayar tgl berapa-->
-                                        <th>Action</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
 

@@ -10,14 +10,10 @@ class mapping_vendor extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-<<<<<<< HEAD
         if (!$this->session->userdata("username")) {
             redirect('login');
         }
-=======
->>>>>>> 94237ab2e0838e3c3ffb5407b9003579f19d2302
         $this->load->model('m_mapping_vendor');
-       
     }
 
     public function index()
