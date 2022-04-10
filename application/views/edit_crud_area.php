@@ -18,6 +18,7 @@
                     <input type="text" name="AREA_ZONE" class="form-control" value="<?php echo $car->AREA_ZONE ?>">
                 </div>
 
+                <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
                 <button type="reset" class="btn btn-danger">Reset</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
 

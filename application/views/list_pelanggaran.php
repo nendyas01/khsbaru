@@ -29,8 +29,8 @@
                                         <th>No KHS</th>
                                         <th>Paket</th>
                                         <th>Jenis Pelanggaran</th>
-                                        <th>Status</th>
-                                        <th>Ref</th>
+                                        <!-- <th>Status</th>
+                                        <th>Ref</th> -->
                                     </tr>
                                 </thead>
 
@@ -49,8 +49,8 @@
                                             <td> <?php echo $ap->no_KHS ?></td>
                                             <td> <?php echo $ap->paket ?></td>
                                             <td> <?php echo $ap->jenis ?></td>
-                                            <td> <?php echo $ap->status ?></td>
-                                            <td> <?php echo $ap->REF ?></td>
+                                            <!-- <td> <?php echo $ap->status ?></td>
+                                            <td> <?php echo $ap->REF ?></td> -->
 
                                         </tr>
 

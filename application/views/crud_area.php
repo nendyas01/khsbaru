@@ -19,7 +19,10 @@
                     <div class="panel-body table-responsive">
                         <font size="2" face="Arial">
                             <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Area</button>
+                                <button type="button" class="mb-3 btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Area</button>
+                                </hr>
+                                <br>
+                                <br>
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -29,6 +32,7 @@
                                         <th colspan="1">Detail</th>
                                         <th>Hapus</th>
                                         <th>Edit</th>
+
 
                                     </tr>
 
@@ -79,6 +83,7 @@
                                         $('#example').DataTable({
                                             dom: 'lBfrtip',
                                             buttons: [{
+                                                    align: 'center',
                                                     extend: 'copy',
                                                     oriented: 'potrait',
                                                     download: 'open',
@@ -114,7 +119,8 @@
 
                         <div class="form-group">
                             <label>AREA ZONE</label>
-                            <select name="AREA_ZONE" id="AREA_ZONE" class="form-control">
+                            <input type="text" name="AREA_ZONE" class="form-control">
+                            <!--  <select name="AREA_ZONE" id="AREA_ZONE" class="form-control">
                                 <option selected="0">- Pilih Zona Area -</option>
 
                                 <option value="0">0</option>
@@ -123,7 +129,7 @@
                                 <option value="3">3</option>
                                 <option value="4">4</option>
 
-                            </select>
+                            </select> -->
                         </div>
 
                         <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>

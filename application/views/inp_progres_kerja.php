@@ -75,7 +75,7 @@
                                 <div class="col-sm-2">
                                     <div class="input-group m-b-10">
                                         <input type="text" class="form-control" name="var_realisasi" id="var_realisasi">
-                                        <span class="input-group-addon" id="satuan"></span>
+                                        <span class="input-group-addon" id="satuan">kms</span>
                                     </div>
                                 </div>
                             </div>
