@@ -88,14 +88,8 @@
                   <script type="text/javascript">
                     $('#example').DataTable({
                       dom: 'lBfrtip',
-                      buttons: [{
-                          extend: 'copy',
-                          oriented: 'potrait',
-                          download: 'open',
-                          widthX: '90px'
-
-                        },
-                        'csv', 'excel', 'pdf', 'print'
+                      buttons: [
+                        'excel', 'pdf', 'print'
                       ]
                     });
                   </script>

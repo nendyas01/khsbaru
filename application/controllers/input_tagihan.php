@@ -1,25 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class anggaran extends CI_Controller
+class input_tagihan extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_crud_user');
-        if($this->session->userdata("status")==0){
-			redirect('login');
-		}
+        if (!$this->session->userdata("username")) {
+            redirect('login');
+        }
+        $this->load->model('m_anggaran');
     }
-    public function index()
-    {
-        $data['anggaran'] = $this->m_anggaran->tampil_data();
-        $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-        $this->load->view('anggaran', $data);
-        $this->load->view('templates/footer');
-        //print_r($data);
-    }
+    
 
 
     public function v_input_tagihan()

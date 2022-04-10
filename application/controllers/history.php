@@ -5,9 +5,7 @@ class anggaran extends CI_Controller
 { 
     public function __construct(){ 
         parent::__construct(); 
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
+       
         $this->load->model('m_history_skko'); 
     }
     public function history_skko(){
@@ -18,4 +16,6 @@ class anggaran extends CI_Controller
         $this->load->view('templates/footer');
 
     }
+
+    
 }

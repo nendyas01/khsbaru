@@ -8,9 +8,10 @@ class pengajuan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata("username")){
+        if($this->session->userdata("status")==0){
 			redirect('login');
 		}
+    
         $this->load->model('m_pengajuan');
     }
 

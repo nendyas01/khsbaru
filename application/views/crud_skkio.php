@@ -32,9 +32,8 @@
                     <th>SKKI NILAI</th>
                     <th>SKKI TERPAKAI</th>
                     <th>SKKI TANGGAL</th>
-                    <th colspan="1">Detail</th>
-                    <th>Hapus</th>
-                    <th>Edit</th>
+                    
+                    <th>Aksi</th>
 
                   </tr>
 
@@ -54,10 +53,12 @@
                       <td> <?php echo 'Rp ' . number_format($cs->SKKI_NILAI, 0, ',', '.') ?></td>
                       <td> <?php echo 'Rp ' . number_format($cs->SKKI_TERPAKAI, 0, ',', '.') ?></td>
                       <td> <?php echo $cs->SKKI_TANGGAL  ?></td>
-                      <td> <?php echo anchor('crud_skkio/detail_crud_skkio/' . $cs->SKKI_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                      <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_skkio/hapus/' . $cs->SKKI_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
-                      <td><?php echo anchor('crud_skkio/edit_crud_skkio/' . $cs->SKKI_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
-
+                      <td>
+                          <a href ="<?php echo base_url('crud_skkio/detail_crud_skkio/' . $cs->SKKI_ID) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
+                          <a href ="<?php echo base_url('crud_user/hapus/' .$cs->SKKI_ID) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
+                          <a href ="<?php echo base_url('crud_skkio/edit_crud_skkio/'. $cs->SKKI_ID) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> <a>
+                      </td> 
+                      
                     </tr>
                   <?php } ?>
 

@@ -13,6 +13,19 @@ class m_crud_user extends CI_Model
         return $result;
     }
 
+    public function getarea()
+    {
+        $query = $this->db->query("SELECT * FROM tb_area ORDER BY AREA_NAMA ASC");
+        return $query->result();
+    }
+
+    public function getrole()
+    {
+        $query = $this->db->query("SELECT * FROM tb_role ORDER BY role_nama ASC");
+        return $query->result();
+    }
+
+
     public function input_data($data, $table)
     {
         $this->db->insert($table, $data);

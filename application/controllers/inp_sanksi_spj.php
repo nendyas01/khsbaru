@@ -8,6 +8,7 @@ class inp_sanksi_spj extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_inp_sanksi_spj');
+        
     }
 
     public function index()

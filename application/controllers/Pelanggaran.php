@@ -3,13 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pelanggaran extends CI_Controller
 {
-    function __construct()
+    public function __construct()
     {
-        parent::__construct();
-        if(!$this->session->userdata("username")){
-			redirect('login');
-		}
+        parent::__construct();    
         $this->load->model('m_progress');
+        if($this->session->userdata("username")==0){
+			redirect('login');
+        }
     }
 
     /* function inp_pel_khs()

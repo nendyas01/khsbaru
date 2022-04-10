@@ -5,7 +5,10 @@ class Ba_survey_submit extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_ba_survey');
+        $this->load->model('m_crud_user');
+        if($this->session->userdata("status")==0){
+			redirect('login');
+		}
     }
 
     public function index()
