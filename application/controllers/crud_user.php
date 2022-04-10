@@ -25,29 +25,25 @@ class crud_user extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    // public function tambah_aksi()
-    // {
-    //     $USERNAME = $this->input->post('USERNAME');
-    //     $role_id = $this->input->post('role_id');
-    //     $AREA_KODE = $this->input->post('AREA_KODE');
+    public function tambah_aksi()
+    {
+        $USERNAME = $this->input->post('USERNAME');
+        $role_id = $this->input->post('role_id');
+        $AREA_KODE = $this->input->post('AREA_KODE');
 
-    //     $data = array(
-    //         'USERNAME'           => $USERNAME,
-    //         'role_id'            => $role_id,
-    //         'AREA_KODE'          => $AREA_KODE,
-    //     );
+        $data = array(
+            'USERNAME'           => $USERNAME,
+            'role_id'            => $role_id,
+            'AREA_KODE'          => $AREA_KODE,
+        );
 
-    //     $this->m_crud_user->input_data($data, 'tb_user');
-    //     // $this->session->set_flashdata('sukses', 'Data berhasil disimpan!');
-    //     redirect('crud_user/index');
-    // }
-    public function tambah_aksi(){
-        $this->load->library('form_validation'); 
-
-        $this->form_validation->set_rules('USERNAME', 'Username', 'trim|required');
-        $this->form_validation->set_rules('role_id', 'ID Role', 'trim|required');
-        $this->form_validation->set_rules('USERNAME', 'Username', 'trim|required');
+        $this->m_crud_user->input_data('tb_user', $data);
+        // $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        echo json_encode(array('status'=>'sukses'));
+        
     }
+
+    
 
     public function hapus($USERNAME)
     {

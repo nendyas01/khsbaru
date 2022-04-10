@@ -72,7 +72,7 @@
                 </tr>
               </table>
               <table id="example" class="table table-striped table-bordered table-responsive mb-5" cellspacing="0">
-                <center><h3>Tabel History</h3></center>
+                <center><h3>Tabel Riwayat Perubahan</h3></center>
                 
                 <thead>
                   <tr>
@@ -116,26 +116,14 @@
                   <script type="text/javascript">
                     $('#example').DataTable({
                       dom: 'lBfrtip',
-                      buttons: [{
-                          extend: 'copy',
-                          oriented: 'potrait',
-                          download: 'open',
-                          widthX: '90px'
-                        },
-                        'csv', 'excel', 'pdf', 'print'
+                      buttons: ['excel', 'pdf', 'print'
                       ]
                     });
                   </script>
                   <script type="text/javascript">
                     $('#history').DataTable({
                       dom: 'lBfrtip',
-                      buttons: [{
-                          extend: 'copy',
-                          oriented: 'potrait',
-                          download: 'open',
-                          widthX: '90px'
-                        },
-                        'csv', 'excel', 'pdf', 'print'
+                      buttons: ['excel', 'pdf', 'print'
                       ]
                     });
                   </script>

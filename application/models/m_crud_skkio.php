@@ -27,11 +27,12 @@ class m_crud_skkio extends CI_Model
         return $query->result();
     }
 
-    public function input_data($data, $table)
+    public function input_data($table,$data) 
     {
         $this->db->insert($table, $data);
     }
-
+    
+    
     public function hapus_data($where, $table)
     {
         $this->db->where($where);

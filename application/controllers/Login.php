@@ -16,20 +16,25 @@ class Login extends CI_Controller {
         $password = $_POST['PASSWORD'];
         $query = $this->db->query("select * from tb_user where USERNAME='$username' and PASSWORD=('$password')");
         
-        if($query->num_rows() > 0){
-            $row = $query->row();
-            $data = array(
-                'username'  => $row->USERNAME,
-                'status'    => $row->USER_STATUS,
-                'role'      => $row->role_id
-                
-            );
-            $this->session->set_userdata($data);
-            redirect('chart/index');
+        if($username != '' || $password != ''){
+            if($query->num_rows() > 0){
+                $row = $query->row();
+                $data = array(
+                    'username'  => $row->USERNAME,
+                    'status'    => $row->USER_STATUS,
+                    'role'      => $row->role_id
+                    
+                );
+                $this->session->set_userdata($data);
+                redirect('chart/index');
+            }else{
+                $this->session->set_flashdata('msg', 'non');
+                redirect('login');
+
+            }
         }else{
             $this->session->set_flashdata('msg', 'gagal');
             redirect('login');
-
         }
     }
 
