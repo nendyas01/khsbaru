@@ -7,11 +7,10 @@ class crud_user extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_crud_user');
-        if($this->session->userdata("status")==0){
+        if ($this->session->userdata("status") == 0) {
             $this->session->set_flashdata('msg', 'non');
-			redirect('login');
-       
-		}
+            redirect('login');
+        }
     }
 
     public function index()
@@ -39,11 +38,10 @@ class crud_user extends CI_Controller
 
         $this->m_crud_user->input_data('tb_user', $data);
         // $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        echo json_encode(array('status'=>'sukses'));
-        
+        echo json_encode(array('status' => 'sukses'));
     }
 
-    
+
 
     public function hapus($USERNAME)
     {
@@ -92,12 +90,12 @@ class crud_user extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function aktif($username='')
+    public function aktif($username = '')
     {
         $this->db->query("UPDATE tb_user SET USER_STATUS='1' where username='$username'");
         redirect('crud_user/index');
     }
-    public function non($username='')
+    public function non($username = '')
     {
         $this->db->query("UPDATE tb_user SET USER_STATUS='0' where username='$username'");
         redirect('crud_user/index');

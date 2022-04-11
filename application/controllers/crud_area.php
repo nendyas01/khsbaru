@@ -51,7 +51,6 @@ class crud_area extends CI_Controller
                     'sukses' => 'Data Berhasil Di Hapus'
                 ];
             }
-
             echo json_encode($msg);
         }
     }

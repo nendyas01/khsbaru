@@ -7,7 +7,7 @@ class m_crud_user extends CI_Model
         $this->db->select('tb_user.*,tb_area.AREA_NAMA,tb_area.AREA_ZONE');
         $this->db->from('tb_user');
         $this->db->join('tb_area', 'tb_area.AREA_KODE = tb_user.AREA_KODE', 'inner');
-        
+
         $query = $this->db->get();
         $result = $query->result();
         return $result;
@@ -26,7 +26,7 @@ class m_crud_user extends CI_Model
     }
 
 
-    public function input_data($table, $data )
+    public function input_data($table, $data)
     {
         $this->db->insert($table, $data);
     }

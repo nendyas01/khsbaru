@@ -29,11 +29,7 @@
                                         <th>Area Kode</th>
                                         <th>Area Nama</th>
                                         <th>Area Zone</th>
-                                        <th colspan="1">Detail</th>
-                                        <th>Hapus</th>
-                                        <th>Edit</th>
-
-
+                                        <th>Aksi</th>
                                     </tr>
 
                                 </thead>
@@ -43,7 +39,7 @@
                                     $no = 1;
                                     foreach ($crud_area as $car) {
 
-                                        $tombolhapus = "<button type=\"button\" class=\"btn btn-outline-danger\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
+                                        $tombolhapus = "<button type=\"button\" class=\"btn btn-danger btn-sm\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
                                         <i class=\"fa fa-trash\"></i>
                                         </button>";
                                     ?>
@@ -52,10 +48,18 @@
                                             <td> <?php echo $car->AREA_KODE ?></td>
                                             <td> <?php echo $car->AREA_NAMA ?></td>
                                             <td> <?php echo $car->AREA_ZONE ?></td>
-                                            <td><?php echo anchor('crud_area/detail_crud_area/' . $car->AREA_KODE, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                                            <!-- <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
-                                            <td> <?php echo $tombolhapus ?></td>
-                                            <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+
+                                            <td>
+                                                <a href="<?php echo base_url('crud_area/detail_crud_area/' . $car->AREA_KODE) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
+                                                <a href="<?php echo base_url('crud_user/hapus/' . $cu->USERNAME) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
+                                                        <a href="<? echo base_url('crud_area/edit_crud_area/' . $car->AREA_KODE) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            </td>
+
+
+                                            <!-- <td><?php echo anchor('crud_area/detail_crud_area/' . $car->AREA_KODE, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
+                                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
+                                            <!-- <td> <?php echo $tombolhapus ?></td>
+                                            <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td> --> -->
 
                                         </tr>
                                     <?php } ?>
@@ -124,53 +128,14 @@
                                                                     icon: 'success',
                                                                     title: 'Konfirmasi',
                                                                     text: response.sukses
-
                                                                 });
-                                                                crud_area();
 
+                                                                redirect(crud_area());
                                                             }
-
                                                         }
                                                     });
                                                 }
                                             })
-
-                                            /* Swal.fire({
-                                                title: 'Are you sure?',
-                                                text: "You won't be able to revert this!",
-                                                icon: 'warning',
-                                                showCancelButton: true,
-                                                confirmButtonColor: '#3085d6',
-                                                cancelButtonColor: '#d33',
-                                                confirmButtonText: 'Yes, delete it!',
-                                                cancelButtonText: 'Tidak'
-                                            }).then((result) => {
-                                                if (result.value) {
-                                                    $.ajax({
-                                                        type: "post",
-                                                        url: "<?= site_url('crud_area/hapus') ?>",
-                                                        data: {
-                                                            AREA_KODE: AREA_KODE,
-                                                        },
-                                                        dataType: "json",
-                                                        success: function(response) {
-                                                            if (response.sukses) {
-                                                                Swal.fire({
-                                                                        icon: 'success',
-                                                                        title: 'Konfirmasi',
-                                                                        text: response.sukses
-                                                                    )
-                                                                };
-
-                                                                tampildatamahasiswa();
-
-
-
-                                                            }
-                                                        }
-                                                    });
-                                                }
-                                            }) */
                                         }
                                     </script>
                                 </tbody>
