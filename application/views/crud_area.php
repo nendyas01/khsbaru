@@ -42,6 +42,10 @@
                                     <?php
                                     $no = 1;
                                     foreach ($crud_area as $car) {
+
+                                        $tombolhapus = "<button type=\"button\" class=\"btn btn-outline-danger\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
+                                        <i class=\"fa fa-trash\"></i>
+                                        </button>";
                                     ?>
                                         <tr>
                                             <td> <?php echo $no++ ?></td>
@@ -49,7 +53,8 @@
                                             <td> <?php echo $car->AREA_NAMA ?></td>
                                             <td> <?php echo $car->AREA_ZONE ?></td>
                                             <td><?php echo anchor('crud_area/detail_crud_area/' . $car->AREA_KODE, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                                            <!-- <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
+                                            <td> <?php echo $tombolhapus ?></td>
                                             <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
 
                                         </tr>
@@ -92,6 +97,81 @@
                                                 'csv', 'excel', 'pdf', 'print'
                                             ]
                                         });
+
+                                        function hapus(AREA_KODE) {
+
+                                            Swal.fire({
+                                                title: 'Hapus',
+                                                text: 'Yakin ingin menghapus data area?',
+                                                icon: 'warning',
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#3085d6',
+                                                cancelButtonColor: '#d33',
+                                                confirmButtonText: 'Ya, Hapus',
+                                                cancelButtonText: 'Tidak'
+                                            }).then((result) => {
+                                                if (result.value) {
+                                                    $.ajax({
+                                                        type: "post",
+                                                        url: "<?= site_url('crud_area/hapus') ?>",
+                                                        data: {
+                                                            AREA_KODE: AREA_KODE,
+                                                        },
+                                                        dataType: "json",
+                                                        success: function(response) {
+                                                            if (response.sukses) {
+                                                                Swal.fire({
+                                                                    icon: 'success',
+                                                                    title: 'Konfirmasi',
+                                                                    text: response.sukses
+
+                                                                });
+                                                                crud_area();
+
+                                                            }
+
+                                                        }
+                                                    });
+                                                }
+                                            })
+
+                                            /* Swal.fire({
+                                                title: 'Are you sure?',
+                                                text: "You won't be able to revert this!",
+                                                icon: 'warning',
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#3085d6',
+                                                cancelButtonColor: '#d33',
+                                                confirmButtonText: 'Yes, delete it!',
+                                                cancelButtonText: 'Tidak'
+                                            }).then((result) => {
+                                                if (result.value) {
+                                                    $.ajax({
+                                                        type: "post",
+                                                        url: "<?= site_url('crud_area/hapus') ?>",
+                                                        data: {
+                                                            AREA_KODE: AREA_KODE,
+                                                        },
+                                                        dataType: "json",
+                                                        success: function(response) {
+                                                            if (response.sukses) {
+                                                                Swal.fire({
+                                                                        icon: 'success',
+                                                                        title: 'Konfirmasi',
+                                                                        text: response.sukses
+                                                                    )
+                                                                };
+
+                                                                tampildatamahasiswa();
+
+
+
+                                                            }
+                                                        }
+                                                    });
+                                                }
+                                            }) */
+                                        }
                                     </script>
                                 </tbody>
                             </table>
@@ -122,13 +202,11 @@
                             <input type="text" name="AREA_ZONE" class="form-control">
                             <!--  <select name="AREA_ZONE" id="AREA_ZONE" class="form-control">
                                 <option selected="0">- Pilih Zona Area -</option>
-
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
-
                             </select> -->
                         </div>
 

@@ -29,10 +29,12 @@ class m_crud_area extends CI_Model
         $this->db->insert($table, $data);
     }
 
-    public function hapus_data($where, $table)
+    public function hapus($AREA_KODE)
     {
-        $this->db->where($where);
-        $this->db->delete($table);
+        /*  $this->db->where($where);
+        $this->db->delete($table); */
+
+        return $this->db->delete('tb_area', ['AREA_KODE' => $AREA_KODE]);
     }
 
     public function edit_data($where, $table)
