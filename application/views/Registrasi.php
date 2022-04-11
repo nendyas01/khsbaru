@@ -44,11 +44,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body class="hold-transition register-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href=""><strong>Form</strong> Registrasi User</a>
+      <a href=""><strong>Form</strong> Pendaftaran Akun</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg ">Silahkan mengisi form registrasi!</p>
+      <p class="login-box-msg ">Silahkan mengisi form pendaftaran akun!</p>
     
       <form class="user" action="<?= base_url('registrasi/savedaftar') ?>" name="formInput" onsubmit="validasiEmail();" id="regis"  method="post">
       <div id="notif"></div>
