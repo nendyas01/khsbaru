@@ -49,10 +49,10 @@ class mapping_vendor extends CI_Controller
     {
         $AREA_KODE = $this->input->post('nama_area');
         $PAKET_JENIS = $this->input->post('jns_paket');
-        $ZONE = $this->input->post('ZONA');
+        $ZONE = $this->input->post('ZONE');
         // $MAPPING_TAHUN = $this->m_mapping_vendor->getMAPPINGTAHUN->result();
         $MAPPING_TAHUN = $this->input->post('MAPPING_TAHUN');
-        $VENDOR_ID = $this->input->post('vendor');
+        $VENDOR_ID = $this->input->post('VENDOR_ID');
         $mapping_id = $this->m_mapping_vendor->getID()->row()->total_mapping + 1;
         // $nama_area = $this->input->post('AREA_NAMA');
 
@@ -76,7 +76,7 @@ class mapping_vendor extends CI_Controller
         // print_r($data);
 
         $this->db->insert_batch('tb_mapping_vendor', $data);
-        redirect('mapping_vendor/index');
+        echo json_encode(array('status'=>'sukses'));
     }
 
     public function get_vendor()
