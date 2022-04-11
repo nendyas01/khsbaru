@@ -7,9 +7,9 @@ class crud_vendor extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_crud_vendor');
-        if($this->session->userdata("status")==0){
-			redirect('login');
-		}
+        if ($this->session->userdata("status") == 0) {
+            redirect('login');
+        }
     }
     public function index()
     {

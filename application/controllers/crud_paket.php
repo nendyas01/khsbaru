@@ -7,10 +7,9 @@ class crud_paket extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_crud_paket');
-        if($this->session->userdata("status")==0){
-			redirect('login');
-		}
-       
+        if ($this->session->userdata("status") == 0) {
+            redirect('login');
+        }
     }
     public function index()
     {
@@ -90,5 +89,16 @@ class crud_paket extends CI_Controller
         $this->load->view('templates/sidebar');
         $this->load->view('detail_crud_paket', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function aktif($PAKET_JENIS = '')
+    {
+        $this->db->query("UPDATE tb_paket SET STATUS='1' where PAKET_JENIS='$PAKET_JENIS'");
+        redirect('crud_paket/index');
+    }
+    public function non($PAKET_JENIS = '')
+    {
+        $this->db->query("UPDATE tb_paket SET STATUS='0' where PAKET_JENIS='$PAKET_JENIS'");
+        redirect('crud_paket/index');
     }
 }

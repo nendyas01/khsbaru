@@ -29,7 +29,7 @@
                                         <th>Satuan</th>
                                         <th>Paket Deskripsi 2</th>
                                         <th>Status</th>
-                                        <th> Aksi </th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
 
@@ -45,12 +45,12 @@
                                             <td> <?php echo $cp->SATUAN ?></td>
                                             <td> <?php echo $cp->PAKET_DESKRIPSI2 ?></td>
                                             <td>
-                                                <?php if ($cp->STATUS == "0") { ?>
-                                                    <a href="<?php echo base_url("crud_user/aktif/$cp->PAKET_JENIS")  ?>" class="btn btn-danger">Aktif</a>
+                                                <?php if ($cp->STATUS == "1") { ?>
+                                                    <a href="<?php echo base_url("crud_paket/aktif/$cp->PAKET_JENIS")  ?>" class="btn btn-danger">Aktif</a>
                                                     <!-- <span class="btn btn-info">Aktif</span> -->
 
                                                 <?php } else { ?>
-                                                    <a href="<?php echo base_url("crud_user/non/$cp->PAKET_JENIS") ?>" class="btn btn-info">Nonaktif</a>
+                                                    <a href="<?php echo base_url("crud_paket/non/$cp->PAKET_JENIS") ?>" class="btn btn-info">Nonaktif</a>
 
 
                                                 <?php }  ?>
@@ -62,6 +62,8 @@
                                             </td>
                                         </tr>
                                     <?php } ?>
+
+
 
                                     <!--  Button untuk copy, csv, excel -->
                                     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">

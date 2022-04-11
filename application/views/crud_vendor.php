@@ -88,7 +88,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel"> Tambah Data Paket</h4>
+                    <h4 class="modal-title" id="myModalLabel"> Tambah Data Vendor</h4>
                 </div>
                 <div class="modal-body">
                     <form method="post" action="<?php echo base_url() . 'crud_vendor/tambah_aksi'; ?>">
