@@ -128,7 +128,7 @@
 
             <div class="form-group">
               <label>NAMA AREA</label>
-              <select class="area form-control m-b-10" style="width:100%;" name="nama_area[]" multiple>
+              <select class="area form-control m-b-10" style="width:100%;" id="AREA_KODE" name="nama_area[]" multiple>
                 <?php foreach ($nama_area as $na) : ?>
                   <option value="<?php echo $na->AREA_KODE; ?>"> <?php echo $na->AREA_NAMA; ?></option>
                 <?php endforeach; ?>

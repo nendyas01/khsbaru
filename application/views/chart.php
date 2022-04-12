@@ -21,9 +21,9 @@
         <div class="box box-dark">
             <div class="box-header with-border">
               <div class="row">
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <h3 class="box-title">Grafik Pencapaian</h3>
-                </div>
+                </div> -->
                 
               </div>
             </div>
@@ -78,20 +78,20 @@
             </div>
           </div>
 
-            <div class="row">
+            <!-- <div class="row">
             
-          </div>
+          </div> -->
         <div class="box box-dark mt-5">
             <div class="box-header with-border">
               <div class="row">
-                <div class="col-md-6">
-                  <center><h3 class="box-title">Grafik Perbandingan SPJ dan Pagu Kontrak tiap Vendor</h3></center>
-                </div>
+                <!-- <div class="col-md-6">
+                  <center><h3 class="box-title">                Grafik Perbandingan SPJ dan Pagu Kontrak tiap Vendor</h3></center>
+                </div> -->
                 
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6">
+            <!-- <div class="row">
+              <div class="col-md-6"> -->
                 
                 <div class="row">
                   <div class="col-md-5">
@@ -112,8 +112,8 @@
                   </div>
                 </div>
 
-              </div>
-            </div>
+              <!-- </div>
+            </div> -->
         </div>
 
     </section>
@@ -123,7 +123,7 @@
 <script>
     $(document).ready(function() {
 
-      $('[name="area_kode"]').prop('disabled', true);
+      // $('[name="area_kode"]').prop('disabled', true);
 
       getChart();
       getArea();
