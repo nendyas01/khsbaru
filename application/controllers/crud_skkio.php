@@ -95,7 +95,6 @@ class crud_skkio extends CI_Controller
         // $tanggal=$row->SKKI_TANGGAL;
 
         // $this->db->query("insert into tb_history_skkio values('','$ID','$kode', now()) ");
-
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('edit_crud_skkio', $data);
@@ -146,7 +145,7 @@ class crud_skkio extends CI_Controller
 
         // $this->db->query("insert into tb_history_skkio values('','$SKKI_ID', '$AREA_KODE', '$SKKI_NILAI', '$SKKI_NO', '$SKKI_JENIS', '$SKKI_TANGGAL',now()) ");
         $this->db->insert('tb_history_skkio', $history);
-        
+        $this->session->set_flashdata('info_edit','Data berhasil di edit.');
         redirect('crud_skkio/index');
     }
 

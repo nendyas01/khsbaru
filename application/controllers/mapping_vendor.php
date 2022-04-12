@@ -47,8 +47,8 @@ class mapping_vendor extends CI_Controller
 
     public function tambah_aksi()
     {
-        $AREA_KODE = $this->input->post('nama_area');
-        $PAKET_JENIS = $this->input->post('jns_paket');
+        $AREA_KODE = $this->input->post('AREA_KODE');
+        $PAKET_JENIS = $this->input->post('PAKET_JENIS');
         $ZONE = $this->input->post('ZONE');
         // $MAPPING_TAHUN = $this->m_mapping_vendor->getMAPPINGTAHUN->result();
         $MAPPING_TAHUN = $this->input->post('MAPPING_TAHUN');
