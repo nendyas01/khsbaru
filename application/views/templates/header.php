@@ -95,7 +95,7 @@
 
   <!-- autocomplete -->
   <script src="<?php echo base_url() ?>assets/js/bootstrap.js"></script>
-  <!-- <script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script> -->
+  <script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
 
   <!-- Hapus -->
   <script src="<?php echo base_url() ?>assets/dist/sweetalert.min.js"></script>
