@@ -30,14 +30,14 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
   <!-- sweetalert -->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 
   <!-- autocomplete -->
   <!-- <link rel="stylesheet" type=text/css href="<?php echo base_url() ?>assets/css/bootstrap.css"> -->
   <link rel="stylesheet" type=text/css href="<?php echo base_url() ?>assets/css/jquery-ui.css">
 
   <!-- Hapus -->
-  <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/dist/sweetalert.css"> -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/dist/sweetalert.css">
 
   <!-- drop and drag -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -95,17 +95,15 @@
 
   <!-- autocomplete -->
   <script src="<?php echo base_url() ?>assets/js/bootstrap.js"></script>
-  <script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
+  <!-- <script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script> -->
 
   <!-- Hapus -->
-  <!-- <script src="<?php echo base_url() ?>assets/dist/sweetalert.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/dist/sweetalert-dev.js"></script> -->
+  <script src="<?php echo base_url() ?>assets/dist/sweetalert.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/dist/sweetalert-dev.js"></script>
 
   <!-- drop and drag -->
   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-
-
 
   <!-- <link href="https://code.highcharts.com/css/highcharts.css" rel="stylesheet"> -->
   <style>

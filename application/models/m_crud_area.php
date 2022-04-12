@@ -34,7 +34,10 @@ class m_crud_area extends CI_Model
         /*  $this->db->where($where);
         $this->db->delete($table); */
 
-        return $this->db->delete('tb_area', ['AREA_KODE' => $AREA_KODE]);
+        //return $this->db->delete('tb_area', ['AREA_KODE' => $AREA_KODE]);
+
+        $this->db->where('AREA_KODE', $AREA_KODE);
+        $this->db->delete('tb_area');
     }
 
     public function edit_data($where, $table)

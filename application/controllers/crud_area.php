@@ -35,13 +35,13 @@ class crud_area extends CI_Controller
         redirect('crud_area/index');
     }
 
-    public function hapus()
+    public function hapus($AREA_KODE)
     {
         /* $Where = array('AREA_KODE' => $AREA_KODE);
         $this->m_crud_area->hapus_data($Where, 'tb_area');
         redirect('crud_area/index'); */
 
-        if ($this->input->is_ajax_request() == true) {
+        /* if ($this->input->is_ajax_request() == true) {
             $AREA_KODE = $this->input->post('AREA_KODE', true);
 
             $hapus = $this->m_crud_area->hapus($AREA_KODE);
@@ -52,7 +52,11 @@ class crud_area extends CI_Controller
                 ];
             }
             echo json_encode($msg);
-        }
+        } */
+
+        $AREA_KODE = $this->input->post("AREA_KODE");
+        $this->m_crud_area->hapus($AREA_KODE);
+        redirect('crud_area');
     }
 
     public function edit_crud_area($AREA_KODE)

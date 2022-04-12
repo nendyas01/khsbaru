@@ -30,8 +30,7 @@
                                         <th>Area Nama</th>
                                         <th>Area Zone</th>
                                         <th>Aksi</th>
-                                        <th>Aksi</th>
-                                        <th>Aksi</th>
+
                                     </tr>
 
                                 </thead>
@@ -41,11 +40,13 @@
                                     $no = 1;
                                     foreach ($crud_area as $car) {
 
-                                        $tombolhapus = "<button type=\"button\" echo base_url=\"crud_area/hapus\" class=\"btn btn-danger btn-sm\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
+                                        /* $tombolhapus = "<button type=\"button\"  class=\"btn btn-danger btn-sm\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
                                         <i class=\"fa fa-trash\"></i>
-                                        </button>";
+                                        </button>"; */
+
+                                        /* echo base_url=\"crud_area/hapus\" */
                                     ?>
-                                        <tr>
+                                        <tr id="delete<?php $car->AREA_KODE; ?>">
                                             <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $car->AREA_KODE ?></td>
                                             <td> <?php echo $car->AREA_NAMA ?></td>
@@ -58,10 +59,18 @@
                                             </td> -->
 
 
-                                            <td><?php echo anchor('crud_area/detail_crud_area/' . $car->AREA_KODE, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
+                                            <!-- <td><?php echo anchor('crud_area/detail_crud_area/' . $car->AREA_KODE, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td> -->
                                             <!--  <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
-                                            <td> <?php echo $tombolhapus ?></td>
-                                            <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <!-- <td> <?php echo $tombolhapus ?></td>
+                                            <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td> -->
+
+                                            <td>
+                                                <a href="<?php echo base_url("crud_area/detail_crud_area/{$car->AREA_KODE}") ?>" data-toggle="tooltip" data-placement="bottom" title="Detail Data" data-original-title="Tooltip on bottom" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
+                                                <a onclick="deletedata(<?php echo $car->AREA_KODE ?>)" href=# data-toggle="tooltip" data-placement="bottom" title="Hapus Data" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url("crud_area/edit_crud_area/{$car->AREA_KODE}") ?>" data-toggle="tooltip" data-placement="bottom" title="Edit Data" data-original-title="Tooltip on bottom" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            </td>
+
+                                            <!-- "<?php echo base_url("crud_area/hapus/{$car->AREA_KODE}") ?>" -->
 
                                         </tr>
                                     <?php } ?>
@@ -104,7 +113,7 @@
                                             ]
                                         });
 
-                                        function hapus(AREA_KODE) {
+                                        /* function hapus(AREA_KODE) {
 
                                             Swal.fire({
                                                 title: 'Hapus',
@@ -125,19 +134,51 @@
                                                         },
                                                         dataType: "json",
                                                         success: function(response) {
+
                                                             if (response.sukses) {
                                                                 Swal.fire({
                                                                     icon: 'success',
                                                                     title: 'Konfirmasi',
                                                                     text: response.sukses
                                                                 });
-
                                                                 redirect(crud_area());
                                                             }
                                                         }
                                                     });
                                                 }
-                                            })
+                                            }) 
+                                        }*/
+
+                                        function deletedata(AREA_KODE) {
+                                            //swal("sukses");
+
+                                            swal({
+                                                    title: "Anda Yakin?",
+                                                    text: "Data <?php echo $car->AREA_KODE ?> Akan Dihapus Secara Permanen",
+                                                    type: "warning",
+                                                    showCancelButton: true,
+                                                    // confirmButtonColor: "#DD6B55",
+                                                    confirmButtonText: "Yes, delete it!",
+                                                    closeOnConfirm: false
+                                                },
+                                                function() {
+                                                    $.ajax({
+                                                        url: "<?php echo base_url('crud_area/hapus') ?>",
+                                                        type: "post",
+                                                        data: {
+                                                            AREA_KODE: AREA_KODE
+                                                        },
+                                                        success: function() {
+                                                            swal('Data Berhasil Di Hapus', '', 'success');
+                                                            $("#delete" + AREA_KODE).fadeTo("slow", 0.7, function() {
+                                                                $(this).remove();
+                                                            })
+                                                        },
+                                                        error: function() {
+                                                            swal('data gagal di hapus', 'error');
+                                                        }
+                                                    });
+                                                });
                                         }
                                     </script>
                                 </tbody>
