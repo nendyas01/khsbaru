@@ -92,7 +92,7 @@
   <script src="<?php echo base_url() ?>assets/dist/js/demo.js"></script>
 
   <!-- autocomplete -->
-  <script src="<?php echo base_url() ?>assets/js/bootstrap.js"></script>-->
+  <script src="<?php echo base_url() ?>assets/js/bootstrap.js"></script>
   <script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
 
   <!-- Hapus -->
