@@ -30,6 +30,8 @@
                                         <th>Area Nama</th>
                                         <th>Area Zone</th>
                                         <th>Aksi</th>
+                                        <th>Aksi</th>
+                                        <th>Aksi</th>
                                     </tr>
 
                                 </thead>
@@ -39,7 +41,7 @@
                                     $no = 1;
                                     foreach ($crud_area as $car) {
 
-                                        $tombolhapus = "<button type=\"button\" class=\"btn btn-danger btn-sm\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
+                                        $tombolhapus = "<button type=\"button\" echo base_url=\"crud_area/hapus\" class=\"btn btn-danger btn-sm\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
                                         <i class=\"fa fa-trash\"></i>
                                         </button>";
                                     ?>
@@ -49,17 +51,17 @@
                                             <td> <?php echo $car->AREA_NAMA ?></td>
                                             <td> <?php echo $car->AREA_ZONE ?></td>
 
-                                            <td>
+                                            <!-- <td>
                                                 <a href="<?php echo base_url('crud_area/detail_crud_area/' . $car->AREA_KODE) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
-                                                <a href="<?php echo base_url('crud_user/hapus/' . $cu->USERNAME) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
-                                                        <a href="<? echo base_url('crud_area/edit_crud_area/' . $car->AREA_KODE) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            </td>
+                                                <a href="<?php echo base_url('crud_area/hapus/' . $car->AREA_KODE) ?>" onclick="hapus(. $car->AREA_KODE .)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
+                                                        <a href="<?php echo base_url('crud_area/edit_crud_area/' . $car->AREA_KODE) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            </td> -->
 
 
-                                            <!-- <td><?php echo anchor('crud_area/detail_crud_area/' . $car->AREA_KODE, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
-                                            <!-- <td> <?php echo $tombolhapus ?></td>
-                                            <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td> --> -->
+                                            <td><?php echo anchor('crud_area/detail_crud_area/' . $car->AREA_KODE, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
+                                            <!--  <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
+                                            <td> <?php echo $tombolhapus ?></td>
+                                            <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
 
                                         </tr>
                                     <?php } ?>
