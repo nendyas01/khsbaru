@@ -16,6 +16,12 @@
 
 
                     <div class="panel-body table-responsive">
+                    <?php
+                        $info = $this->session->flashdata('info_edit');
+                        if (!empty($info)){
+                            echo '<div class="alert alert-success">'.$this->session->flashdata('info_edit').'</div>';
+                        }
+                    ?>
                         <div id="pesan-sukses" class="alert alert-success" style="display:none;">
                             Data pengguna berhasil ditambahkan!
                         </div>

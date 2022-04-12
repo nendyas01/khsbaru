@@ -76,6 +76,7 @@ class crud_user extends CI_Controller
 
         $where = array('USERNAME' => $USERNAME);
         $this->m_crud_user->update_data($where, $data, 'tb_user');
+        $this->session->set_flashdata('info_edit','Data berhasil di edit.');
         redirect('crud_user/index');
     }
 
