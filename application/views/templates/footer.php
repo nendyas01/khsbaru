@@ -136,7 +136,7 @@
     jQuery(function($) { //on document.ready
       $('#datepick').datepicker();
       $('#datepick1').datepicker();
-     
+
       $('#skki_date').datepicker();
     })
   }

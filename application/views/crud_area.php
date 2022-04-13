@@ -41,7 +41,7 @@
                                     foreach ($crud_area as $car) {
 
                                     ?>
-                                        <tr AREA_KODE="delete<?php $car->AREA_KODE; ?>">
+                                        <tr id="delete<?php $car->AREA_KODE; ?>">
                                             <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $car->AREA_KODE ?></td>
                                             <td> <?php echo $car->AREA_NAMA ?></td>
@@ -171,9 +171,9 @@
                                                         },
                                                         success: function() {
                                                             swal('Data Berhasil Di Hapus', '', 'success');
+                                                            //$('#example').DataTable().ajax.reload();
                                                             $("#delete" + AREA_KODE).fadeTo("slow", 0.7, function() {
                                                                 $(this).remove();
-                                                                refreshTable();
                                                             })
                                                         },
                                                         error: function() {
