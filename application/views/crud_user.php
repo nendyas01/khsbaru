@@ -57,11 +57,11 @@
                                             <td> <?php echo $cu->AREA_ZONE ?></td>
                                             <td>
                                                 <?php if ($cu->USER_STATUS == "0") { ?>
-                                                    <a href="<?php echo base_url("crud_user/aktif/$cu->USERNAME")  ?>" class="btn btn-danger">Aktif</a>
+                                                    <a href="<?php echo base_url("crud_user/aktif/$cu->USERNAME")  ?>" class="btn btn-info">Nonaktif</a>
                                                     <!-- <span class="btn btn-info">Aktif</span> -->
 
                                                 <?php } else { ?>
-                                                    <a href="<?php echo base_url("crud_user/non/$cu->USERNAME") ?>" class="btn btn-info">Nonaktif</a>
+                                                    <a href="<?php echo base_url("crud_user/non/$cu->USERNAME") ?>" class="btn btn-danger">Aktif</a>
 
 
                                                 <?php }  ?>
