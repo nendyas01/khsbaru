@@ -37,7 +37,7 @@
   <link rel="stylesheet" type=text/css href="<?php echo base_url() ?>assets/css/jquery-ui.css">
 
   <!-- Hapus -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/dist/sweetalert.css">
+  <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/dist/sweetalert.css"> -->
 
   <!-- drop and drag -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -97,12 +97,21 @@
   <script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
 
   <!-- Hapus -->
-  <script src="<?php echo base_url() ?>assets/dist/sweetalert.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/dist/sweetalert-dev.js"></script>
+  <!-- <script src="<?php echo base_url() ?>assets/dist/sweetalert.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/dist/sweetalert-dev.js"></script> -->
 
   <!-- drop and drag -->
   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+
+  <!-- SweetAlert -->
+  <link rel="stylesheet" href="<?= base_url('assets'); ?>/assets/css/sweetalert2/sweetalert2.min.css">
+  <style>
+    .swal2-popup {
+      font-size: 1.0rem !important;
+      height: 80%;
+    }
+  </style>
 
   <!-- <link href="https://code.highcharts.com/css/highcharts.css" rel="stylesheet"> -->
   <style>

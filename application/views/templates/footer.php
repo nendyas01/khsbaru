@@ -42,6 +42,10 @@
 <!-- Director dashboard demo (This is only for demo purposes) -->
 <!--<script src="js/Director/dashboard.js" type="text/javascript"></script> -->
 
+<!-- sweetalert2 -->
+<script src="<?php echo base_url() ?>assets/js/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/myscript.js"></script>
+
 <!-- Director for demo purposes -->
 <script type="text/javascript">
   $('input').on('ifChecked', function(event) {
