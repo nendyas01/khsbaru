@@ -19,7 +19,7 @@
                     <div class="panel-body table-responsive">
                         <font size="2" face="Arial">
                             <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
-                                <button type="button" class="mb-3 btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Area</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Area</button>
                                 </hr>
                                 <br>
                                 <br>
@@ -40,17 +40,26 @@
                                     $no = 1;
                                     foreach ($crud_area as $car) {
 
-                                        /* $tombolhapus = "<button type=\"button\"  class=\"btn btn-danger btn-sm\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
-                                        <i class=\"fa fa-trash\"></i>
-                                        </button>"; */
-
-                                        /* echo base_url=\"crud_area/hapus\" */
                                     ?>
-                                        <tr id="delete<?php $car->AREA_KODE; ?>">
+                                        <tr AREA_KODE="delete<?php $car->AREA_KODE; ?>">
                                             <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $car->AREA_KODE ?></td>
                                             <td> <?php echo $car->AREA_NAMA ?></td>
                                             <td> <?php echo $car->AREA_ZONE ?></td>
+
+
+                                            <td>
+                                                <a href="<?php echo base_url("crud_area/detail_crud_area/{$car->AREA_KODE}") ?>" data-toggle="tooltip" data-placement="bottom" title="Detail Data" data-original-title="Tooltip on bottom" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
+                                                <a onclick="deletedata(<?php echo $car->AREA_KODE ?>)" data-toggle="tooltip" data-placement="bottom" title="Hapus Data" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url("crud_area/edit_crud_area/{$car->AREA_KODE}") ?>" data-toggle="tooltip" data-placement="bottom" title="Edit Data" data-original-title="Tooltip on bottom" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            </td>
+
+                                            <!-- $tombolhapus = "<button type=\"button\"  class=\"btn btn-danger btn-sm\" title=\"Hapus Data\" onclick=\"hapus('" . $car->AREA_KODE . "')\">
+                                            <i class=\"fa fa-trash\"></i>
+                                            </button>"; -->
+
+                                            <!-- echo base_url=\"crud_area/hapus\" -->
+                                            <!-- "<?php echo base_url("crud_area/hapus/{$car->AREA_KODE}") ?>" -->
 
                                             <!-- <td>
                                                 <a href="<?php echo base_url('crud_area/detail_crud_area/' . $car->AREA_KODE) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
@@ -63,14 +72,6 @@
                                             <!--  <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_area/hapus/' . $car->AREA_KODE, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td> -->
                                             <!-- <td> <?php echo $tombolhapus ?></td>
                                             <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td> -->
-
-                                            <td>
-                                                <a href="<?php echo base_url("crud_area/detail_crud_area/{$car->AREA_KODE}") ?>" data-toggle="tooltip" data-placement="bottom" title="Detail Data" data-original-title="Tooltip on bottom" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
-                                                <a onclick="deletedata(<?php echo $car->AREA_KODE ?>)" href=# data-toggle="tooltip" data-placement="bottom" title="Hapus Data" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                                                <a href="<?php echo base_url("crud_area/edit_crud_area/{$car->AREA_KODE}") ?>" data-toggle="tooltip" data-placement="bottom" title="Edit Data" data-original-title="Tooltip on bottom" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            </td>
-
-                                            <!-- "<?php echo base_url("crud_area/hapus/{$car->AREA_KODE}") ?>" -->
 
                                         </tr>
                                     <?php } ?>
@@ -172,6 +173,7 @@
                                                             swal('Data Berhasil Di Hapus', '', 'success');
                                                             $("#delete" + AREA_KODE).fadeTo("slow", 0.7, function() {
                                                                 $(this).remove();
+                                                                refreshTable();
                                                             })
                                                         },
                                                         error: function() {
