@@ -5,7 +5,7 @@
 
                 <div class="form-group">
                     <label>AREA KODE</label>
-                    <input type="text" name="AREA_KODE" class="form-control" value="<?php echo $car->AREA_KODE ?>">
+                    <input type="text" name="AREA_KODE" class="form-control" value="<?php echo $car->AREA_KODE ?>" readonly>
                 </div>
 
                 <div class="form-group">
