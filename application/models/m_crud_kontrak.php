@@ -46,10 +46,10 @@ class m_crud_kontrak extends CI_Model
         $this->db->insert($table, $data);
     }
 
-    public function hapus_data($where, $table)
+    public function hapus($VENDOR_ID)
     {
-        $this->db->where($where);
-        $this->db->delete($table);
+        $this->db->where('VENDOR_ID', $VENDOR_ID);
+        $this->db->delete('tb_pagu_kontrak');
     }
 
     public function edit_data($where, $table)

@@ -27,15 +27,15 @@
                                 <br>
                                 <thead>
                                     <tr>
-                                        <!-- <th>No</th> -->
+                                        <th>No</th>
                                         <th>ID VENDOR</th>
                                         <th>PAKET JENIS</th>
                                         <th>PAGU KONTRAK</th>
                                         <th>TERPAKAI</th>
                                         <th>RANKING</th>
-                                        <th>NO PJN</th>
+                                        <!-- <th>NO PJN</th> -->
                                         <th>TANGGAL PJN</th>
-                                        <th>NO RKS</th>
+                                        <!-- <th>NO RKS</th>
                                         <th>TANGGAL RKS</th>
                                         <th>NO SPP</th>
                                         <th>TANGGAL SPP</th>
@@ -45,11 +45,12 @@
                                         <th>ID SANKSI</th>
                                         <th>TANGGAL SANKSI</th>
                                         <th>TANGGAL AKHIR</th>
-                                        <th>PUNISHMENT</th>
-                                        <th>BLOCKED</th>
-                                        <th colspan="1">Detail</th>
+                                        <th>PUNISHMENT</th> -->
+                                        <!-- <th>BLOCKED</th> -->
+                                        <!-- <th colspan="1">Detail</th>
                                         <th>Hapus</th>
-                                        <th>Edit</th>
+                                        <th>Edit</th> -->
+                                        <th>AKSI</th>
 
                                     </tr>
 
@@ -57,20 +58,19 @@
 
                                 <tbody>
                                     <?php
-                                    //$no = 1;
+                                    $no = 1;
                                     foreach ($crud_kontrak as $cpk) {
                                     ?>
-                                        <tr>
-                                            <!--  <td> //echo $no++ 
-                                                        </td> -->
+                                        <tr id="delete<?php $cpk->VENDOR_ID; ?>">
+                                            <td> <?php echo $no++ ?></td>
                                             <td> <?php echo $cpk->VENDOR_ID ?></td>
                                             <td> <?php echo $cpk->PAKET_JENIS ?></td>
                                             <td> <?php echo 'Rp ' . number_format($cpk->PAGU_KONTRAK, 0, ',', '.') ?></td>
                                             <td> <?php echo 'Rp ' . number_format($cpk->TERPAKAI, 0, ',', '.') ?></td>
                                             <td> <?php echo $cpk->RANKING ?></td>
-                                            <td> <?php echo $cpk->NO_PJN ?></td>
+                                            <!-- <td> <?php echo $cpk->NO_PJN ?></td> -->
                                             <td> <?php echo $cpk->TGL_PJN ?></td>
-                                            <td> <?php echo $cpk->NO_RKS ?></td>
+                                            <!-- <td> <?php echo $cpk->NO_RKS ?></td>
                                             <td> <?php echo $cpk->TGL_RKS ?></td>
                                             <td> <?php echo $cpk->NO_SPP ?></td>
                                             <td> <?php echo $cpk->TGL_SPP ?></td>
@@ -80,12 +80,18 @@
                                             <td> <?php echo $cpk->id_sanksi ?></td>
                                             <td> <?php echo $cpk->tgl_sanksi ?></td>
                                             <td> <?php echo $cpk->tgl_akhir ?></td>
-                                            <td> <?php echo $cpk->punishment ?></td>
-                                            <td> <?php echo $cpk->BLOCKED ?></td>
+                                            <td> <?php echo $cpk->punishment ?></td> -->
+                                            <!-- <td> <?php echo $cpk->BLOCKED ?></td> -->
 
-                                            <td><?php echo anchor('crud_kontrak/detail_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
+                                            <!-- <td><?php echo anchor('crud_kontrak/detail_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                                             <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('crud_kontrak/hapus/' . $cpk->VENDOR_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
-                                            <td><?php echo anchor('crud_kontrak/edit_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+                                            <td><?php echo anchor('crud_kontrak/edit_crud_kontrak/' . $cpk->VENDOR_ID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td> -->
+
+                                            <td>
+                                                <a href="<?php echo base_url("crud_kontrak/detail_crud_kontrak/{$cpk->VENDOR_ID}") ?>" data-toggle="tooltip" data-placement="bottom" title="Detail Data" data-original-title="Tooltip on bottom" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
+                                                <a onclick="deletedata(<?php echo $cpk->VENDOR_ID ?>)" data-toggle="tooltip" data-placement="bottom" title="Hapus Data" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url("crud_kontrak/edit_crud_kontrak/{$cpk->VENDOR_ID}") ?>" data-toggle="tooltip" data-placement="bottom" title="Edit Data" data-original-title="Tooltip on bottom" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            </td>
 
                                         </tr>
                                     <?php } ?>
@@ -114,17 +120,50 @@
                                     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
                                     <script type="text/javascript">
-                                        $('#example').DataTable({
-                                            dom: 'lBfrtip',
-                                            buttons: [{
-                                                    extend: 'copy',
-                                                    oriented: 'potrait',
-                                                    download: 'open',
-                                                    widthX: '90px'
+                                        // $('#example').DataTable({
+                                        //     dom: 'lBfrtip',
+                                        //     buttons: [{
+                                        //             extend: 'copy',
+                                        //             oriented: 'potrait',
+                                        //             download: 'open',
+                                        //             widthX: '90px'
+                                        //         },
+                                        //         'csv', 'excel', 'pdf', 'print'
+                                        //     ]
+                                        // });
+
+                                        function deletedata(VENDOR_ID) {
+                                            //swal("sukses");
+
+                                            swal({
+                                                    title: "Anda Yakin?",
+                                                    text: "Data Pagu Kontrak Akan Dihapus Secara Permanen",
+                                                    type: "warning",
+                                                    showCancelButton: true,
+                                                    // confirmButtonColor: "#DD6B55",
+                                                    confirmButtonText: "Yes, delete it!",
+                                                    closeOnConfirm: false
                                                 },
-                                                'csv', 'excel', 'pdf', 'print'
-                                            ]
-                                        });
+                                                function() {
+                                                    $.ajax({
+                                                        url: "<?php echo base_url('crud_kontrak/hapus') ?>",
+                                                        type: "post",
+                                                        data: {
+                                                            VENDOR_ID: VENDOR_ID
+                                                        },
+                                                        success: function() {
+                                                            swal('Data Berhasil Di Hapus', '', 'success');
+                                                            //$('#example').DataTable().ajax.reload();
+                                                            $("#delete" + VENDOR_ID).fadeTo("slow", 0.7, function() {
+                                                                $(this).remove();
+                                                            })
+                                                        },
+                                                        error: function() {
+                                                            swal('data gagal di hapus', 'error');
+                                                        }
+                                                    });
+                                                });
+                                        }
                                     </script>
                                 </tbody>
                             </table>

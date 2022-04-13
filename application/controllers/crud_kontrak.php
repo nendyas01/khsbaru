@@ -7,10 +7,9 @@ class crud_kontrak extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_crud_kontrak');
-        if($this->session->userdata("status")==0){
-			redirect('login');
-		}
-       
+        if ($this->session->userdata("status") == 0) {
+            redirect('login');
+        }
     }
 
     public function index()
@@ -74,9 +73,9 @@ class crud_kontrak extends CI_Controller
 
     public function hapus($VENDOR_ID)
     {
-        $where = array('VENDOR_ID' => $VENDOR_ID);
-        $this->m_crud_kontrak->hapus_data($where, 'tb_pagu_kontrak');
-        redirect('crud_kontrak/index');
+        $VENDOR_ID = $this->input->post("VENDOR_ID");
+        $this->m_crud_area->hapus($VENDOR_ID);
+        redirect('crud_kontrak');
     }
 
     public function edit_crud_kontrak($VENDOR_ID)
