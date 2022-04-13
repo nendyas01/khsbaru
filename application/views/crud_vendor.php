@@ -28,10 +28,10 @@
                                         <th>Tahun</th>
                                         <th>Direksi Vendor</th>
                                         <th>Email</th>
-                                        <th>Telepon</th>
+                                        <!--  <th>Telepon</th> -->
                                         <th>Status</th>
-                                        <th>Email_2</th>
-                                        <th>Jabatan</th>
+                                        <!-- <th>Email_2</th>
+                                        <th>Jabatan</th> -->
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -47,10 +47,17 @@
                                             <td> <?php echo $cv->TAHUN ?></td>
                                             <td> <?php echo $cv->DIREKSI_VENDOR ?></td>
                                             <td> <?php echo $cv->EMAIL ?></td>
-                                            <td> <?php echo $cv->TELEPON ?></td>
-                                            <td> <?php echo $cv->STATUS ?></td>
-                                            <td> <?php echo $cv->EMAIL_2 ?></td>
-                                            <td> <?php echo $cv->JABATAN ?></td>
+                                            <td>
+                                                <?php if ($cv->STATUS == "1") { ?>
+                                                    <a href="<?php echo base_url("crud_vendor/aktif/$cv->VENDOR_ID")  ?>" class="btn btn-danger">Aktif</a>
+                                                    <!-- <span class="btn btn-info">Aktif</span> -->
+
+                                                <?php } else { ?>
+                                                    <a href="<?php echo base_url("crud_vendor/non/$cv->VENDOR_ID") ?>" class="btn btn-info">Nonaktif</a>
+
+
+                                                <?php }  ?>
+                                            </td>
                                             <td>
                                                 <a href="<?php echo base_url('crud_vendor/detail_crud_vendor/' . $cv->VENDOR_ID) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
                                                         <a href="<?php echo base_url('crud_vendor/hapus/' . $cv->VENDOR_ID) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
