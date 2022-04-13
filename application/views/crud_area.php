@@ -101,18 +101,17 @@
                                     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
                                     <script type="text/javascript">
-                                        $('#example').DataTable({
+                                        /* $('#example').DataTable({
                                             dom: 'lBfrtip',
                                             buttons: [{
                                                     align: 'center',
-                                                    extend: 'copy',
                                                     oriented: 'potrait',
                                                     download: 'open',
                                                     widthX: '90px'
                                                 },
-                                                'csv', 'excel', 'pdf', 'print'
+                                                'excel', 'pdf', 'print'
                                             ]
-                                        });
+                                        }); */
 
                                         /* function hapus(AREA_KODE) {
 
