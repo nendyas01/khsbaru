@@ -26,7 +26,7 @@
                             Data paket berhasil ditambahkan!
                         </div>
                         <font size="2" face="Arial">
-                            <table id="example" class="table table-striped table-bordered" cellspacing="0">
+                            <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
                                 <button type="button" class="btn btn-primary" onclick="modal_tambah()"><i class="fa fa-plus"></i> Tambah Data Paket</button>
                                 <br>
                                 <br>
@@ -99,36 +99,37 @@
                     <h4 class="modal-title" id="myModalLabel"> Tambah Data Paket</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label>Paket Jenis</label>
-                        <input type="text" name="PAKET_JENIS" id="PAKET_JENIS" class="form-control">
-                        <small id="PAKET_JENIS_ERROR" class="text-danger"></small>
-                    </div>
-                    <div class="form-group">
-                        <label>Paket Deskripsi</label>
-                        <input type="text" name="PAKET_DESKRIPSI" id="PAKET_DESKRIPSI" class="form-control">
-                        <small id="PAKET_DESKRIPSI_ERROR" class="text-danger"></small>
-
+                    <form method="post" action="">
                         <div class="form-group">
-                            <label>Satuan </label>
-                            <input type="text" name="SATUAN" id="SATUAN" class="form-control">
-                            <small id="SATUAN_ERROR" class="text-danger"></small>
+                            <label>Paket Jenis</label>
+                            <input type="text" name="PAKET_JENIS" id="PAKET_JENIS" class="form-control">
+                            <small id="PAKET_JENIS_ERROR" class="text-danger"></small>
                         </div>
                         <div class="form-group">
-                            <label>Paket Deskripsi 2</label>
-                            <input type="text" name="PAKET_DESKRIPSI2" id="PAKET_DESKRIPSI2" class="form-control">
-                            <small id="PAKET_DESKRIPSI2_ERROR" class="text-danger"></small>
-                        </div>
-                        <div class="form-group">
-                            <label>Status</label>
-                            <input type="text" name="STATUS" id="STATUS" class="form-control">
-                            <small id="STATUS_ERROR" class="text-danger"></small>
-                        </div>
+                            <label>Paket Deskripsi</label>
+                            <input type="text" name="PAKET_DESKRIPSI" id="PAKET_DESKRIPSI" class="form-control">
+                            <small id="PAKET_DESKRIPSI_ERROR" class="text-danger"></small>
 
-                        <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
-                        <button type="submit" class="btn btn-primary" onclick="save()">Simpan</button>
-                    </div>
+                            <div class="form-group">
+                                <label>Satuan </label>
+                                <input type="text" name="SATUAN" id="SATUAN" class="form-control">
+                                <small id="SATUAN_ERROR" class="text-danger"></small>
+                            </div>
+                            <div class="form-group">
+                                <label>Paket Deskripsi 2</label>
+                                <input type="text" name="PAKET_DESKRIPSI2" id="PAKET_DESKRIPSI2" class="form-control">
+                                <small id="PAKET_DESKRIPSI2_ERROR" class="text-danger"></small>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <input type="text" name="STATUS" id="STATUS" class="form-control">
+                                <small id="STATUS_ERROR" class="text-danger"></small>
+                            </div>
 
+                            <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
+                            <button type="submit" class="btn btn-primary" onclick="save()">Simpan</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

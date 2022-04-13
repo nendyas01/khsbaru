@@ -37,7 +37,8 @@ class crud_paket extends CI_Controller
         );
 
         $this->m_crud_paket->input_data($data, 'tb_paket');
-        redirect('crud_paket/index');
+        /* redirect('crud_paket/index'); */
+        echo json_encode(array('status' => 'sukses'));
     }
 
     public function hapus($PAKET_JENIS)
@@ -77,6 +78,7 @@ class crud_paket extends CI_Controller
 
         $where = array('PAKET_JENIS' => $PAKET_JENIS);
         $this->m_crud_paket->update_data($where, $data, 'tb_paket');
+        $this->session->set_flashdata('info_edit', 'Data berhasil di edit.');
         redirect('crud_paket/index');
     }
 
