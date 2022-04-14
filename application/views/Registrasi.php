@@ -103,7 +103,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </div>
           <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">Daftar</button>
           </div>
           <!-- /.col -->
         </div>
@@ -130,7 +130,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             success: function (response) {
                 Swal.fire({
                     title: "Informasi",
-                    text: "Selamat! Kamu berhasil melakukan registrasi. Silahkan Login",
+                    text: "Selamat! Akun kamu sudah terdaftar. Silahkan Login",
                     icon: "success",
                     showCancelButton: false,
                     closeOnConfirm: false,
