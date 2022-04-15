@@ -55,7 +55,7 @@
                   <td><?php echo $row->SKKI_NO ?></td>
                 </tr>
                 <tr>
-                  <td>NAMA AREA</td>
+                  <td>KODE AREA</td>
                   <td><?php echo $row->AREA_KODE ?></td>
                 </tr>
                 <tr>

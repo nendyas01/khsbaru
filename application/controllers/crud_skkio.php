@@ -126,19 +126,6 @@ class crud_skkio extends CI_Controller
             'DATE' => time(),
 
         ];
-
-        // $data = array(
-        //     'SKKI_ID'                  => $SKKI_ID,
-        //     'SKKI_JENIS'               => $SKKI_JENIS,
-        //     'SKKI_NO'                  => $SKKI_NO,
-        //     'AREA_KODE'                => $AREA_KODE,
-        //     'SKKI_NILAI'               => $SKKI_NILAI,
-        //     'SKKI_TERPAKAI'            => $SKKI_TERPAKAI,
-        //     'SKKI_TANGGAL'             => $SKKI_TANGGAL,
-        // );
-
-        // $where = array('SKKI_ID' => $SKKI_ID);
-        // $this->m_crud_skkio->update_data($where, $data, 'tb_skko_i');
         
         $this->db->query("update tb_skko_i set SKKI_JENIS='$SKKI_JENIS',SKKI_NO='$SKKI_NO',AREA_KODE='$AREA_KODE',SKKI_NILAI='$SKKI_NILAI',SKKI_TERPAKAI='$SKKI_TERPAKAI',
         SKKI_TANGGAL='$SKKI_TANGGAL' where SKKI_ID='$SKKI_ID'");
