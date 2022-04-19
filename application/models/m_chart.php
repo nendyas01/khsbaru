@@ -29,10 +29,7 @@ function tahun_paket(){
     return $this->db->get()->result(); 
 }
 
-// function getpaket(){
-//     $query = $this->db->query("SELECT * FROM tb_paket ORDER BY PAKET_DESKRIPSI ASC");
-//     return $query->result();
-// }
+
 function getpaket2($tahun){
     $query = $this->db->query("SELECT * FROM tb_paket INNER JOIN tb_spj ON tb_spj.PAKET_JENIS = tb_paket.PAKET_JENIS
     WHERE YEAR(tb_spj.SPJ_TANGGAL_MULAI) = '$tahun' GROUP BY tb_paket.PAKET_DESKRIPSI");

@@ -28,12 +28,9 @@ class chart extends CI_Controller
     {
         $area_kode=$this->input->post('area_kode');
         $tahun=$this->input->post('tahun');
-        // $area_kode=54110;
-        // $tahun=2019;
         $get = $this->m_chart->jumlah_gangguan($area_kode, $tahun);
         echo json_encode($get);
-        // echo $this->db->last_query($get);
-        // print_r($get);
+   
     }
 
     function getBarChart(){
@@ -70,8 +67,6 @@ class chart extends CI_Controller
         $get = $this->m_chart->tahun_paket();
         echo json_encode($get);
     }
-
-    
 
     function getPaket(){
         $tahun = $this->input->get('tahun');

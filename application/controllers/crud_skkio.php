@@ -23,30 +23,6 @@ class crud_skkio extends CI_Controller
         // var_dump($data['crud_skkio']);
     }
 
-    // public function tambah_aksi()
-    // {
-    //     $SKKI_ID = $this->input->post('SKKI_ID');
-    //     $SKKI_JENIS = $this->input->post('SKKI_JENIS');
-    //     $SKKI_NO = $this->input->post('SKKI_NO');
-    //     $AREA_KODE = $this->input->post('AREA_KODE');
-    //     $SKKI_NILAI = $this->input->post('SKKI_NILAI');
-    //     $SKKI_TERPAKAI = $this->input->post('SKKI_TERPAKAI');
-    //     $SKKI_TANGGAL = $this->input->post('SKKI_TANGGAL');
-
-    //     $data = array(
-    //         'SKKI_ID'                  => $SKKI_ID,
-    //         'SKKI_JENIS'               => $SKKI_JENIS,
-    //         'SKKI_NO'                  => $SKKI_NO,
-    //         'AREA_KODE'                => $AREA_KODE,
-    //         'SKKI_NILAI'               => $SKKI_NILAI,
-    //         'SKKI_TERPAKAI'            => $SKKI_TERPAKAI,
-    //         'SKKI_TANGGAL'             => $SKKI_TANGGAL,
-
-    //     );
-    //     $this->m_crud_skkio->input_data($data, 'tb_skko_i');
-    //     $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
-    //     redirect('crud_skkio/index');
-    // }
 
     public function tambah_aksi()
     {

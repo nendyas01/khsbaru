@@ -9,7 +9,7 @@ class m_anggaran extends CI_Model
         a.SKKI_NO,
         a.SKKI_NILAI,
         a.SKKI_JENIS, 
-        a.SKKI_NILAI, 
+        
         a.SKKI_ID,
         a.SKKI_TERPAKAI, 
         a.AREA_KODE, 
