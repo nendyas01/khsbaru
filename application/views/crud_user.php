@@ -114,6 +114,13 @@
                             <input type="text" name="USERNAME" id="USERNAME" class="form-control">
                             <small id="USERNAME_ERROR" class="text-danger"></small>
                         </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="text" name="PASSWORD" id="PASSWORD" class="form-control">
+                            <small id="PASSWORD_ERROR" class="text-danger"></small>
+                        </div>
+
                         <div class="form-group">
                             <label>Nama Role</label>
                             <select class="form-control" id="role_id" name="role_id">
@@ -156,6 +163,14 @@
         } else {
             $('#USERNAME_ERROR').text('');
         }
+
+        var PASSWORD = $('#PASSWORD').val();
+        if (PASSWORD == '') {
+            $('#PASSWORD_ERROR').text('Password wajib diisi');
+            return false;
+        } else {
+            $('#PASSWORD_ERROR').text('');
+        }
         var role_id = $('#role_id').val();
         if (role_id == '') {
             $('#role_id_ERROR').text('role nama wajib diisi');
@@ -177,7 +192,8 @@
             data: {
                 USERNAME: USERNAME,
                 role_id: role_id,
-                AREA_KODE: AREA_KODE
+                AREA_KODE: AREA_KODE,
+                PASSWORD:PASSWORD
             },
             success: function(data) {
                 $('#pesan-sukses').show();

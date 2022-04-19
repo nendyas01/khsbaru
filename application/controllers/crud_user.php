@@ -29,11 +29,13 @@ class crud_user extends CI_Controller
         $USERNAME = $this->input->post('USERNAME');
         $role_id = $this->input->post('role_id');
         $AREA_KODE = $this->input->post('AREA_KODE');
+        $PASSWORD = $this->input->post('PASSWORD');
 
         $data = array(
             'USERNAME'           => $USERNAME,
             'role_id'            => $role_id,
             'AREA_KODE'          => $AREA_KODE,
+            'PASSWORD'             => $PASSWORD,
         );
 
         $this->m_crud_user->input_data('tb_user', $data);
@@ -67,11 +69,13 @@ class crud_user extends CI_Controller
         $USERNAME = $this->input->post('USERNAME', true);
         $ROLE_ID = $this->input->post('ROLE_ID', true);
         $AREA_KODE = $this->input->post('AREA_KODE', true);
+        $PASSWORD = $this->input->post('PASSWORD', true);
 
         $data = array(
             'USERNAME'      => $USERNAME,
             'ROLE_ID'       => $ROLE_ID,
             'AREA_KODE'     => $AREA_KODE,
+            'PASSWORD'      => $PASSWORD,
         );
 
         $where = array('USERNAME' => $USERNAME);

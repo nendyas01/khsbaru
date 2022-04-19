@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Nama Role</label>
+                    <label>ID Role</label>
                     <input type="number_format" name="ROLE_ID" class="form-control" value="<?php echo $cu->role_id ?>">
                 </div>
 

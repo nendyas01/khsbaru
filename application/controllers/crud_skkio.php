@@ -64,13 +64,7 @@ class crud_skkio extends CI_Controller
         $row=$key->row();
         $ID=$row->SKKI_ID;
         $kode=$row->AREA_KODE;
-        // $no_skki=$row->SKKI_NO;
-        // $jenis=$row->SKKI_JENIS;
-        // $nilai=$row->SKKI_NILAI;
-        // $terpakai=$row->SKKI_TERPAKAI;
-        // $tanggal=$row->SKKI_TANGGAL;
-
-        // $this->db->query("insert into tb_history_skkio values('','$ID','$kode', now()) ");
+       
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('edit_crud_skkio', $data);
@@ -116,13 +110,9 @@ class crud_skkio extends CI_Controller
 
     public function detail_crud_skkio($SKKI_ID=null)
     {
-        // var_dump($SKKI_ID);
-        // die();
+        
         $detail_crud_skkio = $this->m_crud_skkio->get_history($SKKI_ID);
        
-        // $data['detail_crud_skkio'] = $detail_crud_skkio;
-        // // $data['hasil_edit_crud_skkio'] = $this->m_crud_skkio->insert_hasil_edit()->result();
-        // $data['area'] = $detail_crud_skkio;
 
         $data = [
             'history' => $detail_crud_skkio,
@@ -135,13 +125,5 @@ class crud_skkio extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    // public function detail_history_skki($SKKI_ID = null){
-    //     // var_dump($SKKI_ID);
-    //     // die();
-    //     $data['ID']=$SKKI_ID;
-    //     $this->load->view('templates/header');
-    //     $this->load->view('templates/sidebar');
-    //     $this->load->view('detail_history_skki', $data);
-    //     $this->load->view('templates/footer');
-    // }
+    
 }
