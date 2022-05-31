@@ -18,7 +18,7 @@ if (flash2) {
 }
 
 
-//sweetalert2 tombol hapus
+//sweetalert2 tombol hapus area
 
 $(document).on('click', '#hapusarea', function (e) {
 
@@ -40,3 +40,24 @@ $(document).on('click', '#hapusarea', function (e) {
     })
 })
 
+//sweetalert2 tombol hapus pagu kontrak
+
+$(document).on('click', '#hapuskontrak', function (e) {
+
+    e.preventDefault();
+    var href = $(this).attr('href')
+
+    Swal.fire({
+        title: 'Apakah Anda Yakin?',
+        text: "Hapus Data Pagu Kontrak",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus data'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location = href;
+        }
+    })
+})

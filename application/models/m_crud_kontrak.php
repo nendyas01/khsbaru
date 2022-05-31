@@ -4,7 +4,8 @@ class m_crud_kontrak extends CI_Model
 {
     public function tampil_data()
     {
-        $this->db->select('VENDOR_ID,
+        $this->db->select('ID_PG,
+                        VENDOR_ID,
                         PAKET_JENIS,
                         PAGU_KONTRAK,
                         TERPAKAI,
@@ -46,16 +47,15 @@ class m_crud_kontrak extends CI_Model
         $this->db->insert($table, $data);
     }
 
-    public function hapus($VENDOR_ID)
+    public function hapus($where, $table)
     {
-        $this->db->where('VENDOR_ID', $VENDOR_ID);
-        $this->db->delete('tb_pagu_kontrak');
+        $this->db->where($where);
+        $this->db->delete($table);
     }
 
     public function edit_data($where, $table)
     {
         return $this->db->get_where($table, $where);
-        return $this->db->affected_rows();
     }
 
     public function update_data($where, $data, $table)

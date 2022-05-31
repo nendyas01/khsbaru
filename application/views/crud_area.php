@@ -17,9 +17,18 @@
 
                     <div class="flash-data" id="flash2" data-flash="<?= $this->session->flashdata('sukses'); ?>"></div>
                     <div class="panel-body table-responsive">
+                        <?php
+                        $info = $this->session->flashdata('info_edit');
+                        if (!empty($info)) {
+                            echo '<div class="alert alert-success">' . $this->session->flashdata('info_edit') . '</div>';
+                        }
+                        ?>
+                        <div id="pesan-sukses" class="alert alert-success" style="display:none;">
+                            Data paket berhasil ditambahkan!
+                        </div>
                         <font size="2" face="Arial">
                             <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Tambah Data Area</button>
+                                <button type="button" class="btn btn-primary" onclick="modal_tambah()"><i class="fa fa-plus"></i> Tambah Data Area</button>
                                 </hr>
                                 <br>
                                 <br>
@@ -78,29 +87,24 @@
                                     <!-- <td> <?php echo $tombolhapus ?></td>
                                         <td><?php echo anchor('crud_area/edit_crud_area/' . $car->AREA_KODE, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td> -->
 
-                                    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
-                                    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-                                    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-
-                                    <!--  Button untuk copy, csv, excel -->
-                                    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
-                                    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
-
-                                    <script>
-                                        $(document).ready(function() {
-                                            $('#example').DataTable();
-                                        });
-                                    </script>
-
-
-                                    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                                    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
                                     <script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
                                     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
                                     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
                                     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
                                     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
                                     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-                                    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+                                    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script> -->
+
+                                    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+                                    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                                    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#example').DataTable();
+                                        });
+                                    </script>
 
                                     <script type="text/javascript">
                                         /* $('#example').DataTable({
@@ -190,6 +194,7 @@
                 </section>
             </div>
     </section>
+
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -198,19 +203,22 @@
                     <h4 class="modal-title" id="myModalLabel"> Tambah Data Area</h4>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="<?php echo base_url() . 'crud_area/tambah_aksi'; ?>">
+                    <form method="post" action="">
                         <div class="form-group">
                             <label>AREA KODE</label>
-                            <input type="text" name="AREA_KODE" class="form-control">
+                            <input type="text" name="AREA_KODE" id="AREA_KODE" class="form-control">
+                            <small id="AREA_KODE_ERROR" class="text-danger"></small>
                         </div>
                         <div class="form-group">
                             <label>AREA NAMA</label>
-                            <input type="text" name="AREA_NAMA" class="form-control">
+                            <input type="text" name="AREA_NAMA" id="AREA_NAMA" class="form-control">
+                            <small id="AREA_NAMA_ERROR" class="text-danger"></small>
                         </div>
 
                         <div class="form-group">
                             <label>AREA ZONE</label>
-                            <input type="text" name="AREA_ZONE" class="form-control">
+                            <input type="text" name="AREA_ZONE" id="AREA_ZONE" class="form-control">
+                            <small id="AREA_ZONE_ERROR" class="text-danger"></small>
                             <!--  <select name="AREA_ZONE" id="AREA_ZONE" class="form-control">
                                 <option selected="0">- Pilih Zona Area -</option>
                                 <option value="0">0</option>
@@ -221,11 +229,77 @@
                             </select> -->
                         </div>
 
-                        <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+
+                        <!-- <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button> -->
+                        <button type="submit" class="btn btn-primary" onclick="save()">Simpan</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="<?php echo base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+    function save() {
+        var AREA_KODE = $('#AREA_KODE').val();
+        if (AREA_KODE == '') {
+            $('#AREA_KODE_ERROR').text('AREA KODE wajib diisi');
+            return false;
+        } else {
+            $('#AREA_KODE_ERROR').text('');
+        }
+        var AREA_NAMA = $('#AREA_NAMA').val();
+        if (AREA_NAMA == '') {
+            $('#AREA_NAMA_ERROR').text('AREA NAMA wajib diisi');
+            return false;
+        } else {
+            $('#AREA_NAMA_ERROR').text('');
+        }
+        var AREA_ZONE = $('#AREA_ZONE').val();
+        if (AREA_ZONE == '') {
+            $('#AREA_ZONE_ERROR').text('AREA ZONE wajib diisi');
+            return false;
+        } else {
+            $('#AREA_ZONE_ERROR').text('');
+        }
+        $.ajax({
+            url: "<?= base_url('crud_area/tambah_aksi') ?>",
+            type: "POST",
+            dataType: "JSON",
+            data: {
+                AREA_KODE: AREA_KODE,
+                AREA_NAMA: AREA_NAMA,
+                AREA_ZONE: AREA_ZONE,
+
+            },
+            success: function(data) {
+                $('#pesan-sukses').show();
+                $('#myModal').modal('hide');
+                refreshTable();
+
+            }
+        });
+    }
+
+    function modal_tambah() {
+        $('#myModal').modal('show');
+    }
+</script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+<!--  Button untuk copy, csv, excel -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+</script>

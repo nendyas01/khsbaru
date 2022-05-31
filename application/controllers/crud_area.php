@@ -87,6 +87,7 @@ class crud_area extends CI_Controller
 
         $where = array('AREA_KODE' => $AREA_KODE);
         $this->m_crud_area->update_data($where, $data, 'tb_area');
+        $this->session->set_flashdata('info_edit', 'Data berhasil di edit.');
         redirect('crud_area/index');
     }
 

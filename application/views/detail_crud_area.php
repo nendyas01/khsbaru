@@ -30,6 +30,7 @@
 
                     </table>
                 </div>
+                <input type="button" class="btn btn-info" value="Kembali" onclick="history.back(-1)" />
             </div>
         </div>
     </section>
