@@ -12,11 +12,14 @@ class m_progress extends CI_Model
             f.AREA_NAMA, 
             b.VENDOR_NAMA, 
             c.PAKET_DESKRIPSI,  
-            a.SPJ_DESKRIPSI 
+            a.SPJ_DESKRIPSI,
+            d.PROGRESS_VALUE,
+            d.REALISASI 
         '
         );
 
         $this->db->from('tb_spj a');
+        $this->db->from('tb_progress d');
         $this->db->join('tb_vendor b',  'a.VENDOR_ID=b.VENDOR_ID', 'left');
         $this->db->join('tb_paket c',  'a.PAKET_JENIS = c.PAKET_JENIS', 'left');
         $this->db->join('tb_skko_i e',  'a.SKKI_NO = e.SKKI_NO', 'left');

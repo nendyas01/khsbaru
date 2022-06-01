@@ -29,7 +29,7 @@
                                         <th>Jenis Pekerjaan</th>
                                         <th>Deskripsi Pekerjaan</th>
                                         <th>Progress Pekerjaan</th>
-                                        <th>Target</th>
+                                        <!-- <th>Target</th> -->
                                         <th>Realisasi</th>
                                     </tr>
                                 </thead>
@@ -47,9 +47,9 @@
                                             <td> <?php echo $pr->VENDOR_NAMA ?></td>
                                             <td> <?php echo $pr->PAKET_DESKRIPSI ?></td>
                                             <td> <?php echo $pr->SPJ_DESKRIPSI ?></td>
-                                            <td> <?php echo 0, '%' ?></td>
-                                            <td> <?php echo 0.0000, ' kms' ?></td>
-                                            <td> <?php echo 0, ' kms' ?></td>
+                                            <td> <?php echo $pr->PROGRESS_VALUE ?></td>
+                                            <!-- <td> <?php echo 0.0000, ' kms' ?></td> -->
+                                            <td> <?php echo $pr->REALISASI ?></td>
                                         </tr>
 
                                     <?php } ?>

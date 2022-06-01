@@ -59,6 +59,7 @@ class inp_progres_kerja extends CI_Controller
                 'PROGRESS_NOTES' => $PROGRESS_NOTES,
             ));
 
+            $this->m_inp_progres_kerja->input_data($data, 'tb_progress');
             $this->db->insert_batch('tb_progress', $data);
             redirect('inp_progress_kerja');
         }

@@ -35,4 +35,20 @@ class m_inp_progres_kerja extends CI_Model
         $query = $this->db->get_where($table, $where);
         return $query->row();
     }
+
+    public function input_data($data, $table)
+    {
+        $this->db->insert($table, $data);
+    }
+
+    // public function tampil_data()
+    // {
+    //     $this->db->select('AREA_KODE,
+    //                     AREA_NAMA,
+    //                     AREA_ZONE,');
+    //     $this->db->from('tb_area ');
+    //     $query = $this->db->get();
+    //     $result = $query->result();
+    //     return $result;
+    // }
 }
