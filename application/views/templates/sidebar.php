@@ -461,6 +461,24 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+
+        <li class="treeview <?= $this->uri->segment(1) == 'inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'approve_pelanggaran'
+                              || $this->uri->segment(1) == 'list_pelanggaran' || $this->uri->segment(1) == 'upl_sanksi_khs' || $this->uri->segment(1) == 'upl_sanksi_spj'
+                              || $this->uri->segment(1) == 'list_sanksi' || $this->uri->segment(1) == 'list_sanksi_spj' || $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'active' : '' ?>">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Pengelolaan Pelanggaran</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?= $this->uri->segment(1) == 'inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'list_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
+          </ul>
+        </li>
+
         <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
                               || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
           <a href="#">
@@ -487,6 +505,20 @@
           <li <?= $this->uri->segment(1) == 'crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
            
           </ul>
+        </li>
+
+        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
+
+        <a href="#">
+          <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+          <li <?= $this->uri->segment(1) == 'inp_progres_kerja' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_progres_kerja') ?>"><i class="fa fa-circle-o"></i> Tambah Progress</a></li>
+        </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "9") { ?>
         <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>

@@ -53,15 +53,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
       <form action="login/cekuser" id="masuker" method="post">
         <div class="form-group has-feedback">
-          <!-- <input type="text" name="nama" class="form-control" placeholder="username"> saya komen ya biar buat dibandingkan , ini code yang lama -->
+           
           <input type="text" name="USERNAME" class="form-control" placeholder="username">
-          <!-- jadi name itu harus sama , sama yang dikirim ke controllernya -->
-          <!-- di sini kamu menset usernamenya , namenya = nama , harusnya itu USERNAME -->
-          <!-- jadi harus diganti , disamain sama parameter yang kamu kirim ke controllernya , kita ubah jadi USERNAME-->
+          
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <!-- input type="password" name="id" class="form-control" placeholder="Password"> ini juga sama harus disamain kayak parameter yang kamu kirim -->
+          
           <input type="password" name="PASSWORD" class="form-control" placeholder="Password">
 
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>

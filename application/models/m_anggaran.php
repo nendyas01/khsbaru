@@ -63,22 +63,7 @@ class m_anggaran extends CI_Model
     return $this->db->get()->row();
   }
 
-  // public function getval(){
-  //   $this->db->select('COALESCE(MAX(PROGRESS_VALUE),0)');
-  //   $this->db->from('tb_progress');
-  //   $this->db->where('SPJ_NO');
-  //   return $this->db->get()->row();
-  // }
-
-  // public function get_termin(){
-  //   $query= "SELECT COALESCE((SELECT status FROM tb_termin WHERE SPJ_NO), '0') FROM DUAL";
-  //   return $query;
-  // }
-
-  // public function get_nilai_termin1(){
-  //   $query = "SELECT COALESCE((SELECT termin_1 FROM tb_termin WHERE SPJ_NO), '0') FROM DUAL";
-  //   return $query;
-  // }
+  
 
   public function input_data($data, $table)
   {

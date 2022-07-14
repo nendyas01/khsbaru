@@ -4,9 +4,10 @@ class m_crud_user extends CI_Model
 {
     public function tampil_data()
     {
-        $this->db->select('tb_user.*,tb_area.AREA_NAMA,tb_area.AREA_ZONE');
+        $this->db->select('tb_user.*,tb_area.AREA_NAMA,tb_area.AREA_ZONE, tb_role.role_nama');
         $this->db->from('tb_user');
         $this->db->join('tb_area', 'tb_area.AREA_KODE = tb_user.AREA_KODE', 'inner');
+        $this->db->join('tb_role', 'tb_role.role_id = tb_user.role_id', 'inner');
 
         $query = $this->db->get();
         $result = $query->result();

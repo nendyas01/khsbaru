@@ -74,7 +74,8 @@ class anggaran extends CI_Controller
             $no_spj = $this->input->post('var_no_spj');
             $termin = $this->m_anggaran->get_termin_by_no_spj($no_spj);
             $progress = $this->m_anggaran->get_progress_by_no_spj($no_spj);
-
+            // print_r($termin);
+            // die;
             if ($termin->status == 0 && $progress->PROGRESS_VALUE < 100) {
                 $this->session->set_flashdata('gagal', 'Tidak Bisa Input Pembayaran, Progress Belum 100%');
                 redirect('anggaran/tambah_data', 'refresh');
