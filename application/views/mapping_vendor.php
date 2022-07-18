@@ -56,7 +56,7 @@
                       <td> <button class="btn btn-default btn x-s" onclick="modal_detail(<?php echo $mv->MAPPING_ID ?>)"><?php echo $mv->total_vendor?></button></td>
                       <td> <button class="btn btn-default btn x-s" onclick="modal_detail_area(<?php echo $mv->MAPPING_ID?>)"><?php echo $mv->total_area?></button></td>
                       <td> <?php echo $mv->ZONE ?></td>
-                      <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                      <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('Mapping_vendor/hapus/' . $mv->MAPPING_ID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                     </tr>
                   <?php } ?>
 
@@ -175,7 +175,7 @@
                 $('#PAKET_JENIS').change(function() {
                   var id = $(this).val();
                   $.ajax({
-                    url: "<?php echo base_url(); ?>/mapping_vendor/get_vendor",
+                    url: "<?php echo base_url(); ?>/Mapping_vendor/get_vendor",
                     method: "POST",
                     data: {
                       id: id
@@ -204,7 +204,7 @@
                 $('#AREA_KODE').change(function() {
                   var id = $(this).val();
                   $.ajax({
-                    url: "<?php echo base_url(); ?>/mapping_vendor/getarea",
+                    url: "<?php echo base_url(); ?>/Mapping_vendor/getarea",
                     method: "POST",
                     data: {
                       id: id
@@ -307,7 +307,7 @@
   <script>
     function modal_detail(mapping_id){
       $.ajax({
-        url: "<?= base_url('mapping_vendor/vendor_name/') ?>"+mapping_id,
+        url: "<?= base_url('Mapping_vendor/vendor_name/') ?>"+mapping_id,
         method: "GET",
         dataType: "JSON",
         success: function (response) {
@@ -328,7 +328,7 @@
     function modal_detail_area(mapping_id){
       // alert(mapping_id);
       $.ajax({
-        url: "<?= base_url('mapping_vendor/area_name/') ?>"+mapping_id,
+        url: "<?= base_url('Mapping_vendor/area_name/') ?>"+mapping_id,
         method: "GET",
         dataType: "JSON",
         success: function (response) {
@@ -378,7 +378,7 @@
     }
     else{
       $.ajax({
-        url: "<?= base_url('mapping_vendor/tambah_aksi')?>",
+        url: "<?= base_url('Mapping_vendor/tambah_aksi')?>",
         type: "POST",
         dataType: "JSON",
         data: {
@@ -430,5 +430,5 @@
                       buttons: ['excel', 'pdf', 'print'
                       ]
                     });
-                  </script>
+</script>
 

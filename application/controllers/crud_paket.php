@@ -8,7 +8,7 @@ class crud_paket extends CI_Controller
         parent::__construct();
         $this->load->model('m_crud_paket');
         if ($this->session->userdata("status") == 0) {
-            redirect('login');
+            redirect('Login');
         }
     }
     public function index()

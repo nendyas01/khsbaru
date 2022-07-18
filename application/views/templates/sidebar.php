@@ -17,14 +17,14 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
       <?php if ($this->session->userdata("role") == '1') { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
 
         <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
-                              || $this->uri->segment(1) == 'crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
+                              || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
             <span class="pull-right-container">
@@ -35,9 +35,9 @@
             <li <?= $this->uri->segment(1) == 'crud_area' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_area') ?>"><i class="fa fa-circle-o"></i> Data Area</a></li>
             <li <?= $this->uri->segment(1) == 'crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
             <li <?= $this->uri->segment(1) == 'crud_paket' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
-            <li <?= $this->uri->segment(1) == 'crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
             <li <?= $this->uri->segment(1) == 'crud_vendor' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_vendor') ?>"><i class="fa fa-circle-o"></i> Data Vendor</a></li>
-            <li <?= $this->uri->segment(1) == 'mapping_vendor' ? 'class="active"' : '' ?>><a href="<?php echo base_url('mapping_vendor') ?>"><i class="fa fa-circle-o"></i> Data Mapping Vendor</a></li>
+            <li <?= $this->uri->segment(1) == 'Mapping_vendor' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Mapping_vendor') ?>"><i class="fa fa-circle-o"></i> Data Mapping Vendor</a></li>
           </ul>
         </li>
 
@@ -112,8 +112,8 @@
           </ul>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Anggaran' || $this->uri->segment(1) == 'Anggaran/v_input_tagihan'
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -121,15 +121,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
             
-            <li <?= $this->uri->segment(1) == 'crud_skkio' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_skkio') ?>"><i class="fa fa-circle-o"></i> Data SKKI/O</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_skkio' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_skkio') ?>"><i class="fa fa-circle-o"></i> Data SKKI/O</a></li>
           </ul>
         </li>
 
       <?php } elseif ($this->session->userdata("role") == "2") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -158,8 +158,8 @@
 
 
 
-        <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Anggaran' || $this->uri->segment(1) == 'Anggaran/v_input_tagihan'
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -167,7 +167,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
           </ul>
         </li>
 
@@ -201,14 +201,14 @@
         </li>
 
       <?php } elseif ($this->session->userdata("role") == "3") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Anggaran' || $this->uri->segment(1) == 'Anggaran/v_input_tagihan'
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -216,8 +216,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
           </ul>
         </li>
         <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
@@ -250,13 +250,13 @@
         </li>
 
       <?php } elseif ($this->session->userdata("role") == "4") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Anggaran' || $this->uri->segment(1) == 'Anggaran/v_input_tagihan'
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -264,7 +264,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
           </ul>
         </li>
 
@@ -332,8 +332,8 @@
 
 
       <?php } elseif ($this->session->userdata("role") == "5") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -356,8 +356,8 @@
           </ul>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Anggaran' || $this->uri->segment(1) == 'Anggaran/v_input_tagihan'
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -365,8 +365,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
           </ul>
         </li>
         <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
@@ -382,8 +382,8 @@
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "6") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -434,8 +434,8 @@
         </li>
 
       <?php } elseif ($this->session->userdata("role") == "7") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -456,8 +456,8 @@
         </li>
         </li>
       <?php } elseif ($this->session->userdata("role") == "8") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -479,8 +479,8 @@
           </ul>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Anggaran' || $this->uri->segment(1) == 'Anggaran/v_input_tagihan'
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -488,13 +488,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
-            <li <?= $this->uri->segment(1) == 'crud_skkio' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_skkio') ?>"><i class="fa fa-circle-o"></i> Data SKKI/O</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_skkio' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_skkio') ?>"><i class="fa fa-circle-o"></i> Data SKKI/O</a></li>
           </ul>
         </li>
         <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
-                              || $this->uri->segment(1) == 'crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
+                              || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
             <span class="pull-right-container">
@@ -502,7 +502,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li <?= $this->uri->segment(1) == 'crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
+          <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
            
           </ul>
         </li>
@@ -521,8 +521,8 @@
         </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "9") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -542,8 +542,8 @@
 
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Anggaran' || $this->uri->segment(1) == 'Anggaran/v_input_tagihan'
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -551,11 +551,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
           </ul>
         </li>
         <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
-                              || $this->uri->segment(1) == 'crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
+                              || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
             <span class="pull-right-container">
@@ -563,13 +563,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li <?= $this->uri->segment(1) == 'crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
+          <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
             <li <?= $this->uri->segment(1) == 'crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "10") { ?>
-        <li <?= $this->uri->segment(1) == 'chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
-          <a href="<?php echo base_url('chart') ?>">
+        <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
+          <a href="<?php echo base_url('Chart') ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -589,7 +589,7 @@
           </ul>
         </li>
         <li class="treeview <?= $this->uri->segment(1) == 'anggaran' || $this->uri->segment(1) == 'anggaran/v_input_tagihan'
-                              || $this->uri->segment(1) == 'crud_skkio' ? 'active' : '' ?>">
+                              || $this->uri->segment(1) == 'Crud_skkio' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-money"></i> <span>Pengelolaan Anggaran</span>
             <span class="pull-right-container">
@@ -597,11 +597,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
           </ul>
         </li>
         <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
-                              || $this->uri->segment(1) == 'crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
+                              || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
             <span class="pull-right-container">
@@ -609,15 +609,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li <?= $this->uri->segment(1) == 'crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
+          <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
             <li <?= $this->uri->segment(1) == 'crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
           </ul>
         </li>
       <?php  } ?>
 
 
-      <li <?= $this->uri->segment(1) == 'login/logout' || $this->uri->segment(1) == '' ? 'class="active"' : '' ?>>
-        <a href="<?php echo base_url('login/logout') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span>
+      <li <?= $this->uri->segment(1) == 'Login/logout' || $this->uri->segment(1) == '' ? 'class="active"' : '' ?>>
+        <a href="<?php echo base_url('Login/logout') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span>
         </a>
       </li>
     </ul>

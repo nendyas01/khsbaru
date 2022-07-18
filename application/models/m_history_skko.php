@@ -1,9 +1,9 @@
 <?php 
 
-class m_history_skko extends CI_Model{
+class M_history_skko extends CI_Model{
     public function __construct(){ 
         parent::__construct(); 
-        $this->load->model('m_history_skko'); 
+        $this->load->model('M_history_skko'); 
     }
     
     public function history_skko()

@@ -104,7 +104,7 @@
 			// console.log(id);
 			$.ajax({
 				type: "POST",
-				url: "<?= base_url('anggaran/getNilai/'); ?>",
+				url: "<?= base_url('Anggaran/getNilai/'); ?>",
 				data: {
 					id: id
 				},

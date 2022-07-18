@@ -2,7 +2,7 @@
     <section class="content">
         <center> <h3>Edit Data Pengguna</h3> </center>
         <?php foreach ($crud_user as $cu) { ?>
-            <form action="<?php echo base_url() . 'crud_user/update'; ?>" method="post">
+            <form action="<?php echo base_url() . 'Crud_user/update'; ?>" method="post">
 
                 <div class="form-group">
                     <label>USERNAME</label>

@@ -62,9 +62,9 @@
                       <td> <?php echo 'Rp ' . number_format($cs->SKKI_TERPAKAI, 0, ',', '.') ?></td>
                       <td> <?php echo $cs->SKKI_TANGGAL  ?></td>
                       <td>
-                          <a href ="<?php echo base_url('crud_skkio/detail_crud_skkio/' . $cs->SKKI_ID) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
-                          <a href ="<?php echo base_url('crud_skkio/hapus/' .$cs->SKKI_ID) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
-                          <a href ="<?php echo base_url('crud_skkio/edit_crud_skkio/'. $cs->SKKI_ID) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> <a>
+                          <a href ="<?php echo base_url('Crud_skkio/Detail_crud_skkio/' . $cs->SKKI_ID) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
+                          <a href ="<?php echo base_url('Crud_skkio/hapus/' .$cs->SKKI_ID) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
+                          <a href ="<?php echo base_url('Crud_skkio/Edit_crud_skkio/'. $cs->SKKI_ID) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> <a>
                       </td> 
                       
                     </tr>
@@ -204,7 +204,7 @@
     }
 
     $.ajax({
-      url: "<?= base_url('crud_skkio/tambah_aksi')?>",
+      url: "<?= base_url('Crud_skkio/tambah_aksi')?>",
       type: "POST",
       dataType: "JSON",
       data: {

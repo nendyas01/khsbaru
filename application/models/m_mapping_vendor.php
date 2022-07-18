@@ -1,5 +1,5 @@
 <?php
-class m_mapping_vendor extends CI_Model
+class M_mapping_vendor extends CI_Model
 {
     function tampil_data_dua()
     {

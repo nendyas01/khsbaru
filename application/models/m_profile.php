@@ -1,6 +1,6 @@
 <?php
 
-class m_profile extends CI_Model
+class M_profile extends CI_Model
 {
 
     function getdata()

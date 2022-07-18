@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class profile extends CI_Controller
+class Profile extends CI_Controller
 {
     public function __construct()
     {
@@ -12,14 +12,14 @@ class profile extends CI_Controller
 		}
     
         
-        $this->load->model('m_profile');
+        $this->load->model('M_profile');
     }
     function index()
     {
-        $data['profile'] = $this->m_profile->getdata();
+        $data['Profile'] = $this->M_profile->getdata();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('profile', $data);
+        $this->load->view('Profile', $data);
         //$this->load->view('form_progress', $data);
         $this->load->view('templates/footer');
         //print_r($data);

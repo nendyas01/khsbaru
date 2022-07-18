@@ -1,7 +1,7 @@
 <div class="content-wrapper">
     <section class="content">
         <?php foreach ($crud_skkio as $cs) { ?>
-            <form action="<?php echo base_url() . 'crud_skkio/update/' . $SKKI_ID; ?>" method="post">
+            <form action="<?php echo base_url() . 'Crud_skkio/update/' . $SKKI_ID; ?>" method="post">
                 <input type="hidden" name="h_jenis" value="<?php echo $cs->SKKI_JENIS ?>">
                 <input type="hidden" name="h_no" value="<?php echo $cs->SKKI_NO ?>">
                 <input type="hidden" name="h_area" value="<?php echo $cs->AREA_KODE; ?>">

@@ -8,7 +8,7 @@ class Login extends CI_Controller
 
     public function index()
     {
-        $this->load->view('login');
+        $this->load->view('Login');
     }
 
     public function cekuser()
@@ -27,21 +27,21 @@ class Login extends CI_Controller
 
                 );
                 $this->session->set_userdata($data);
-                redirect('chart/index');
+                redirect('Chart/index');
             } else {
                 $this->session->set_flashdata('msg', 'non');
-                redirect('login');
+                redirect('Login');
             }
         } else {
             $this->session->set_flashdata('msg', 'gagal');
-            redirect('login');
+            redirect('Login');
         }
     }
 
     public function logout()
     {
         $this->session->sess_destroy();
-        redirect('login');
+        redirect('Login');
     }
 
     public function savedaftar()

@@ -146,7 +146,7 @@
       function getArea() {
         $.ajax({
           type: "POST",
-          url: "<?php echo base_url(); ?>chart/getArea",
+          url: "<?php echo base_url(); ?>Chart/getArea",
           data: "data",
           dataType: "JSON",
           success: function (data) {
@@ -162,7 +162,7 @@
       function getAreaGangguan() {
         $.ajax({
           type: "POST",
-          url: "<?php echo base_url(); ?>chart/getArea",
+          url: "<?php echo base_url(); ?>Chart/getArea",
           data: "data",
           dataType: "JSON",
           success: function (data) {
@@ -179,7 +179,7 @@
       function getTahun(){
         $.ajax({
           type: "POST",
-          url: "<?php echo base_url(); ?>/chart/getTahun",
+          url: "<?php echo base_url(); ?>/Chart/getTahun",
           data: "data",
           dataType: "JSON",
           success: function (data) {
@@ -195,7 +195,7 @@
       function getTahunPaket(){
         $.ajax({
           type: "POST",
-          url: "<?php echo base_url(); ?>/chart/getTahunPaket",
+          url: "<?php echo base_url(); ?>/Chart/getTahunPaket",
           data: "data",
           dataType: "JSON",
           success: function (data) {
@@ -213,7 +213,7 @@
       function getPaket(tahun){
           $.ajax({
               type: "GET",
-              url: "<?php echo base_url(); ?>/chart/getPaket?tahun="+tahun,
+              url: "<?php echo base_url(); ?>/Chart/getPaket?tahun="+tahun,
               data: "data",
               dataType: "JSON",
               success: function (data) {
@@ -232,7 +232,7 @@
 
       function getChart(tahun=null, area_kode=null) {
         $.ajax({
-          url: "<?php echo base_url(); ?>/chart/getchart",
+          url: "<?php echo base_url(); ?>/Chart/getchart",
           method: "POST",
           async: false,
           data:{area_kode:area_kode, tahun:tahun},
@@ -313,7 +313,7 @@
 
         $.ajax({
             type: "GET",
-            url: "<?php echo base_url(); ?>chart/getBarchart",
+            url: "<?php echo base_url(); ?>Chart/getBarchart",
             data: {area_kode:area_kode, tahun:tahun},
             dataType: "JSON",
             success: function (data) {
@@ -392,7 +392,7 @@
 
       function getLineChart2(tahun=null, paket_jenis=null){
           $.ajax({
-              url: "<?php echo base_url(); ?>/chart/getLineChart2",
+              url: "<?php echo base_url(); ?>/Chart/getLineChart2",
               method: "POST",
               async: false,
               data:{paket_jenis:paket_jenis, tahun:tahun},

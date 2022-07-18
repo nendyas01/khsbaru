@@ -1,6 +1,6 @@
 <?php
 
-class m_anggaran extends CI_Model
+class M_anggaran extends CI_Model
 {
   public function tampil_data()
   {

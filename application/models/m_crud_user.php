@@ -1,6 +1,6 @@
 <?php
 
-class m_crud_user extends CI_Model
+class M_crud_user extends CI_Model
 {
     public function tampil_data()
     {

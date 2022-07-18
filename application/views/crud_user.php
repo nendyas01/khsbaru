@@ -57,20 +57,20 @@
                                             <td> <?php echo $cu->AREA_ZONE ?></td>
                                             <td>
                                                 <?php if ($cu->USER_STATUS == "0") { ?>
-                                                    <a href="<?php echo base_url("crud_user/aktif/$cu->USERNAME")  ?>" class="btn btn-info">Nonaktif</a>
+                                                    <a href="<?php echo base_url("Crud_user/aktif/$cu->USERNAME")  ?>" class="btn btn-info">Nonaktif</a>
                                                     <!-- <span class="btn btn-info">Aktif</span> -->
 
                                                 <?php } else { ?>
-                                                    <a href="<?php echo base_url("crud_user/non/$cu->USERNAME") ?>" class="btn btn-danger">Aktif</a>
+                                                    <a href="<?php echo base_url("Crud_user/non/$cu->USERNAME") ?>" class="btn btn-danger">Aktif</a>
 
 
                                                 <?php }  ?>
                                             </td>
 
                                             <td>
-                                                <a href="<?php echo base_url('crud_user/detail_crud_user/' . $cu->USERNAME) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
-                                                        <a href="<?php echo base_url('crud_user/hapus/' . $cu->USERNAME) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
-                                                                <a href="<?php echo base_url('crud_user/edit_crud_user/' . $cu->USERNAME) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> <a>
+                                                <a href="<?php echo base_url('Crud_user/Detail_crud_user/' . $cu->USERNAME) ?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i> <a>
+                                                        <a href="<?php echo base_url('Crud_user/hapus/' . $cu->USERNAME) ?>" onclick="javascript:return confirm('Anda yakin hapus?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> <a>
+                                                                <a href="<?php echo base_url('Crud_user/Edit_crud_user/' . $cu->USERNAME) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> <a>
                                             </td>
 
                                         </tr>
@@ -186,7 +186,7 @@
             $('#AREA_KODE_ERROR').text('');
         }
         $.ajax({
-            url: "<?= base_url('crud_user/tambah_aksi') ?>",
+            url: "<?= base_url('Crud_user/tambah_aksi') ?>",
             type: "POST",
             dataType: "JSON",
             data: {

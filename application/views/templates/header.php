@@ -340,7 +340,7 @@
 
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
-              <a href=<?php echo base_url('profile/index'); ?> class="dropdown-toggle">
+              <a href=<?php echo base_url('Profile/index'); ?> class="dropdown-toggle">
                 <i class="fa fa-fw fa-user"></i>
                 <span class="hidden-xs"><?php echo $this->session->userdata("username") ?> </span>
               </a>

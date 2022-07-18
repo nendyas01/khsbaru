@@ -8,7 +8,7 @@ class crud_kontrak extends CI_Controller
         parent::__construct();
         $this->load->model('m_crud_kontrak');
         if ($this->session->userdata("status") == 0) {
-            redirect('login');
+            redirect('Login');
         }
     }
 

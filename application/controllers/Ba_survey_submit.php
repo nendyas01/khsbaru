@@ -7,7 +7,7 @@ class Ba_survey_submit extends CI_Controller
         parent::__construct();
         $this->load->model('m_crud_user');
         if($this->session->userdata("status")==0){
-			redirect('login');
+			redirect('Login');
 		}
     }
 
