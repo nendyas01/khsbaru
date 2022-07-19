@@ -38,7 +38,7 @@ class Chart extends CI_Controller
         $tahun_paket=$this->input->get('tahun_paket');
         $tmp_tahun = substr($tahun_paket,1,4);
 
-        $get = $this->m_chart->jml_paket($area_kode, $tmp_tahun);
+        $get = $this->M_chart->jml_paket($area_kode, $tmp_tahun);
         echo json_encode($get);
         // print_r($get);
         //echo $tmp_tahun;

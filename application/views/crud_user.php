@@ -46,7 +46,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($crud_user as $cu) {
+                                    foreach ($Crud_user as $cu) {
                                     ?>
                                         <tr>
                                             <td> <?php echo $no++ ?></td>
