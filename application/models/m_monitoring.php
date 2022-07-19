@@ -1,6 +1,6 @@
 <?php
 
-class m_monitoring extends CI_Model
+class M_monitoring extends CI_Model
 {
 
     public function tampil_data()
@@ -19,7 +19,7 @@ class m_monitoring extends CI_Model
         return $result;
     }
 
-    public function monitoring_add($where, $table)
+    public function Monitoring_add($where, $table)
     {
         return $this->db->get_where($table, $where);
     }

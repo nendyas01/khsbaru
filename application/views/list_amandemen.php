@@ -33,7 +33,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($list_amandemen as $la) {
+                                    foreach ($List_amandemen as $la) {
                                     ?>
                                         <tr>
                                             <td> <?php echo $no++ ?></td>

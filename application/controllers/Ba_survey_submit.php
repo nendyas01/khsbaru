@@ -5,10 +5,10 @@ class Ba_survey_submit extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_crud_user');
-        if($this->session->userdata("status")==0){
-			redirect('Login');
-		}
+        $this->load->model('M_crud_user');
+        if ($this->session->userdata("status") == 0) {
+            redirect('Login');
+        }
     }
 
     public function index()
@@ -23,8 +23,8 @@ class Ba_survey_submit extends CI_Controller
             'hasil_survey' => $this->input->post('var_hasil_survey')
         );
 
-        $this->m_ba_survey->Update($where, $data, $table);
+        $this->M_ba_survey->Update($where, $data, $table);
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
-        echo '<script language="javascript">window.location = "ba_survey"</script>';
+        echo '<script language="javascript">window.location = "Ba_survey"</script>';
     }
 }

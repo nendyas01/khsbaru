@@ -1,6 +1,6 @@
 <?php
 
-class m_inp_spj_fin extends CI_Model
+class M_inp_spj_fin extends CI_Model
 {
 
     function tampil_data_dua()

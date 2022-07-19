@@ -1,6 +1,6 @@
 <?php
 
-class m_list_amandemen extends CI_Model
+class M_list_amandemen extends CI_Model
 {
 
 

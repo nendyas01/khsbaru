@@ -1,6 +1,6 @@
 <?php
 
-class m_kontrol_fin extends CI_Model
+class M_kontrol_fin extends CI_Model
 {
     public function tampil_data()
     {

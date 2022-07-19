@@ -40,7 +40,7 @@
                             <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($kontrol_fin as $kf) {
+                                foreach ($Kontrol_fin as $kf) {
                                     $sisa = $kf->fin_limit - $kf->fin_current;
                                     $terpakai = 0;
                                 ?>

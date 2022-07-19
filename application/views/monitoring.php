@@ -38,7 +38,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($monitoring as $m) {
+                                    foreach ($Monitoring as $m) {
 
                                         $terpakai = 0;
                                     ?>

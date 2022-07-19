@@ -48,7 +48,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($crud_vendor as $cv) {
+                                    foreach ($Crud_vendor as $cv) {
                                     ?>
                                         <tr>
                                             <td> <?php echo $cv->VENDOR_ID ?></td>

@@ -1,7 +1,7 @@
 <?php
 
 
-class skrd extends CI_Controller
+class Skrd extends CI_Controller
 {
 
     public function __construct()
@@ -11,23 +11,23 @@ class skrd extends CI_Controller
             redirect('login');
         }
 
-        $this->load->model('m_skrd');
+        $this->load->model('M_skrd');
     }
 
     public function index()
     {
-        $data['skrd'] = $this->m_skrd->getdata();
+        $data['Skrd'] = $this->M_skrd->getdata();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('skrd', $data);
+        $this->load->view('Skrd', $data);
         $this->load->view('templates/footer');
     }
 
     public function upload()
     {
-        $this->m_skrd->set_rules('judul', 'Judul', 'required');
+        $this->M_skrd->set_rules('judul', 'Judul', 'required');
 
-        if ($this->m_skrd->run() == FALSE) {
+        if ($this->M_skrd->run() == FALSE) {
             $this->load->view('upload/skrd');
         } else {
             $judul = $this->input->post('judul');

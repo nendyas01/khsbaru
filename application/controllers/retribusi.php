@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class retribusi extends CI_Controller
+class Retribusi extends CI_Controller
 {
 
     public function __construct()
@@ -12,12 +12,12 @@ class retribusi extends CI_Controller
             redirect('login');
         }
 
-        $this->load->model('m_retribusi');
+        $this->load->model('M_retribusi');
     }
 
     public function index()
     {
-        $data['retri'] = $this->m_retribusi->getdata();
+        $data['retri'] = $this->M_retribusi->getdata();
         $data['title'] = "Upload Multifile";
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
@@ -27,10 +27,10 @@ class retribusi extends CI_Controller
 
     public function upload()
     {
-        $this->m_retribusi->set_rules('judul', 'Judul', 'required');
+        $this->M_retribusi->set_rules('judul', 'Judul', 'required');
 
-        if ($this->m_retribusi->run() == FALSE) {
-            $this->load->view('upload/retribusi');
+        if ($this->M_retribusi->run() == FALSE) {
+            $this->load->view('upload/Retribusi');
         } else {
             $judul = $this->input->post('judul');
             $upload_image = $_FILES['image'];

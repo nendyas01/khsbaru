@@ -1,6 +1,6 @@
 <?php
 
-class m_inp_addendum extends CI_Model
+class M_inp_addendum extends CI_Model
 {
 
     public function tampil_data()

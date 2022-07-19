@@ -5,12 +5,12 @@ class Retribusi_submit extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-  
-        if($this->session->userdata("status")==0){
-			redirect('login');
-		}
-    
-        $this->load->model('m_retribusi');
+
+        if ($this->session->userdata("status") == 0) {
+            redirect('login');
+        }
+
+        $this->load->model('M_retribusi');
     }
 
     public function index()
@@ -24,8 +24,8 @@ class Retribusi_submit extends CI_Controller
             'evidence' => $this->input->post('evidence_ret')
         );
 
-        $this->m_retribusi->Update($where, $data, $table);
+        $this->M_retribusi->Update($where, $data, $table);
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
-        echo '<script language="javascript">window.location = "retribusi"</script>';
+        echo '<script language="javascript">window.location = "Retribusi"</script>';
     }
 }

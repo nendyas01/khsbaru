@@ -1,6 +1,6 @@
 <?php
 
-class m_retribusi extends CI_Model
+class M_retribusi extends CI_Model
 {
 
     function getdata()

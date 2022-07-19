@@ -1,22 +1,22 @@
 <?php
 
-class crud_vendor extends CI_Controller
+class Crud_vendor extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_crud_vendor');
+        $this->load->model('M_crud_vendor');
         /* if ($this->session->userdata("status") == 0) {
             redirect('login');
         } */
     }
     public function index()
     {
-        $data['crud_vendor'] = $this->m_crud_vendor->tampil_data();
+        $data['Crud_vendor'] = $this->M_crud_vendor->tampil_data();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('crud_vendor', $data);
+        $this->load->view('Crud_vendor', $data);
         $this->load->view('templates/footer');
     }
 
@@ -44,22 +44,22 @@ class crud_vendor extends CI_Controller
             'JABATAN'               => $JABATAN,
         );
 
-        $this->m_crud_vendor->input_data($data, 'tb_vendor');
-        redirect('crud_vendor/index');
+        $this->M_crud_vendor->input_data($data, 'tb_vendor');
+        redirect('Crud_vendor/index');
     }
 
     public function hapus($VENDOR_ID)
     {
         $where = array('VENDOR_ID' => $VENDOR_ID);
-        $this->m_crud_vendor->hapus_data($where, 'tb_vendor');
-        redirect('crud_vendor/index');
+        $this->M_crud_vendor->hapus_data($where, 'tb_vendor');
+        redirect('Crud_vendor/index');
     }
 
     public function edit_crud_vendor($VENDOR_ID)
     {
         $where = array('VENDOR_ID' => $VENDOR_ID);
 
-        $data['crud_vendor'] = $this->m_crud_vendor->edit_data($where, 'tb_vendor')->result();
+        $data['Crud_vendor'] = $this->M_crud_vendor->edit_data($where, 'tb_vendor')->result();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('edit_crud_vendor', $data);
@@ -92,14 +92,14 @@ class crud_vendor extends CI_Controller
         );
 
         $where = array('VENDOR_ID' => $VENDOR_ID);
-        $this->m_crud_vendor->update_data($where, $data, 'tb_vendor');
-        redirect('crud_vendor/index');
+        $this->M_crud_vendor->update_data($where, $data, 'tb_vendor');
+        redirect('Crud_vendor/index');
     }
 
     public function detail_crud_vendor($VENDOR_ID)
     {
-        $this->load->model('m_crud_vendor');
-        $detail_crud_vendor = $this->m_crud_vendor->detail_data($VENDOR_ID);
+        $this->load->model('M_crud_vendor');
+        $detail_crud_vendor = $this->M_crud_vendor->detail_data($VENDOR_ID);
         $data['detail_crud_vendor'] = $detail_crud_vendor;
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

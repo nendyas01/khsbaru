@@ -1,7 +1,7 @@
 <?php
 
 
-class monitoring extends CI_Controller
+class Monitoring extends CI_Controller
 {
     public function __construct()
     {
@@ -11,15 +11,15 @@ class monitoring extends CI_Controller
             redirect('login');
         }
 
-        $this->load->model('m_monitoring');
+        $this->load->model('M_monitoring');
     }
 
     public function index()
     {
-        $data['monitoring'] = $this->m_monitoring->tampil_data();
+        $data['Monitoring'] = $this->M_monitoring->tampil_data();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('monitoring', $data);
+        $this->load->view('Monitoring', $data);
         $this->load->view('templates/footer');
     }
 }

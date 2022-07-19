@@ -1,17 +1,17 @@
 <?php
 
 
-class monitoring_add extends CI_Controller
+class Monitoring_add extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata("status")==0){
-			redirect('login');
-		}
-    
-        $this->load->model('m_monitoring');
+        if ($this->session->userdata("status") == 0) {
+            redirect('login');
+        }
+
+        $this->load->model('M_monitoring');
     }
 
     public function index()
@@ -20,7 +20,7 @@ class monitoring_add extends CI_Controller
         $data['title'] = "Upload Multifile";
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('monitoring_add');
+        $this->load->view('Monitoring_add');
         $this->load->view('templates/footer');
     }
 

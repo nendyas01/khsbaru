@@ -29,7 +29,7 @@
                             <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($perijinan as $p) {
+                                foreach ($Perijinan as $p) {
                                 ?>
                                     <tr>
                                         <td> <?php echo $no++ ?></td>

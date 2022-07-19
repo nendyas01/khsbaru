@@ -1,6 +1,6 @@
 <?php
 
-class m_skrd extends CI_Model
+class M_skrd extends CI_Model
 {
     function getdata()
     {

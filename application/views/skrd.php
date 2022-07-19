@@ -33,7 +33,7 @@
                                     <div class="col-sm-10">
                                         <select class="form-control m-b-10" name="var_no_surat_ptsp">
                                             <option value>-- Pilih No Surat Ke PTSP --</option>
-                                            <?php foreach ($skrd as $skrd) : ?>
+                                            <?php foreach ($Skrd as $skrd) : ?>
                                                 <option value="<?php echo $skrd->surat_ijin_no; ?>"> <?php echo $skrd->surat_ijin_no; ?></option>
                                             <?php endforeach; ?>
                                         </select>

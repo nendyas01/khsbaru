@@ -5,7 +5,7 @@ class Inp_spj_fin_submit extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_spj_fin');
+        $this->load->model('M_inp_spj_fin');
     }
 
     public function index()
@@ -24,12 +24,12 @@ class Inp_spj_fin_submit extends CI_Controller
 
 
         if ($this->form_validation->run() == false) {
-            $data['skk'] = $this->m_inp_spj_fin->getdata();
-            $data['jenis_paket'] = $this->m_inp_spj_fin->getpaket();
-            $data['area'] = $this->m_inp_spj_fin->getarea();
+            $data['skk'] = $this->M_inp_spj_fin->getdata();
+            $data['jenis_paket'] = $this->M_inp_spj_fin->getpaket();
+            $data['area'] = $this->M_inp_spj_fin->getarea();
             $this->load->view('templates/header');
             $this->load->view('templates/sidebar');
-            $this->load->view('inp_spj_fin', $data);
+            $this->load->view('Inp_spj_fin', $data);
             $this->load->view('templates/footer');
         } else {
             $data = array(
@@ -50,7 +50,7 @@ class Inp_spj_fin_submit extends CI_Controller
                 'SPJ_ADD_NILAI'     =>  $this->input->post('var_nilai_spj'),
             );
 
-            $this->m_inp_spj_fin->Save($data, 'tb_spj');
+            $this->M_inp_spj_fin->Save($data, 'tb_spj');
 
             $data = array(
                 'spj_no'   =>  $this->input->post('var_no_spj'),
@@ -62,9 +62,9 @@ class Inp_spj_fin_submit extends CI_Controller
                 'status'   =>  $this->input->post('option_bayar'),
             );
 
-            $this->m_inp_spj_fin->Save($data, 'tb_termin');
+            $this->M_inp_spj_fin->Save($data, 'tb_termin');
             echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
-            echo '<script language="javascript">window.location = "inp_spj_fin"</script>';
+            echo '<script language="javascript">window.location = "Inp_spj_fin"</script>';
         }
     }
 }

@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class inp_addendum extends CI_Controller
+class Inp_addendum extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_addendum');
+        $this->load->model('M_inp_addendum');
     }
     function index()
     {
@@ -15,18 +15,18 @@ class inp_addendum extends CI_Controller
             'USERNAME'       =>  $this->session->userdata('username')
         );
 
-        $data['user'] = $this->m_inp_addendum->Get_Where($where, $table);
-        $data['spj'] = $this->m_inp_addendum->getdata();
+        $data['user'] = $this->M_inp_addendum->Get_Where($where, $table);
+        $data['spj'] = $this->M_inp_addendum->getdata();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('inp_addendum', $data);
+        $this->load->view('Inp_addendum', $data);
         $this->load->view('templates/footer');
     }
 
     function get_autofill()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_addendum->search_spj($_GET['term']);
+            $result = $this->M_inp_addendum->search_spj($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->SPJ_NO;
@@ -39,7 +39,7 @@ class inp_addendum extends CI_Controller
     function get_autofill1()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_addendum->search_skkio($_GET['term']);
+            $result = $this->M_inp_addendum->search_skkio($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->SKKI_NO;
@@ -69,14 +69,14 @@ class inp_addendum extends CI_Controller
             'SKKIO_NO'                => $SKKIO_NO,
         );
 
-        $this->m_inp_addendum->input_data($data, 'tb_addendum', 'tb_skko_i');
-        redirect('inp_addendum/index');
+        $this->M_inp_addendum->input_data($data, 'tb_addendum', 'tb_skko_i');
+        redirect('Inp_addendum/index');
     }
 
-    function edit($inp_addendum)
+    function edit($Inp_addendum)
     {
-        $where = array('id' => $inp_addendum);
+        $where = array('id' => $Inp_addendum);
         $data['user'] = $this->m_data->edit_data($where, 'tb_addendum')->result();
-        $this->load->view('inp_addendum', $data);
+        $this->load->view('Inp_addendum', $data);
     }
 }

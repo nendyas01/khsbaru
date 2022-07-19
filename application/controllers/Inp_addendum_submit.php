@@ -1,11 +1,11 @@
 <?php
 
-class inp_addendum_submit extends CI_Controller
+class Inp_addendum_submit extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_addendum');
+        $this->load->model('M_inp_addendum');
     }
 
     public function index()
@@ -20,7 +20,7 @@ class inp_addendum_submit extends CI_Controller
             'ADDENDUM_INPUT_USER'    => $this->input->post('username'),
             'ADDENDUM_DESKRIPSI'     => $this->input->post('var_deskripsi')
         ];
-        $this->m_inp_addendum->Save($data, 'tb_addendum');
+        $this->M_inp_addendum->Save($data, 'tb_addendum');
 
 
         $table = 'tb_spj';
@@ -33,9 +33,9 @@ class inp_addendum_submit extends CI_Controller
             'SKKI_NO'         => $this->input->post('var_skki_tujuan')
         );
 
-        $this->m_inp_addendum->Update($where, $data, $table);
+        $this->M_inp_addendum->Update($where, $data, $table);
 
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
-        echo '<script language="javascript">window.location = "inp_addendum"</script>';
+        echo '<script language="javascript">window.location = "Inp_addendum"</script>';
     }
 }

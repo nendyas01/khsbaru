@@ -1,6 +1,6 @@
 <?php
 
-class m_ba_survey extends CI_Model
+class M_ba_survey extends CI_Model
 {
     public function survey()
     {

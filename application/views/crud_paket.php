@@ -45,7 +45,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($crud_paket as $cp) {
+                                    foreach ($Crud_paket as $cp) {
                                     ?>
                                         <tr>
                                             <td> <?php echo $no++ ?></td>
