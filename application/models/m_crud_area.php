@@ -1,6 +1,6 @@
 <?php
 
-class m_crud_area extends CI_Model
+class M_crud_area extends CI_Model
 {
     public function tampil_data()
     {

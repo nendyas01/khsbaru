@@ -1,11 +1,11 @@
 <?php
 
-class upl_sanksi_khs_submit extends CI_Controller
+class Upl_sanksi_khs_submit extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_upl_sanksi_khs');
+        $this->load->model('M_upl_sanksi_khs');
     }
 
     public function index()
@@ -18,7 +18,7 @@ class upl_sanksi_khs_submit extends CI_Controller
             'status' => "1"
         );
 
-        $this->m_upl_sanksi_khs->Update($where, $data, $table);
+        $this->M_upl_sanksi_khs->Update($where, $data, $table);
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
         echo '<script language="javascript">window.location = "upl_sanksi_khs"</script>';
     }

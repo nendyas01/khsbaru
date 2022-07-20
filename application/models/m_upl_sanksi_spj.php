@@ -1,6 +1,6 @@
 <?php
 
-class m_upl_sanksi_spj extends CI_Model
+class M_upl_sanksi_spj extends CI_Model
 {
     function search_spj($title)
     {

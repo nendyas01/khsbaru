@@ -1,6 +1,6 @@
 <?php
 
-class m_inp_sanksi_spj extends CI_Model
+class M_inp_sanksi_spj extends CI_Model
 {
     /* function getdata()
     {

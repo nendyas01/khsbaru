@@ -1,6 +1,6 @@
 <?php
 
-class m_sanksi_siap_cetak extends CI_Model
+class M_sanksi_siap_cetak extends CI_Model
 {
     public function tampil_data()
     {

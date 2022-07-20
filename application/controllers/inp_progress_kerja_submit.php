@@ -1,11 +1,11 @@
 <?php
 
-class inp_progress_kerja_submit extends CI_Controller
+class Inp_progress_kerja_submit extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_progres_kerja');
+        $this->load->model('M_inp_progres_kerja');
     }
 
     public function index()
@@ -23,7 +23,7 @@ class inp_progress_kerja_submit extends CI_Controller
 
         );
 
-        $this->m_inp_progres_kerja->Save($data, 'tb_progress');
+        $this->M_inp_progres_kerja->Save($data, 'tb_progress');
 
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
         echo '<script language="javascript">window.location = "inp_progres_kerja"</script>';

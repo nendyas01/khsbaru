@@ -5,10 +5,10 @@ class Pelanggaran extends CI_Controller
 {
     public function __construct()
     {
-        parent::__construct();    
-        $this->load->model('m_progress');
-        if($this->session->userdata("username")==0){
-			redirect('login');
+        parent::__construct();
+        $this->load->model('M_pelanggaran');
+        if ($this->session->userdata("username") == 0) {
+            redirect('login');
         }
     }
 
@@ -41,7 +41,7 @@ class Pelanggaran extends CI_Controller
 
     function upl_sanksi_spj()
     {
-        $this->data['nomor_sanksi'] = $this->m_pelanggaran->get_data();
+        $this->data['nomor_sanksi'] = $this->M_pelanggaran->get_data();
         //$data['progress'] = $this->m_progress->tambah;
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

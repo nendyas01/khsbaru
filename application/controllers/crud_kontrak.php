@@ -1,12 +1,12 @@
 <?php
 
-class crud_kontrak extends CI_Controller
+class Crud_kontrak extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_crud_kontrak');
+        $this->load->model('M_crud_kontrak');
         if ($this->session->userdata("status") == 0) {
             redirect('Login');
         }
@@ -14,7 +14,7 @@ class crud_kontrak extends CI_Controller
 
     public function index()
     {
-        $data['crud_kontrak'] = $this->m_crud_kontrak->tampil_data();
+        $data['crud_kontrak'] = $this->M_crud_kontrak->tampil_data();
         //$data[' '] = $this->m_crud_kontrak->getdata();
         //$data[' '] = $this->m_crud_kontrak->getjenis();
         $this->load->view('templates/header');
@@ -67,8 +67,8 @@ class crud_kontrak extends CI_Controller
             'BLOCKED'                   => $BLOCKED,
         );
 
-        $this->m_crud_kontrak->input_data($data, 'tb_pagu_kontrak');
-        redirect('crud_kontrak/index');
+        $this->M_crud_kontrak->input_data($data, 'tb_pagu_kontrak');
+        redirect('Crud_kontrak/index');
     }
 
     public function hapus($VENDOR_ID)
@@ -78,15 +78,15 @@ class crud_kontrak extends CI_Controller
         // redirect('crud_kontrak');
 
         $where = array('VENDOR_ID' => $VENDOR_ID);
-        $this->m_crud_kontrak->hapus($where, 'tb_pagu_kontrak');
+        $this->M_crud_kontrak->hapus($where, 'tb_pagu_kontrak');
         $this->session->set_flashdata('sukses', 'Data Pagu Kontrak Berhasil Dihapus');
-        redirect('crud_kontrak');
+        redirect('Crud_kontrak');
     }
 
     public function edit_crud_kontrak($ID_PG)
     {
         $where = array('ID_PG' => $ID_PG);
-        $data['crud_kontrak'] = $this->m_crud_kontrak->edit_data($where, 'tb_pagu_kontrak')->result();
+        $data['crud_kontrak'] = $this->M_crud_kontrak->edit_data($where, 'tb_pagu_kontrak')->result();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('edit_crud_kontrak', $data);
@@ -140,15 +140,15 @@ class crud_kontrak extends CI_Controller
         );
 
         $where = array('VENDOR_ID' => $VENDOR_ID);
-        $this->m_crud_kontrak->update_data($where, $data, 'tb_pagu_kontrak');
+        $this->M_crud_kontrak->update_data($where, $data, 'tb_pagu_kontrak');
         $this->session->set_flashdata('info_edit', 'Data berhasil di edit.');
-        redirect('crud_kontrak/index');
+        redirect('Crud_kontrak/index');
     }
 
     public function detail_crud_kontrak($VENDOR_ID)
     {
-        $this->load->model('m_crud_kontrak');
-        $detail_crud_kontrak = $this->m_crud_kontrak->detail_data($VENDOR_ID);
+        $this->load->model('M_crud_kontrak');
+        $detail_crud_kontrak = $this->M_crud_kontrak->detail_data($VENDOR_ID);
         $data['detail_crud_kontrak'] = $detail_crud_kontrak;
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

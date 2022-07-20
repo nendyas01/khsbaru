@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class inp_progres_kerja extends CI_Controller
+class Inp_progres_kerja extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_progres_kerja');
+        $this->load->model('M_inp_progres_kerja');
     }
 
     function index()
@@ -16,7 +16,7 @@ class inp_progres_kerja extends CI_Controller
             'USERNAME'       =>  $this->session->userdata('username')
         );
 
-        $data['user'] = $this->m_inp_progres_kerja->Get_Where($where, $table);
+        $data['user'] = $this->M_inp_progres_kerja->Get_Where($where, $table);
 
         //$data['nomorspj'] = $this->m_inp_progres_kerja->getdata();
         //$data['SPJ_NO'] = $this->m_inp_addendum->getdata();
@@ -29,7 +29,7 @@ class inp_progres_kerja extends CI_Controller
     function get_autofill()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_progres_kerja->search_spj($_GET['term']);
+            $result = $this->M_inp_progres_kerja->search_spj($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->SPJ_NO;
@@ -59,9 +59,9 @@ class inp_progres_kerja extends CI_Controller
                 'PROGRESS_NOTES' => $PROGRESS_NOTES,
             ));
 
-            $this->m_inp_progres_kerja->input_data($data, 'tb_progress');
+            $this->M_inp_progres_kerja->input_data($data, 'tb_progress');
             $this->db->insert_batch('tb_progress', $data);
-            redirect('inp_progress_kerja');
+            redirect('Inp_progress_kerja');
         }
     }
 
@@ -87,7 +87,7 @@ class inp_progres_kerja extends CI_Controller
             );
             $this->m_inp_progres_kerja->insert_progress($data);
             $this->session->set_flashdata('sukses', 'Data berhasil disimpan!');
-            redirect('inp_progres_kerja', 'refresh');
+            redirect('Inp_progres_kerja', 'refresh');
         } else {
             $this->load->view('templates/header');
             $this->load->view('templates/sidebar');

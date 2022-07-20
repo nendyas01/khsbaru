@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class upl_sanksi_spj extends CI_Controller
+class Upl_sanksi_spj extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_upl_sanksi_spj');
+        $this->load->model('M_upl_sanksi_spj');
     }
 
     function index()
     {
-        $data['area'] = $this->m_upl_sanksi_spj->getarea();
+        $data['area'] = $this->M_upl_sanksi_spj->getarea();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
@@ -22,7 +22,7 @@ class upl_sanksi_spj extends CI_Controller
     function get_autofill()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_upl_sanksi_spj->search_spj($_GET['term']);
+            $result = $this->M_upl_sanksi_spj->search_spj($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->id_sanksi_spj;
@@ -35,7 +35,7 @@ class upl_sanksi_spj extends CI_Controller
     function get_autocomplete()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_upl_sanksi_spj->get_prov($_GET['term']);
+            $result = $this->M_upl_sanksi_spj->get_prov($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $result_array[] = $row->AREA_NAMA;

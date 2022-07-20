@@ -1,6 +1,6 @@
 <?php
 
-class m_list_sanksi extends CI_Model
+class M_list_sanksi extends CI_Model
 {
     public function tampil_data()
     {

@@ -1,11 +1,11 @@
 <?php
 
-class inp_sanksi_spj_submit extends CI_Controller
+class Inp_sanksi_spj_submit extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_sanksi_spj');
+        $this->load->model('M_inp_sanksi_spj');
     }
 
     public function index()
@@ -22,7 +22,7 @@ class inp_sanksi_spj_submit extends CI_Controller
             'keterangan'         =>  $this->input->post('var_keterangan'),
         );
 
-        $this->m_inp_sanksi_spj->Save($data, 'tb_sanksi_spj');
+        $this->M_inp_sanksi_spj->Save($data, 'tb_sanksi_spj');
 
         echo '<script language="javascript">alert("Penyerahan Dokumen Berhasil Ditambahkan")</script>';
         echo '<script language="javascript">window.location = "inp_sanksi_spj"</script>';

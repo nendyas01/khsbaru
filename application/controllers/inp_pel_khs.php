@@ -1,13 +1,13 @@
 <?php
 
 
-class inp_pel_khs extends CI_Controller
+class Inp_pel_khs extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_pel_khs');
+        $this->load->model('M_inp_pel_khs');
     }
 
     public function index()
@@ -18,12 +18,12 @@ class inp_pel_khs extends CI_Controller
             'USERNAME'       =>  $this->session->userdata('username')
         );
 
-        $data['user'] = $this->m_inp_pel_khs->Get_Where($where, $table);
-        $data['pelanggaran'] = $this->m_inp_pel_khs->getdata();
-        $data['area'] = $this->m_inp_pel_khs->getarea();
+        $data['user'] = $this->M_inp_pel_khs->Get_Where($where, $table);
+        $data['pelanggaran'] = $this->M_inp_pel_khs->getdata();
+        $data['area'] = $this->M_inp_pel_khs->getarea();
 
 
-        $data['kodeotomatis'] = $this->m_inp_pel_khs->kodeotomatis();
+        $data['kodeotomatis'] = $this->M_inp_pel_khs->kodeotomatis();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
@@ -34,7 +34,7 @@ class inp_pel_khs extends CI_Controller
     function get_autofill()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_pel_khs->search_spj($_GET['term']);
+            $result = $this->M_inp_pel_khs->search_spj($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->SPJ_NO;
@@ -47,7 +47,7 @@ class inp_pel_khs extends CI_Controller
     function get_autocomplete()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_pel_khs->get_prov($_GET['term']);
+            $result = $this->M_inp_pel_khs->get_prov($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $result_array[] = $row->AREA_KODE;
@@ -147,7 +147,7 @@ class inp_pel_khs extends CI_Controller
             ));
 
             $this->db->insert_batch('tb_progress', $data);
-            redirect('inp_progress_kerja');
+            redirect('Inp_progress_kerja');
         }
     }
 }

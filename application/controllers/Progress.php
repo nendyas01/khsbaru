@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class progress extends CI_Controller
+class Progress extends CI_Controller
 {
     public function __construct()
     {
@@ -10,12 +10,12 @@ class progress extends CI_Controller
             redirect('login');
         }
 
-        $this->load->model('m_progress');
+        $this->load->model('M_progress');
     }
     function index()
     {
-        $data['progress'] = $this->m_progress->tampil_data();
-        $data['areaspj'] = $this->m_progress->getarea();
+        $data['progress'] = $this->M_progress->tampil_data();
+        $data['areaspj'] = $this->M_progress->getarea();
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('progress', $data);
@@ -26,7 +26,7 @@ class progress extends CI_Controller
     function search()
     {
         $keyword = $this->input->post('keyword');
-        $data['progress'] = $this->m_progress->get_keyword($keyword);
+        $data['progress'] = $this->M_progress->get_keyword($keyword);
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('progress', $data);

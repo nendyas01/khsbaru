@@ -1,6 +1,6 @@
 <?php
 
-class m_progress extends CI_Model
+class M_progress extends CI_Model
 {
     public function tampil_data()
     {

@@ -1,30 +1,29 @@
 <?php
 
 
-class inp_sanksi_spj extends CI_Controller
+class Inp_sanksi_spj extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_inp_sanksi_spj');
-        
+        $this->load->model('M_inp_sanksi_spj');
     }
 
     public function index()
     {
         //$data['nomorspj'] = $this->m_inp_sanksi_spj->getdata();
-        $data['area'] = $this->m_inp_sanksi_spj->getarea();
+        $data['area'] = $this->M_inp_sanksi_spj->getarea();
 
 
-        $data['kodeotomatis'] = $this->m_inp_sanksi_spj->kodeotomatis();
+        $data['kodeotomatis'] = $this->M_inp_sanksi_spj->kodeotomatis();
 
         $table = 'tb_user';
         $where = array(
             'USERNAME'       =>  $this->session->userdata('username')
         );
 
-        $data['user'] = $this->m_inp_sanksi_spj->Get_Where($where, $table);
+        $data['user'] = $this->M_inp_sanksi_spj->Get_Where($where, $table);
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
@@ -35,7 +34,7 @@ class inp_sanksi_spj extends CI_Controller
     function get_autofill()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_sanksi_spj->search_spj($_GET['term']);
+            $result = $this->M_inp_sanksi_spj->search_spj($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->SPJ_NO;
@@ -48,7 +47,7 @@ class inp_sanksi_spj extends CI_Controller
     function get_autocomplete()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_inp_sanksi_spj->get_prov($_GET['term']);
+            $result = $this->M_inp_sanksi_spj->get_prov($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $result_array[] = $row->AREA_NAMA;
@@ -112,13 +111,13 @@ class inp_sanksi_spj extends CI_Controller
                 //'INPUT_PROGRESS_DATE' => $this->session->userdata(),
                 //'PROGRESS_INPUT_USER' => date('Y-m-d H:i:s')
             );
-            $this->m_inp_progres_kerja->insert_progress($data);
+            $this->M_inp_progres_kerja->insert_progress($data);
             $this->session->set_flashdata('sukses', 'Data berhasil disimpan!');
-            redirect('inp_progres_kerja', 'refresh');
+            redirect('Inp_sanksi_spj', 'refresh');
         } else {
             $this->load->view('templates/header');
             $this->load->view('templates/sidebar');
-            $this->load->view('inp_progres_kerja');
+            $this->load->view('inp_sanksi_spj');
             $this->load->view('templates/footer');
         };
     }

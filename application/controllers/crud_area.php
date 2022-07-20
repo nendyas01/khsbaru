@@ -1,16 +1,16 @@
 <?php
 
-class crud_area extends CI_Controller
+class Crud_area extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_crud_area');
+        $this->load->model('M_crud_area');
     }
 
     public function index()
     {
-        $data['crud_area'] = $this->m_crud_area->tampil_data();
+        $data['Crud_area'] = $this->M_crud_area->tampil_data();
         //$data[' '] = $this->m_crud_kontrak->getdata();
         //$data[' '] = $this->m_crud_kontrak->getjenis();
         $this->load->view('templates/header');
@@ -31,8 +31,8 @@ class crud_area extends CI_Controller
             'AREA_ZONE'               => $AREA_ZONE,
         );
 
-        $this->m_crud_area->input_data($data, 'tb_area');
-        redirect('crud_area/index');
+        $this->M_crud_area->input_data($data, 'tb_area');
+        redirect('Crud_area/index');
     }
 
     public function hapus($AREA_KODE)
@@ -40,9 +40,9 @@ class crud_area extends CI_Controller
 
         // $AREA_KODE = $this->input->post("AREA_KODE");
         $where = array('AREA_KODE' => $AREA_KODE);
-        $this->m_crud_area->hapus($where, 'tb_area');
+        $this->M_crud_area->hapus($where, 'tb_area');
         $this->session->set_flashdata('sukses', 'Data Area Berhasil Dihapus');
-        redirect('crud_area');
+        redirect('Crud_area');
     }
 
     /* $Where = array('AREA_KODE' => $AREA_KODE);
@@ -65,7 +65,7 @@ class crud_area extends CI_Controller
     public function edit_crud_area($AREA_KODE)
     {
         $where = array('AREA_KODE' => $AREA_KODE);
-        $data['crud_area'] = $this->m_crud_area->edit_data($where, 'tb_area')->result();
+        $data['crud_area'] = $this->M_crud_area->edit_data($where, 'tb_area')->result();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
@@ -86,15 +86,15 @@ class crud_area extends CI_Controller
         );
 
         $where = array('AREA_KODE' => $AREA_KODE);
-        $this->m_crud_area->update_data($where, $data, 'tb_area');
+        $this->M_crud_area->update_data($where, $data, 'tb_area');
         $this->session->set_flashdata('info_edit', 'Data berhasil di edit.');
-        redirect('crud_area/index');
+        redirect('Crud_area/index');
     }
 
     public function detail_crud_area($AREA_KODE)
     {
-        $this->load->model('m_crud_area');
-        $detail_crud_area = $this->m_crud_area->detail_data($AREA_KODE);
+        $this->load->model('M_crud_area');
+        $detail_crud_area = $this->M_crud_area->detail_data($AREA_KODE);
         $data['detail_crud_area'] = $detail_crud_area;
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

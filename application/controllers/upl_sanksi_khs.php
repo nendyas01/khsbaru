@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class upl_sanksi_khs extends CI_Controller
+class Upl_sanksi_khs extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_upl_sanksi_khs');
+        $this->load->model('M_upl_sanksi_khs');
     }
 
     function index()
@@ -20,7 +20,7 @@ class upl_sanksi_khs extends CI_Controller
     function get_autofill()
     {
         if (isset($_GET['term'])) {
-            $result = $this->m_upl_sanksi_khs->search_spj($_GET['term']);
+            $result = $this->M_upl_sanksi_khs->search_spj($_GET['term']);
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = $row->no_pelanggaran;
