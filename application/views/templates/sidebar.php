@@ -23,7 +23,7 @@
           </a>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
+        <li class="treeview <?= $this->uri->segment(1) == 'Crud_area' || $this->uri->segment(1) == 'Crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
                               || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
@@ -32,8 +32,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'crud_area' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_area') ?>"><i class="fa fa-circle-o"></i> Data Area</a></li>
-            <li <?= $this->uri->segment(1) == 'crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_area' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_area') ?>"><i class="fa fa-circle-o"></i> Data Area</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
             <li <?= $this->uri->segment(1) == 'crud_paket' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
             <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
             <li <?= $this->uri->segment(1) == 'crud_vendor' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_vendor') ?>"><i class="fa fa-circle-o"></i> Data Vendor</a></li>
@@ -51,7 +51,7 @@
           </a>
           <ul class="treeview-menu">
             <li <?= $this->uri->segment(1) == 'kontrol_fin' ? 'class="active"' : '' ?>><a href="<?php echo base_url('kontrol_fin') ?>"><i class="fa fa-circle-o"></i>Kontrol Finansial</a></li>
-            
+
             <li <?= $this->uri->segment(1) == 'inp_addendum' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i>Addendum</a></li>
             <li <?= $this->uri->segment(1) == 'list_amandemen' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_amandemen') ?>"><i class="fa fa-circle-o"></i>List Amandemen</a></li>
           </ul>
@@ -76,9 +76,9 @@
         </li>
 
 
-        <li class="treeview <?= $this->uri->segment(1) == 'inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'approve_pelanggaran'
-                              || $this->uri->segment(1) == 'list_pelanggaran' || $this->uri->segment(1) == 'upl_sanksi_khs' || $this->uri->segment(1) == 'upl_sanksi_spj'
-                              || $this->uri->segment(1) == 'list_sanksi' || $this->uri->segment(1) == 'list_sanksi_spj' || $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Inp_pel_khs' || $this->uri->segment(1) == 'Inp_sanksi_spj' || $this->uri->segment(1) == 'Approve_pelanggaran'
+                              || $this->uri->segment(1) == 'List_pelanggaran' || $this->uri->segment(1) == 'Upl_sanksi_khs' || $this->uri->segment(1) == 'Upl_sanksi_spj'
+                              || $this->uri->segment(1) == 'List_sanksi' || $this->uri->segment(1) == 'List_sanksi_spj' || $this->uri->segment(1) == 'Sanksi_siap_cetak' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Pelanggaran</span>
             <span class="pull-right-container">
@@ -86,19 +86,19 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
-            <li <?= $this->uri->segment(1) == 'inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
-            <li <?= $this->uri->segment(1) == 'approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
-            <li <?= $this->uri->segment(1) == 'list_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> List Sanksi SPJ</a></li>
-            <li <?= $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('sanksi_siap_cetak') ?>"><i class="fa fa-circle-o"></i> Sanksi Siap Cetak</a></li>
-            <li <?= $this->uri->segment(1) == 'upl_sanksi_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('upl_sanksi_khs') ?>"><i class="fa fa-circle-o"></i> Unggah Sanksi KHS</a></li>
-            <li <?= $this->uri->segment(1) == 'upl_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('upl_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Unggah Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'Approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
+            <li <?= $this->uri->segment(1) == 'List_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> List Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'Sanksi_siap_cetak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Sanksi_siap_cetak') ?>"><i class="fa fa-circle-o"></i> Sanksi Siap Cetak</a></li>
+            <li <?= $this->uri->segment(1) == 'Upl_sanksi_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Upl_sanksi_khs') ?>"><i class="fa fa-circle-o"></i> Unggah Sanksi KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'Upl_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Upl_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Unggah Sanksi SPJ</a></li>
           </ul>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Progress' || $this->uri->segment(1) == 'Inp_progres_kerja' ? 'active' : '' ?>">
 
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
@@ -107,8 +107,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
-            <li <?= $this->uri->segment(1) == 'inp_progres_kerja' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_progres_kerja') ?>"><i class="fa fa-circle-o"></i> Tambah Progress</a></li>
+            <li <?= $this->uri->segment(1) == 'Progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_progres_kerja' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_progres_kerja') ?>"><i class="fa fa-circle-o"></i> Tambah Progress</a></li>
           </ul>
         </li>
 
@@ -122,7 +122,7 @@
           </a>
           <ul class="treeview-menu">
             <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
-            
+
             <li <?= $this->uri->segment(1) == 'Crud_skkio' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_skkio') ?>"><i class="fa fa-circle-o"></i> Data SKKI/O</a></li>
           </ul>
         </li>
@@ -136,9 +136,9 @@
 
 
 
-        <li class="treeview <?= $this->uri->segment(1) == 'inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'approve_pelanggaran'
-                              || $this->uri->segment(1) == 'list_pelanggaran' || $this->uri->segment(1) == 'upl_sanksi_khs' || $this->uri->segment(1) == 'upl_sanksi_spj'
-                              || $this->uri->segment(1) == 'list_sanksi' || $this->uri->segment(1) == 'list_sanksi_spj' || $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Inp_pel_khs' || $this->uri->segment(1) == 'Inp_sanksi_spj' || $this->uri->segment(1) == 'Approve_pelanggaran'
+                              || $this->uri->segment(1) == 'List_pelanggaran' || $this->uri->segment(1) == 'Upl_sanksi_khs' || $this->uri->segment(1) == 'Upl_sanksi_spj'
+                              || $this->uri->segment(1) == 'List_sanksi' || $this->uri->segment(1) == 'List_sanksi_spj' || $this->uri->segment(1) == 'Sanksi_siap_cetak' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Pelanggaran</span>
             <span class="pull-right-container">
@@ -146,13 +146,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
-            <li <?= $this->uri->segment(1) == 'inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
-            <li <?= $this->uri->segment(1) == 'approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
-            <li <?= $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('sanksi_siap_cetak') ?>"><i class="fa fa-circle-o"></i> Sanksi Siap Cetak</a></li>
-            <li <?= $this->uri->segment(1) == 'upl_sanksi_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('upl_sanksi_khs') ?>"><i class="fa fa-circle-o"></i> Unggah Sanksi KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'Approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
+            <li <?= $this->uri->segment(1) == 'Sanksi_siap_cetak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Sanksi_siap_cetak') ?>"><i class="fa fa-circle-o"></i> Sanksi Siap Cetak</a></li>
+            <li <?= $this->uri->segment(1) == 'Upl_sanksi_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Upl_sanksi_khs') ?>"><i class="fa fa-circle-o"></i> Unggah Sanksi KHS</a></li>
           </ul>
         </li>
 
@@ -172,14 +172,14 @@
         </li>
 
         <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'progress' ? 'active' : '' ?>">
-        <a href="#">
+          <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
           </ul>
         </li>
 
@@ -220,7 +220,7 @@
             <li <?= $this->uri->segment(1) == 'Anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Progress' || $this->uri->segment(1) == 'Inp_progres_kerja' ? 'active' : '' ?>">
 
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
@@ -229,12 +229,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+            <li <?= $this->uri->segment(1) == 'Progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'approve_pelanggaran'
-                              || $this->uri->segment(1) == 'list_pelanggaran' || $this->uri->segment(1) == 'upl_sanksi_khs' || $this->uri->segment(1) == 'upl_sanksi_spj'
-                              || $this->uri->segment(1) == 'list_sanksi' || $this->uri->segment(1) == 'list_sanksi_spj' || $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Inp_pel_khs' || $this->uri->segment(1) == 'Inp_sanksi_spj' || $this->uri->segment(1) == 'Approve_pelanggaran'
+                              || $this->uri->segment(1) == 'List_pelanggaran' || $this->uri->segment(1) == 'Upl_sanksi_khs' || $this->uri->segment(1) == 'Upl_sanksi_spj'
+                              || $this->uri->segment(1) == 'List_sanksi' || $this->uri->segment(1) == 'List_sanksi_spj' || $this->uri->segment(1) == 'Sanksi_siap_cetak' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Pelanggaran</span>
             <span class="pull-right-container">
@@ -242,10 +242,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
-            <li <?= $this->uri->segment(1) == 'inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
-            <li <?= $this->uri->segment(1) == 'list_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'List_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
           </ul>
         </li>
 
@@ -280,7 +280,7 @@
             <li><a href="<?php echo base_url('kontrol_fin') ?>"><i class="fa fa-circle-o"></i> Kontrol Finansial</a></li>
             <li <?= $this->uri->segment(1) == 'inp_spj_fin' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_spj_fin') ?>"><i class="fa fa-circle-o"></i>Input SPJ</a></li>
             <li><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i> Addendum</a></li>
-            
+
 
 
           </ul>
@@ -300,9 +300,9 @@
         </li>
 
 
-        <li class="treeview <?= $this->uri->segment(1) == 'inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'approve_pelanggaran'
-                              || $this->uri->segment(1) == 'list_pelanggaran' || $this->uri->segment(1) == 'upl_sanksi_khs' || $this->uri->segment(1) == 'upl_sanksi_spj'
-                              || $this->uri->segment(1) == 'list_sanksi' || $this->uri->segment(1) == 'list_sanksi_spj' || $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'Approve_pelanggaran'
+                              || $this->uri->segment(1) == 'List_pelanggaran' || $this->uri->segment(1) == 'Upl_sanksi_khs' || $this->uri->segment(1) == 'Upl_sanksi_spj'
+                              || $this->uri->segment(1) == 'List_sanksi' || $this->uri->segment(1) == 'List_sanksi_spj' || $this->uri->segment(1) == 'Sanksi_siap_cetak' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Pelanggaran</span>
             <span class="pull-right-container">
@@ -310,14 +310,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
-            <li <?= $this->uri->segment(1) == 'inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
-            <li <?= $this->uri->segment(1) == 'approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'Approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_sanksi' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_sanksi') ?>"><i class="fa fa-circle-o"></i> List Sanksi</a></li>
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Progress' || $this->uri->segment(1) == 'Inp_progres_kerja' ? 'active' : '' ?>">
 
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
@@ -326,7 +326,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+            <li <?= $this->uri->segment(1) == 'Progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
           </ul>
         </li>
 
@@ -348,7 +348,7 @@
           <ul class="treeview-menu">
 
             <li><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i> Addendum</a></li>
-            
+
             <li><a href="<?php echo base_url('kontrol_fin') ?>"><i class="fa fa-circle-o"></i> Kontrol Finansial</a></li>
             <li><a href="<?php echo base_url('list_amandemen') ?>"><i class="fa fa-circle-o"></i> List Amandemen</a></li>
 
@@ -369,7 +369,7 @@
             <li <?= $this->uri->segment(1) == 'Anggaran/v_input_tagihan' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran/tambah_data') ?>"><i class="fa fa-circle-o"></i> Tambah Tagihan</a></li>
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Progress' || $this->uri->segment(1) == 'Inp_progres_kerja' ? 'active' : '' ?>">
 
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
@@ -378,7 +378,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+            <li <?= $this->uri->segment(1) == 'Progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "6") { ?>
@@ -398,14 +398,14 @@
           <ul class="treeview-menu">
 
             <li><a href="<?php echo base_url('inp_addendum') ?>"><i class="fa fa-circle-o"></i> Addendum</a></li>
-          
+
             <li><a href="<?php echo base_url('kontrol_fin') ?>"><i class="fa fa-circle-o"></i> Kontrol Finansial</a></li>
 
 
           </ul>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Progress' || $this->uri->segment(1) == 'Inp_progres_kerja' ? 'active' : '' ?>">
 
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
@@ -414,7 +414,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+            <li <?= $this->uri->segment(1) == 'Progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
           </ul>
         </li>
         <li class="treeview<?= $this->uri->segment(1) == '' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
@@ -462,9 +462,9 @@
           </a>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'approve_pelanggaran'
-                              || $this->uri->segment(1) == 'list_pelanggaran' || $this->uri->segment(1) == 'upl_sanksi_khs' || $this->uri->segment(1) == 'upl_sanksi_spj'
-                              || $this->uri->segment(1) == 'list_sanksi' || $this->uri->segment(1) == 'list_sanksi_spj' || $this->uri->segment(1) == 'sanksi_siap_cetak' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Inp_pel_khs' || $this->uri->segment(1) == 'inp_sanksi_spj' || $this->uri->segment(1) == 'Approve_pelanggaran'
+                              || $this->uri->segment(1) == 'List_pelanggaran' || $this->uri->segment(1) == 'Upl_sanksi_khs' || $this->uri->segment(1) == 'Upl_sanksi_spj'
+                              || $this->uri->segment(1) == 'List_sanksi' || $this->uri->segment(1) == 'List_sanksi_spj' || $this->uri->segment(1) == 'Sanksi_siap_cetak' ? 'active' : '' ?>">
           <a href="#">
             <i class="fa fa-book"></i> <span>Pengelolaan Pelanggaran</span>
             <span class="pull-right-container">
@@ -472,10 +472,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?= $this->uri->segment(1) == 'inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
-            <li <?= $this->uri->segment(1) == 'inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
-            <li <?= $this->uri->segment(1) == 'approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
-            <li <?= $this->uri->segment(1) == 'list_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('list_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_pel_khs' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_pel_khs') ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggaran KHS</a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_sanksi_spj' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_sanksi_spj') ?>"><i class="fa fa-circle-o"></i> Tambah Sanksi SPJ</a></li>
+            <li <?= $this->uri->segment(1) == 'Approve_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Approve_pelanggaran') ?>"><i class="fa fa-circle-o"></i> Approve Pelanggaran</a></li>
+            <li <?= $this->uri->segment(1) == 'List_pelanggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('List_pelanggaran') ?>"><i class="fa fa-circle-o"></i> List Pelanggaran</a></li>
           </ul>
         </li>
 
@@ -493,7 +493,7 @@
             <li <?= $this->uri->segment(1) == 'Crud_skkio' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_skkio') ?>"><i class="fa fa-circle-o"></i> Data SKKI/O</a></li>
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
+        <li class="treeview <?= $this->uri->segment(1) == 'Crud_area' || $this->uri->segment(1) == 'Crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
                               || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
@@ -502,23 +502,23 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
-           
+            <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
+
           </ul>
         </li>
 
-        <li class="treeview <?= $this->uri->segment(1) == 'progress' || $this->uri->segment(1) == 'inp_progres_kerja' ? 'active' : '' ?>">
+        <li class="treeview <?= $this->uri->segment(1) == 'Progress' || $this->uri->segment(1) == 'Inp_progres_kerja' ? 'active' : '' ?>">
 
-        <a href="#">
-          <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li <?= $this->uri->segment(1) == 'progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
-          <li <?= $this->uri->segment(1) == 'inp_progres_kerja' ? 'class="active"' : '' ?>><a href="<?php echo base_url('inp_progres_kerja') ?>"><i class="fa fa-circle-o"></i> Tambah Progress</a></li>
-        </ul>
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Pengelolaan Progress</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?= $this->uri->segment(1) == 'Progress' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Progress') ?>"><i class="fa fa-circle-o"></i> Detail SPJ </a></li>
+            <li <?= $this->uri->segment(1) == 'Inp_progres_kerja' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Inp_progres_kerja') ?>"><i class="fa fa-circle-o"></i> Tambah Progress</a></li>
+          </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "9") { ?>
         <li <?= $this->uri->segment(1) == 'Chart' || $this->uri->segment(1) == '' || $this->uri->segment(2) == '' ? 'class="active"' : '' ?>>
@@ -554,7 +554,7 @@
             <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
+        <li class="treeview <?= $this->uri->segment(1) == 'Crud_area' || $this->uri->segment(1) == 'Crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
                               || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
@@ -563,8 +563,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
-            <li <?= $this->uri->segment(1) == 'crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
           </ul>
         </li>
       <?php } elseif ($this->session->userdata("role") == "10") { ?>
@@ -600,7 +600,7 @@
             <li <?= $this->uri->segment(1) == 'Anggaran' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Anggaran') ?>"><i class="fa fa-circle-o"></i> Penyerapan Anggaran</a></li>
           </ul>
         </li>
-        <li class="treeview <?= $this->uri->segment(1) == 'crud_area' || $this->uri->segment(1) == 'crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
+        <li class="treeview <?= $this->uri->segment(1) == 'Crud_area' || $this->uri->segment(1) == 'Crud_kontrak' || $this->uri->segment(1) == 'crud_paket'
                               || $this->uri->segment(1) == 'Crud_user' || $this->uri->segment(1) == 'crud_vendor' ? 'active' : '' ?>">
           <a href="#">
             <i class=" fa fa-edit"></i> <span>Pengelolaan Data Master</span>
@@ -609,8 +609,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
-            <li <?= $this->uri->segment(1) == 'crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_user' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_user') ?>"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>
+            <li <?= $this->uri->segment(1) == 'Crud_kontrak' ? 'class="active"' : '' ?>><a href="<?php echo base_url('Crud_kontrak') ?>"><i class="fa fa-circle-o"></i> Data Pagu Kontrak</a></li>
           </ul>
         </li>
       <?php  } ?>
