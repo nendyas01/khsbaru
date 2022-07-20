@@ -497,13 +497,6 @@
 
     $('#example').DataTable({
         dom: 'lBfrtip',
-        buttons: [{
-                align: 'center',
-                oriented: 'potrait',
-                download: 'open',
-                widthX: '90px'
-            },
-            'excel', 'pdf', 'print'
-        ]
+        buttons: ['excel', 'pdf', 'print']
     });
 </script>

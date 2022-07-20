@@ -47,7 +47,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($crud_area as $car) {
+                                    foreach ($Crud_area as $car) {
 
                                     ?>
                                         <tr>
@@ -314,13 +314,6 @@
 
     $('#example').DataTable({
         dom: 'lBfrtip',
-        buttons: [{
-                align: 'center',
-                oriented: 'potrait',
-                download: 'open',
-                widthX: '90px'
-            },
-            'excel', 'pdf', 'print'
-        ]
+        buttons: ['excel', 'pdf', 'print']
     });
 </script>
